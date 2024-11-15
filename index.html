@@ -12,9 +12,10 @@
 
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-4 bg-gray-800">
-        <div class="text-2xl font-bold"><a href="index.html">JEKATE48</a> <span class="text-lg text-sm font-thin">fanmade Website</span></div>
-    </div>
-        
+        <div class="text-2xl font-bold"><a href="index.html">JEKATE48</a> <span
+                class="text-lg text-sm font-thin">fanmade Website</span></div>
+        </div>
+
         <div class="md:hidden flex items-center">
             <button id="hamburger-icon" class="text-white">
                 <i class="fas fa-bars"></i>
@@ -29,13 +30,12 @@
     </nav>
 
     <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 space-y-4">
-        <a href="#" class="block text-white hover:text-pink-500">News</a>
+        <a href="/components/page/news.html" class="block text-white hover:text-pink-500">News</a>
         <a href="#" class="block text-white hover:text-pink-500">Members</a>
         <a href="#" class="block text-white hover:text-pink-500">Schedule</a>
         <a href="#" class="block text-white hover:text-pink-500">Theater</a>
     </div>
 
-    <!-- Hero Section -->
     <div class="carousel-container bg-gray-800">
         <div id="carousel" class="w-full h-full">
         </div>
@@ -61,7 +61,7 @@
 
 
     <section class="p-8">
-        <h2 class="text-3xl font-bold mb-6">Latest News</h2>
+        <h2 class="text-3xl font-bold mb-6"> <i class="far fa-newspaper mr-2"></i>Latest News</h2>
         <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-gray-800 p-6 rounded-lg animate-pulse">
                 <div class="w-8 h-8 bg-gray-600 rounded-full mb-4"></div>
@@ -141,16 +141,19 @@
         <div id="merch-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
         </div>
         <div class="text-center mt-6">
-            <button class="px-6 py-2 bg-gray-800 rounded-full hover:bg-gray-700">
+            <a href="https://jkt48.com/news/list?lang=id"
+                class="px-6 py-2 bg-gray-800 rounded-full hover:bg-gray-700 text-white">
                 See All
-            </button>
+            </a>
         </div>
+
     </section>
 
 
     <footer class="bg-gray-800 p-8">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
-            <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade Website</span>
+            <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade
+                    Website</span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
@@ -177,7 +180,8 @@
             </div>
         </div>
         <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights reserved.</p>
+            <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights
+                reserved.</p>
             <div class="flex space-x-4">
                 <a href="#" class="text-gray-400 hover:text-white">
                     <i class="fab fa-facebook-f"></i>
@@ -202,7 +206,9 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
     </script>
+
 
 
     <script src="/components/utils/banner.js"></script>

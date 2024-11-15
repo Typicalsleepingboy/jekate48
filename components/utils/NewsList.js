@@ -39,7 +39,7 @@ async function fetchLatestNews() {
         newsContainer.innerHTML = `
             <div class="col-span-3 text-center text-gray-400">
                 <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                <p>Failed to load news. Please try again later.</p>
+                <p>Gagal mendapatkan data news 😭</p>
             </div>
         `;
     }
@@ -60,7 +60,7 @@ async function fetchNewsDetails() {
             newsDetailContainer.innerHTML = `
                 <div class="col-span-3 text-center text-gray-400">
                     <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                    <p>No news ID provided. Please access the page with a valid news ID.</p>
+                    <p>Gagal mendapatkan data id theater 😭</p>
                 </div>
             `;
             return;
@@ -78,7 +78,6 @@ async function fetchNewsDetails() {
         const articleElement = document.createElement('div');
         articleElement.classList.add('bg-gray-800', 'p-6', 'rounded-lg');
 
-        // Tampilkan detail berita
         articleElement.innerHTML = `
             <div class="flex items-center mb-4">
                 <span class="text-sm text-gray-400">${data.tanggal}</span>
@@ -87,7 +86,6 @@ async function fetchNewsDetails() {
             <p class="text-gray-400 whitespace-pre-line mb-6">${data.konten}</p>
         `;
 
-        // Proses array gambar
         if (Array.isArray(data.gambar) && data.gambar.length > 0) {
             const imageGallery = document.createElement('div');
             imageGallery.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'gap-4', 'mb-6');
@@ -114,7 +112,7 @@ async function fetchNewsDetails() {
         newsDetailContainer.innerHTML = `
             <div class="col-span-3 text-center text-gray-400">
                 <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                <p>Failed to load news details. Please try again later.</p>
+                <p>Gagal mendapatkan data news 😭</p>
             </div>
         `;
     }

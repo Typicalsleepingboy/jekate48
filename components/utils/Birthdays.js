@@ -65,12 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const birthdayElement = document.createElement("p");
                 birthdayElement.className = "text-gray-400";
-                birthdayElement.textContent = new Date(person.birthday).toLocaleDateString('id', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
+                // Ambil langsung tanggal dari API
+                birthdayElement.textContent = person.birthday; 
 
                 textContainer.appendChild(nameElement);
                 textContainer.appendChild(birthdayElement);
@@ -93,6 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
             console.error("Error fetching birthdays:", error);
-            loadingSkeleton.textContent = "Failed to load birthdays.";
+            loadingSkeleton.textContent = "Gagal mendapatkan data birthdays 😭.";
         });
 });

@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         const status = getShowStatus(show.date);
                         if (status) {
                             const badge = document.createElement("span");
-                            badge.className = `${status.color} text-white px-10 py-1 rounded-full text-sm`;
+                            badge.className = `${status.color} text-white px-7 py-1 rounded-full text-sm`;
                             badge.textContent = status.text;
                             theaterItem.appendChild(leftContent);
                             theaterItem.appendChild(badge);
@@ -122,11 +122,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch(error => {
                     console.error("Error fetching theater data:", error);
-                    loadingSkeletonTheater.textContent = "Failed to load theater data.";
+                    loadingSkeletonTheater.textContent = "Gagal mendapatkan data theater 😭.";
                 });
         })
         .catch(error => {
             console.error("Error loading theater.json:", error);
-            loadingSkeletonTheater.textContent = "Failed to load theater data.";
+            loadingSkeletonTheater.textContent = "Gagal mendapatkan data theater 😭.";
         });
 });

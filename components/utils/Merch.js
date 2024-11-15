@@ -6,7 +6,7 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
                 const merchItem = document.createElement('div');
                 merchItem.classList.add('bg-gray-800', 'rounded-lg', 'overflow-hidden');
                 const image = document.createElement('img');
-                image.src = `https://takagi.sousou-no-frieren.workers.dev/${item.imageUrl}`;
+                image.src = `https://jkt48.com${item.imageUrl}`;
                 image.alt = item.title;
                 image.classList.add('w-full', 'h-48', 'object-cover');
                 const content = document.createElement('div');
