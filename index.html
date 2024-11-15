@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEKATE48 fanmade Website</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/assets/css/home.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-gray-900 text-white">
+    <nav class="flex items-center justify-between p-4 bg-gray-800">
+        <div class="text-2xl font-bold">
+            JEKATE48
+            <span class="text-lg text-sm font-thin">fanmade Website</span>
+        </div>
+        
+        <div class="md:hidden flex items-center">
+            <button id="hamburger-icon" class="text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="nav-links" class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-pink-500">News</a>
+            <a href="#" class="hover:text-pink-500">Members</a>
+            <a href="#" class="hover:text-pink-500">Schedule</a>
+            <a href="#" class="hover:text-pink-500">Theater</a>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 space-y-4">
+        <a href="#" class="block text-white hover:text-pink-500">News</a>
+        <a href="#" class="block text-white hover:text-pink-500">Members</a>
+        <a href="#" class="block text-white hover:text-pink-500">Schedule</a>
+        <a href="#" class="block text-white hover:text-pink-500">Theater</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="carousel-container bg-gray-800">
+        <div id="carousel" class="w-full h-full">
+        </div>
+        <div class="carousel-content">
+            <div class="p-12 space-y-4">
+                <h1 class="text-6xl font-bold">New Release</h1>
+                <h2 id="mvTitle" class="text-4xl">Loading Data....</h2>
+                <p class="text-sm">Available on:</p>
+                <div class="flex space-x-4">
+                    <a href="https://open.spotify.com/artist/2l8I5pWUnfF7bMK1z6EJRk?si=bavj057eRnG7zYz-m-4WKw"
+                        target="_blank" rel="noopener noreferrer"
+                        class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@JKT48" target="_blank" rel="noopener noreferrer"
+                        class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="p-8">
+        <h2 class="text-3xl font-bold mb-6">Latest News</h2>
+        <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-6 rounded-lg animate-pulse">
+                <div class="w-8 h-8 bg-gray-600 rounded-full mb-4"></div>
+                <div class="h-6 bg-gray-600 rounded mb-2"></div>
+                <div class="h-4 bg-gray-600 rounded w-1/3"></div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg animate-pulse">
+                <div class="w-8 h-8 bg-gray-600 rounded-full mb-4"></div>
+                <div class="h-6 bg-gray-600 rounded mb-2"></div>
+                <div class="h-4 bg-gray-600 rounded w-1/3"></div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg animate-pulse">
+                <div class="w-8 h-8 bg-gray-600 rounded-full mb-4"></div>
+                <div class="h-6 bg-gray-600 rounded mb-2"></div>
+                <div class="h-4 bg-gray-600 rounded w-1/3"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+        <section id="upcoming-theater" class="bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <i class="far fa-calendar mr-2"></i> Upcoming Theater
+            </h2>
+            <div id="loading-skeleton-theater" class="space-y-4">
+                <div class="animate-pulse flex space-x-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-lg"></div>
+                    <div class="flex-1 space-y-2 py-1">
+                        <div class="h-4 bg-gray-700 rounded w-1/3"></div>
+                        <div class="h-4 bg-gray-700 rounded w-2/3"></div>
+                    </div>
+                </div>
+                <div class="animate-pulse flex space-x-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-lg"></div>
+                    <div class="flex-1 space-y-2 py-1">
+                        <div class="h-4 bg-gray-700 rounded w-1/3"></div>
+                        <div class="h-4 bg-gray-700 rounded w-2/3"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="theater-list" class="space-y-4 hidden"></div>
+        </section>
+
+        <section id="upcoming-birthdays" class="bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <i class="far fa-user mr-2"></i> Upcoming Birthdays
+            </h2>
+            <div id="loading-skeleton-birthdays" class="space-y-4">
+                <div class="animate-pulse flex space-x-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full"></div>
+                    <div class="flex-1 space-y-2 py-1">
+                        <div class="h-4 bg-gray-700 rounded w-1/4"></div>
+                        <div class="h-4 bg-gray-700 rounded w-1/2"></div>
+                    </div>
+                </div>
+                <div class="animate-pulse flex space-x-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full"></div>
+                    <div class="flex-1 space-y-2 py-1">
+                        <div class="h-4 bg-gray-700 rounded w-1/4"></div>
+                        <div class="h-4 bg-gray-700 rounded w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="birthday-list" class="space-y-4 hidden"></div>
+        </section>
+    </div>
+
+
+    <section class="p-8">
+        <h2 class="text-3xl font-bold mb-6 flex items-center">
+            <i class="fas fa-shopping-bag mr-2"></i> JKT48 Merch
+        </h2>
+        <div class="mb-6">
+            <div class="flex items-center justify-between max-w-md mx-auto">
+            </div>
+        </div>
+        <div id="merch-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </div>
+        <div class="text-center mt-6">
+            <button class="px-6 py-2 bg-gray-800 rounded-full hover:bg-gray-700">
+                See All
+            </button>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 p-8">
+        <div class="flex flex-col md:flex-row justify-between items-start mb-8">
+            <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48
+                <br><span class="text-lg text-base font-thin">fanmade Website</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-semibold mb-4">News</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About JEKATE48</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Schedule</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Member</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Team J</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Team KIII</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerIcon.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+
+    <script src="/components/utils/banner.js"></script>
+    <script src="/components/utils/NewRelease.js"></script>
+    <script src="/components/utils/News.js"></script>
+    <script src="/components/utils/Theater.js"></script>
+    <script src="/components/utils/Merch.js"></script>
+    <script src="/components/utils/Birthdays.js"></script>
+</body>
+
+</html>
