@@ -21,7 +21,7 @@ async function fetchMembers() {
                     </div>
                     <h3 class="font-semibold text-base mb-1">${member.nama_member}</h3>
                     <p class="text-green-500 text-sm">Active</p>
-                    <a href="/profile/${member.id_member}" 
+                    <a href="/components/detail/member.html?id=${member.id_member}" 
                         class="mt-2 px-4 py-2 bg-pink-500 text-white text-sm rounded-full hover:bg-pink-600 transition-colors">
                         Lihat Profil
                     </a>
@@ -43,7 +43,7 @@ async function fetchMembers() {
                 <p>Gagal mendapatkan data 😭</p>
             </div>
         `;
-        
+
         document.getElementById('core-members').innerHTML = errorMessage;
         document.getElementById('trainee-members').innerHTML = errorMessage;
     }
@@ -55,10 +55,12 @@ const loadingSkeleton = `
         <div class="h-4 bg-gray-600 rounded w-20 mb-2"></div>
         <div class="h-3 bg-gray-600 rounded w-16"></div>
     </div>
-`.repeat(4); 
+`.repeat(4);
 
 document.getElementById('core-members').innerHTML = loadingSkeleton;
 document.getElementById('trainee-members').innerHTML = loadingSkeleton;
 
 // Fetch members
 fetchMembers();
+
+

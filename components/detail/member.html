@@ -11,8 +11,7 @@
     <link rel="icon" href="/assets/css/image/favlogo.png" />
 </head>
 
-
-<body class="min-h-screen bg-gray-900 text-white">
+<body class="min-h-screen bg-gray-900 text-white flex flex-col">
     <nav class="flex items-center justify-between p-4 bg-gray-800">
         <div class="text-2xl font-bold"><a href="/home">JEKATE48</a> <span
                 class="text-lg text-sm font-thin">fanmade Website</span></div>
@@ -36,40 +35,35 @@
         <a href="/components/page/ssk" class="block text-white hover:text-pink-500">Sousenkyo</a>
     </div>
 
-    <div class="container mx-auto p-8">
-        <h1 class="text-4xl font-bold mb-8">JKT48 Members</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <section class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-6 flex items-center">
-                    <i class="fas fa-user-circle mr-2"></i> Members
-                </h2>
-                <div id="core-members" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-max">
-                    <div class="animate-pulse flex flex-col items-center">
-                        <div class="w-24 h-24 bg-gray-600 rounded-full mb-4"></div>
-                        <div class="h-4 bg-gray-600 rounded w-20 mb-2"></div>
-                        <div class="h-3 bg-gray-600 rounded w-16"></div>
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-4">
+            <div id="member-detail" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div id="loading-skeleton" class="animate-pulse p-4 md:p-8">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="w-full md:w-1/3 lg:w-1/4">
+                            <div class="aspect-square bg-gray-700 rounded-lg"></div>
+                        </div>
+                        <div class="flex-1 space-y-6">
+                            <div class="h-8 bg-gray-700 rounded w-3/4"></div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <div class="h-4 bg-gray-700 rounded w-1/2"></div>
+                                    <div class="h-4 bg-gray-700 rounded w-3/4"></div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="h-4 bg-gray-700 rounded w-1/2"></div>
+                                    <div class="h-4 bg-gray-700 rounded w-3/4"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-    
-            <section class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-6 flex items-center">
-                    <i class="fas fa-user-graduate mr-2"></i> Trainee Members
-                </h2>
-                <div id="trainee-members" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-max">
-                    <div class="animate-pulse flex flex-col items-center">
-                        <div class="w-24 h-24 bg-gray-600 rounded-full mb-4"></div>
-                        <div class="h-4 bg-gray-600 rounded w-20 mb-2"></div>
-                        <div class="h-3 bg-gray-600 rounded w-16"></div>
-                    </div>
-                </div>
-            </section>
+                <div id="member-content" class="hidden"></div>
+            </div>
         </div>
-    </div>
-    
+    </main>
 
-    <footer class="bg-gray-800 p-8 mt-8">
+    <footer class="bg-gray-800 p-8 mt-auto">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
             <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade Website</span></div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -83,7 +77,7 @@
                 <div>
                     <h3 class="font-semibold mb-4">Member</h3>
                     <ul class="space-y-2">
-                       <li><a href="/components/page/members" class="text-gray-400 hover:text-white">Members</a></li>
+                        <li><a href="/components/page/members" class="text-gray-400 hover:text-white">Members</a></li>
                         <li><a href="/components/page/members" class="text-gray-400 hover:text-white">Trainee</a></li>
                     </ul>
                 </div>
@@ -111,6 +105,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -118,8 +113,8 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
     </script>
-     <script src="/components/utils/member.js"></script>
+    <script src="/components/utils/memberdetail.js"></script>
 </body>
+
 </html>

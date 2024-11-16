@@ -56,17 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const nameElement = document.createElement("h3");
                 nameElement.className = "font-semibold";
+
+                const profileId = person.profileLink.split("/")[4].split("?")[0];
                 const link = document.createElement("a");
-                link.href = person.profileLink;
-                link.target = "_blank";
+                link.href = `/components/detail/member?id=${profileId}`;
+                link.target = "_self"; // Buka di tab yang sama
                 link.rel = "noopener noreferrer";
                 link.textContent = person.name;
                 nameElement.appendChild(link);
 
                 const birthdayElement = document.createElement("p");
                 birthdayElement.className = "text-gray-400";
-                // Ambil langsung tanggal dari API
-                birthdayElement.textContent = person.birthday; 
+                birthdayElement.textContent = person.birthday;
 
                 textContainer.appendChild(nameElement);
                 textContainer.appendChild(birthdayElement);
@@ -89,6 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
             console.error("Error fetching birthdays:", error);
-            loadingSkeleton.textContent = "Gagal mendapatkan data birthdays 😭.";
+            loadingSkeleton.textContent = "Gagal mendapatkan data birthday 😭.";
         });
 });
