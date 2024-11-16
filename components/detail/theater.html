@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Theater - JEKATE48</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="/assets/css/home.css" rel="stylesheet">
-    <link rel="icon" href="/assets/css/image/favlogo.png" />
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JEKATE48 fanmade Website</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="/assets/css/home.css" rel="stylesheet">
+        <link rel="icon" href="/assets/css/image/favlogo.png" />
+    </head>
+    
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-4 bg-gray-800">
         <div class="text-2xl font-bold"><a href="/index.html">JEKATE48</a> <span class="text-lg text-sm font-thin">fanmade Website</span></div>
@@ -51,7 +51,7 @@
                     <div class="space-y-2">
                         <div class="flex items-center gap-2">
                             <h1 id="setlistName" class="text-3xl font-bold"></h1>
-                            <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">JKT48</span>
+                            <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">Show Theater</span>
                         </div>
                         <p class="text-gray-300" id="setlistDescription"></p>
                     </div>
@@ -137,6 +137,15 @@
             </div>
         </div>
     </footer>
+    <script>
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        hamburgerIcon.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    
+    </script>
     <script src="/components/utils/Theater.js"></script>
 </body>
 </html>
