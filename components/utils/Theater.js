@@ -22,14 +22,8 @@ function getShowStatus(showInfo) {
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-<<<<<<< HEAD
     const [_, datePart, timePart] = showInfo.split(" ");
     const showDateTime = new Date(`${datePart}T${timePart}:00`); 
-=======
-    // Split showInfo untuk mendapatkan tanggal dan waktu
-    const [_, datePart, timePart] = showInfo.split(" "); // Mengambil bagian tanggal dan waktu
-    const showDateTime = new Date(`${datePart}T${timePart}:00`); // Gabungkan ke format ISO
->>>>>>> 800051fd7116f44697a262844701fb57131a1746
 
     const showDateOnly = new Date(showDateTime);
     showDateOnly.setHours(0, 0, 0, 0);
