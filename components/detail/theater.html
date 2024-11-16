@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEKATE48 fanmade Website</title>
+    <title>Detail Theater - JEKATE48</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="/assets/css/home.css" rel="stylesheet">
     <link rel="icon" href="/assets/css/image/favlogo.png" />
 </head>
-
 
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-4 bg-gray-800">
@@ -36,26 +34,65 @@
     </div>
 
     <section class="p-4 md:p-8">
-        
         <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 px-2">
-            <i class="fa-solid fa-crown mr-2"></i>
-            <span class="hidden sm:inline">Sousenkyo 2024</span>
-            <span class="sm:hidden">Sousenkyo 2024</span>
+            Detail Theater
         </h2>
-        <div id="loadingSkeleton" class="col-span-3"></div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Left Column - Theater Image -->
+            <div class="md:col-span-1 bg-gray-800 rounded-lg p-4">
+                <div id="loadingSkeleton" class="text-center">Loading...</div>
+                <div id="theaterDetails" class="hidden">
+                    <img id="setlistBanner" class="w-full rounded-lg mb-4" src="" alt="Setlist Banner">
+                </div>
+            </div>
+    
+            <div class="md:col-span-2 bg-gray-800 rounded-lg p-4">
+                <div id="theaterDetails2" class="hidden space-y-6">
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <h1 id="setlistName" class="text-3xl font-bold"></h1>
+                            <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">JKT48</span>
+                        </div>
+                        <p class="text-gray-300" id="setlistDescription"></p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-gray-400">Jumlah member</p>
+                            <p class="text-xl" id="memberCount"></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400">Tanggal</p>
+                            <p class="text-xl" id="showDate"></p>
+                            <p class="text-xl" id="showTime"></p>
+                        </div>
+                    </div>
+                    <div id="birthdaySection" class="hidden bg-gray-700 rounded-lg p-4">
+                        <h3 class="font-bold mb-4">🎂 Seitansai</h3>
+                        <div class="flex items-center gap-4">
+                            <img id="birthdayMemberImage" src="" alt="" class="w-16 h-16 object-cover rounded-full">
+                            <p>Show ini merupakan seitansai <span id="birthdayMembers"></span></p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="font-bold">🎟️ Tiket theater</p>
+                        <button class="w-full bg-pink-600 hover:bg-pink-500 text-white py-3 rounded-lg transition"id="ticketButtonOffline">
+                            🎟️ Tiket Offline
+                        </button>
+                        <button class="w-full bg-blue-500 hover:bg-blue-300 text-white py-3 rounded-lg transition"id="ticketButtonOnline">
+                            🎟️ Tiket Online di Showroom
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="mt-8 bg-gray-800 rounded-lg p-4">
+            <h2 class="text-2xl font-bold mb-4">👥 Daftar Member</h2>
+            <div id="membersList" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4"></div>
         </div>
     </section>
-    
-    <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 p-4">
-        <div class="bg-gray-800 p-3 md:p-4 rounded-lg w-full max-w-2xl md:max-w-3xl relative">
-            <button id="closeModal" class="absolute -top-3 -right-3 bg-white text-gray-800 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-200 shadow-lg">✕</button>
-            <div id="videoContainer" class="w-full aspect-video rounded-lg overflow-hidden"></div>
-        </div>
-    </div>
-    
 
-    <footer class="bg-gray-800 p-8">
+    <footer class="bg-gray-800 p-8 mt-8">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
             <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade Website</span></div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -100,15 +137,6 @@
             </div>
         </div>
     </footer>
+    <script src="/components/utils/Theater.js"></script>
 </body>
-<script>
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburgerIcon.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-</script>
-<script src="/components/utils/ssk.js"></script>
 </html>
