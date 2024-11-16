@@ -57,6 +57,10 @@ async function fetchNewsDetails() {
     try {
         if (!newsId) {
             const newsDetailContainer = document.getElementById('news-detail-container');
+            const loadingSkeleton = document.querySelectorAll('#loading-skeleton-newsdetail');
+            loadingSkeleton.forEach(skeleton => {
+                skeleton.remove();
+            });
             newsDetailContainer.innerHTML = `
                 <div class="col-span-3 text-center text-gray-400">
                     <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
@@ -109,6 +113,12 @@ async function fetchNewsDetails() {
     } catch (error) {
         console.error('Error fetching news details:', error);
         const newsDetailContainer = document.getElementById('news-detail-container');
+
+        const loadingSkeleton = document.querySelectorAll('#loading-skeleton-newsdetail');
+        loadingSkeleton.forEach(skeleton => {
+            skeleton.remove();
+        });
+
         newsDetailContainer.innerHTML = `
             <div class="col-span-3 text-center text-gray-400">
                 <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
@@ -117,5 +127,6 @@ async function fetchNewsDetails() {
         `;
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', fetchNewsDetails);

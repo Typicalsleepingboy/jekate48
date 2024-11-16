@@ -21,8 +21,9 @@ function getShowStatus(showInfo) {
 
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-    const [datePart, timePart] = showInfo.split(" ")[1, 2];
-    const showDateTime = new Date(`${datePart}T${timePart}:00`);
+
+    const [_, datePart, timePart] = showInfo.split(" ");
+    const showDateTime = new Date(`${datePart}T${timePart}:00`); 
 
     const showDateOnly = new Date(showDateTime);
     showDateOnly.setHours(0, 0, 0, 0);
@@ -31,24 +32,25 @@ function getShowStatus(showInfo) {
         if (showDateTime <= now) {
             return {
                 text: "Sedang Berlangsung",
-                color: "bg-green-500"
+                color: "bg-green-500",
             };
         }
         return {
             text: "Hari ini",
-            color: "bg-blue-500"
+            color: "bg-blue-500",
         };
     }
 
     if (showDateOnly.getTime() === tomorrow.getTime()) {
         return {
             text: "Besok",
-            color: "bg-yellow-500"
+            color: "bg-yellow-500",
         };
     }
 
     return null;
 }
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -83,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         theaterName.className = "font-bold text-lg";
                         theaterName.innerHTML = `${show.setlist}`;
 
-                        // Perbaikan: Kirim `showInfo` ke formatShowDate
                         const { formattedDate, formattedTime } = formatShowDate(show.date, show.showInfo);
 
                         const showDate = document.createElement("p");
@@ -111,8 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         } else {
                             theaterItem.appendChild(leftContent);
                         }
-
-
                         theaterList.appendChild(theaterItem);
                     });
                 })
