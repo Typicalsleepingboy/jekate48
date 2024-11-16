@@ -221,18 +221,18 @@ const fetchData = async () => {
             birthdayMemberImage.src = firstBirthdayMember?.img_alt || 'https://jkt48.com/images/logo.svg';
         }
 
-        const ticketButtonOffline = document.getElementById('ticketButtonOffline');
-        const ticketButtonOnline = document.getElementById('ticketButtonOnline');
+        // const ticketButtonOffline = document.getElementById('ticketButtonOffline');
+        // const ticketButtonOnline = document.getElementById('ticketButtonOnline');
 
-        ticketButtonOffline.addEventListener('click', () => {
-            window.location.href = 'https://jkt48.com/images/logo.svg';
-        });
+        // ticketButtonOffline.addEventListener('click', () => {
+        //     window.location.href = 'https://jkt48.com/images/logo.svg';
+        // });
 
-        ticketButtonOnline.addEventListener('click', () => {
-            window.location.href = '/path/to/online/ticket';
-        });
+        // ticketButtonOnline.addEventListener('click', () => {
+        //     window.location.href = '/path/to/online/ticket';
+        // });
     } catch (error) {
-        loadingSkeleton.textContent = 'Error loading theater details.';
+        loadingSkeleton.textContent = 'Gagal mendapatkan data theater 😭';
         console.error(error);
     }
 };
