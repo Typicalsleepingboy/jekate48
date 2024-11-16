@@ -33,21 +33,22 @@
         <a href="Sousenkyo.html" class="block text-white hover:text-pink-500">Sousenkyo</a>
     </div>
 
-    <section class="p-8">
-        <h2 class="text-3xl font-bold mb-6">
-            <i class="fa-solid fa-crown mr-2"></i>Sousenkyo 2024 Candidates
+    <section class="p-4 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 px-2">
+            <i class="fa-solid fa-crown mr-2 text-yellow-500"></i>
+            <span class="hidden sm:inline">Sousenkyo 2024 Candidates</span>
+            <span class="sm:hidden">SSK 2024</span>
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
         </div>
     </section>
     
-    <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-gray-800 p-4 rounded-lg max-w-lg w-full relative">
-            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">✖</button>
-            <div id="videoContainer" class="w-full aspect-video"></div>
+    <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 p-4">
+        <div class="bg-gray-800 p-3 md:p-4 rounded-lg w-full max-w-2xl md:max-w-3xl relative">
+            <button id="closeModal" class="absolute -top-3 -right-3 bg-white text-gray-800 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-200 shadow-lg">✕</button>
+            <div id="videoContainer" class="w-full aspect-video rounded-lg overflow-hidden"></div>
         </div>
     </div>
-    
     
 
     <footer class="bg-gray-800 p-8">
