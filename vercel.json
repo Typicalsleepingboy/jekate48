@@ -8,6 +8,14 @@
     {
       "source": "/:path*",
       "destination": "/:path*"
+    },
+    {
+      "source": "/components/detail/:path*",
+      "destination": "/components/detail/:path*"
+    },
+    {
+      "source": "/components/page/:path*",
+      "destination": "/components/page/:path*"
     }
   ]
 }
