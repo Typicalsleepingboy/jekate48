@@ -64,7 +64,7 @@ async function fetchNewsDetails() {
             newsDetailContainer.innerHTML = `
                 <div class="col-span-3 text-center text-gray-400">
                     <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                    <p>Gagal mendapatkan data id theater 😭</p>
+                    <p>Gagal mendapatkan data id news 😭</p>
                 </div>
             `;
             return;
