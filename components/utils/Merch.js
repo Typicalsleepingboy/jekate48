@@ -2,10 +2,13 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
     .then(response => response.json())
     .then(data => {
         const processedData = data.map(item => {
-            const match = item.link.match(/\/id\/(\d+)/); 
+            const matchLink = item.link.match(/\/id\/(\d+)/);
+            const matchImageUrl = item.imageUrl.match(/u=(https?:\/\/.+)$/);
+
             return {
                 ...item,
-                link: match ? match[1] : null 
+                link: matchLink ? matchLink[1] : null,
+                imageUrl: matchImageUrl ? decodeURIComponent(matchImageUrl[1]) : item.imageUrl
             };
         });
 
@@ -15,7 +18,7 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
             merchItem.classList.add('bg-gray-800', 'rounded-lg', 'overflow-hidden');
 
             const image = document.createElement('img');
-            image.src = `https://jkt48.com${item.imageUrl}`;
+            image.src = item.imageUrl; 
             image.alt = item.title;
             image.classList.add('w-full', 'h-48', 'object-cover');
 
@@ -29,12 +32,13 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
             const button = document.createElement('button');
             button.classList.add('w-full', 'mt-4', 'px-4', 'py-2', 'bg-pink-500', 'rounded-full', 'hover:bg-pink-600');
             button.textContent = 'Order Now';
+
             if (item.link) {
                 button.onclick = () => {
                     window.location.href = `/components/detail/news.html?id=${item.link}`;
                 };
             } else {
-                button.disabled = false;
+                button.disabled = false; 
                 button.classList.add('bg-gray-500', 'cursor-not-allowed');
                 button.textContent = 'Invalid Link';
             }
