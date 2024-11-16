@@ -1,4 +1,4 @@
-function formatShowDate(dateString) {
+function formatShowDate(dateString, showInfo) {
     const date = new Date(dateString);
 
     const dateOptions = {
@@ -8,28 +8,22 @@ function formatShowDate(dateString) {
         timeZone: 'Asia/Jakarta'
     };
     const formattedDate = new Intl.DateTimeFormat('id-ID', dateOptions).format(date);
-
-    const timeOptions = {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-        timeZone: 'Asia/Jakarta' 
-    };
-
-    const formattedTime = `${new Intl.DateTimeFormat('id-ID', timeOptions).format(date).replace(":", ".")} WIB`;
-
+    const time = showInfo.split(" ")[2];
+    const formattedTime = `${time.replace(":", ".")} WIB`;
     return { formattedDate, formattedTime };
 }
 
-function getShowStatus(showDate) {
+
+function getShowStatus(showInfo) {
     const now = new Date();
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
+    const [datePart, timePart] = showInfo.split(" ")[1, 2];
+    const showDateTime = new Date(`${datePart}T${timePart}:00`);
 
-    const showDateTime = new Date(showDate);
     const showDateOnly = new Date(showDateTime);
     showDateOnly.setHours(0, 0, 0, 0);
 
@@ -56,6 +50,7 @@ function getShowStatus(showDate) {
     return null;
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const loadingSkeletonTheater = document.getElementById("loading-skeleton-theater");
     const theaterList = document.getElementById("theater-list");
@@ -72,54 +67,54 @@ document.addEventListener("DOMContentLoaded", () => {
                     apiData.forEach(show => {
                         const theaterItem = document.createElement("div");
                         theaterItem.className = "flex flex-col md:flex-row justify-between items-start border-b border-gray-700 pb-4";
-                    
+
                         const leftContent = document.createElement("div");
-                        leftContent.className = "flex space-x-4 md:space-x-6"; // Adjust space for larger screens
-                    
+                        leftContent.className = "flex space-x-4 md:space-x-6";
+
                         const matchingTheater = theaterData.find(theater => theater.setlist === show.setlist);
                         const img = document.createElement("img");
                         img.src = matchingTheater ? matchingTheater.image : "https://jkt48.com/images/logo.svg";
                         img.alt = show.setlist;
                         img.className = "w-16 h-16 rounded-lg";
-                    
+
                         const textContainer = document.createElement("div");
-                    
+
                         const theaterName = document.createElement("p");
                         theaterName.className = "font-bold text-lg";
                         theaterName.innerHTML = `${show.setlist}`;
-                    
 
-                        const { formattedDate, formattedTime } = formatShowDate(show.date);
-                    
+                        // Perbaikan: Kirim `showInfo` ke formatShowDate
+                        const { formattedDate, formattedTime } = formatShowDate(show.date, show.showInfo);
+
                         const showDate = document.createElement("p");
                         showDate.className = "text-gray-400 text-lg";
                         showDate.innerHTML = formattedDate;
-                    
+
                         const showTime = document.createElement("p");
                         showTime.className = "text-gray-400 text-lg";
                         showTime.innerHTML = formattedTime;
-                    
+
                         textContainer.appendChild(theaterName);
                         textContainer.appendChild(showDate);
                         textContainer.appendChild(showTime);
-                    
+
                         leftContent.appendChild(img);
                         leftContent.appendChild(textContainer);
-                    
-                        const status = getShowStatus(show.date);
+
+                        const status = getShowStatus(show.showInfo);
                         if (status) {
                             const badge = document.createElement("span");
-                            badge.className = `${status.color} text-white px-7 py-1 rounded-full text-sm mt-2 md:mt-0`; // Add margin-top for mobile
+                            badge.className = `${status.color} text-white px-7 py-1 rounded-full text-sm mt-2 md:mt-0`;
                             badge.textContent = status.text;
                             theaterItem.appendChild(leftContent);
                             theaterItem.appendChild(badge);
                         } else {
                             theaterItem.appendChild(leftContent);
                         }
-                    
+
+
                         theaterList.appendChild(theaterItem);
                     });
-                    
                 })
                 .catch(error => {
                     console.error("Error fetching theater data:", error);
