@@ -4,17 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEKATE48 fanmade Website</title>
+    <title>Members - JEKATE48 fanmade Website</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="/assets/css/home.css" rel="stylesheet">
 </head>
 
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-4 bg-gray-800">
-        <div class="text-2xl font-bold"><a href="/index.html">JEKATE48</a> <span class="text-lg text-sm font-thin">fanmade Website</span></div>
-        </div>
-        
+        <div class="text-2xl font-bold"><a href="/index.html">JEKATE48</a> <span
+                class="text-lg text-sm font-thin">fanmade Website</span></div>
         <div class="md:hidden flex items-center">
             <button id="hamburger-icon" class="text-white">
                 <i class="fas fa-bars"></i>
@@ -35,20 +33,42 @@
         <a href="/components/page/ssk.html" class="block text-white hover:text-pink-500">Sousenkyo</a>
     </div>
 
-    <section class="p-8">
-        <div id="news-detail-container">
-        </div>
-        <div id="loading-skeleton-newsdetail" class="bg-gray-800 p-6 rounded-lg animate-pulse">
-            <div class="w-8 h-8 bg-gray-600 rounded-full mb-4"></div>
-            <div class="h-6 bg-gray-600 rounded mb-2"></div>
-            <div class="h-4 bg-gray-600 rounded w-1/3"></div>
-        </div>
-    </section>
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl font-bold mb-8">JKT48 Members</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-user-circle mr-2"></i> Members
+                </h2>
+                <div id="core-members" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-max">
+                    <div class="animate-pulse flex flex-col items-center">
+                        <div class="w-24 h-24 bg-gray-600 rounded-full mb-4"></div>
+                        <div class="h-4 bg-gray-600 rounded w-20 mb-2"></div>
+                        <div class="h-3 bg-gray-600 rounded w-16"></div>
+                    </div>
+                </div>
+            </section>
     
-    <footer class="bg-gray-800 p-8">
+            <section class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-user-graduate mr-2"></i> Trainee Members
+                </h2>
+                <div id="trainee-members" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-max">
+                    <div class="animate-pulse flex flex-col items-center">
+                        <div class="w-24 h-24 bg-gray-600 rounded-full mb-4"></div>
+                        <div class="h-4 bg-gray-600 rounded w-20 mb-2"></div>
+                        <div class="h-3 bg-gray-600 rounded w-16"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+
+    <footer class="bg-gray-800 p-8 mt-8">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
-            <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade Website</span>
-            </div>
+            <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade Website</span></div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="font-semibold mb-4">News</h3>
@@ -76,22 +96,13 @@
         <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights reserved.</p>
             <div class="flex space-x-4">
-                <a href="#" class="text-gray-400 hover:text-white">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
-
     <script>
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -99,10 +110,8 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
     </script>
-
-
-    <script src="/components/utils/NewsList.js"></script>
+     <script src="/components/utils/member.js"></script>
 </body>
-
 </html>

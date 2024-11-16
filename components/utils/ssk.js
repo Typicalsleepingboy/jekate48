@@ -26,7 +26,7 @@ fetch('/data/ssk.json')
             <div class="p-2 sm:p-3 md:p-4">
                 <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-2 md:mb-3 truncate">${candidate.name}</h3>
                 <button 
-                    class="watch-video-link w-full bg-red-500 hover:bg-red-600 text-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 flex items-center justify-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm" 
+                    class="watch-video-link w-full bg-pink-600 hover:bg-pink-500 text-white rounded-full py-1.5 sm:py-2 px-3 sm:px-4 flex items-center justify-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm" 
                     data-video-id="${candidate.data.url_video}"
                 >
                     <i class="fa-solid fa-play text-xs sm:text-sm"></i>
