@@ -6,16 +6,20 @@
       "destination": "/home.html"
     },
     {
+      "source": "/:path*/:slug",
+      "destination": "/:path*/:slug.html"
+    },
+    {
       "source": "/:path*",
       "destination": "/:path*"
     },
     {
-      "source": "/components/detail/:path*",
-      "destination": "/components/detail/:path*"
+      "source": "/components/detail/:slug",
+      "destination": "/components/detail/:slug.html"
     },
     {
-      "source": "/components/page/:path*",
-      "destination": "/components/page/:path*"
+      "source": "/components/page/:slug",
+      "destination": "/components/page/:slug.html"
     }
   ]
 }
