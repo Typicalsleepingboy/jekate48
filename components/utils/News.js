@@ -22,7 +22,7 @@ async function fetchLatestNews() {
                     `;
                     newsCard.style.cursor = 'pointer';
                     newsCard.addEventListener('click', () => {
-                        window.location.href = `/components/detail/news.html?id=${news.berita_id}`;
+                        window.location.href = `/components/detail/news?id=${news.berita_id}`;
                     });
                     
                     newsContainer.appendChild(newsCard);
