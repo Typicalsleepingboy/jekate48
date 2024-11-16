@@ -34,7 +34,7 @@ async function fetchLatestNews() {
                 newsContainer.innerHTML = `
                     <div class="col-span-3 text-center text-gray-400">
                         <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                        <p>Failed to load news. Please try again later.</p>
+                        <p>Gagal mendapatkan data news 😭.</p>
                     </div>
                 `;
             }
