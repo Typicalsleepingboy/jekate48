@@ -175,13 +175,11 @@ const fetchData = async () => {
         theaterDetails.classList.remove('hidden');
         theaterDetails2.classList.remove('hidden');
 
-
         document.getElementById('setlistBanner').src = setlistData ? setlistData.image : '';
         document.getElementById('setlistName').textContent = theater.setlist;
         document.getElementById('setlistDescription').textContent = theater.description || 'Deskripsi belum tersedia.';
         const { formattedDate, formattedTime } = formatShowDate(theater.date, theater.showInfo);
         document.getElementById('showDate').textContent = `${formattedDate}, ${formattedTime}`;
-        
 
         document.getElementById('memberCount').textContent = theater.members.length;
 
@@ -189,23 +187,35 @@ const fetchData = async () => {
             return `
                 <div class="flex flex-col items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
                     <div class="w-full aspect-square mb-2 rounded-lg overflow-hidden">
-                        ${memberData && memberData.img_alt ?
+                        ${memberData && memberData.img_alt ? 
                     `<img src="${memberData.img_alt}" alt="${memberName}" class="w-full h-full object-cover">` :
                     `<div class="w-full h-full bg-red-600 flex items-center justify-center">
                                 <span class="text-white text-xl font-bold">JKT48</span>
                         </div>`
                 }
                     </div>
-                    <p class="text-sm text-center text-white font-medium">${memberName}</p>
+                    <p class="text-sm text-center text-white font-medium">${memberName || "Tidak Diketahui"}</p>
                 </div>
             `;
         };
 
         const membersList = document.getElementById('membersList');
-        membersList.innerHTML = theater.members.map(memberName => {
-            const memberData = members.find(m => m.name === memberName);
-            return createMemberCard(memberName, memberData);
-        }).join('');
+
+        if (!theater.members || theater.members.length === 0) {
+            membersList.innerHTML = `
+            <div class="flex flex-col items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
+                    <div class="w-full aspect-square mb-2 rounded-lg overflow-hidden">
+                <div class="w-full h-full bg-red-600 flex items-center justify-center">
+                    <span class="text-white text-xl font-bold">JKT48</span>
+                </div>
+            </div>
+            `;
+        } else {
+            membersList.innerHTML = theater.members.map(memberName => {
+                const memberData = members.find(m => m.name === memberName);
+                return createMemberCard(memberName, memberData);
+            }).join('');
+        }
 
         if (theater.birthdayMembers && theater.birthdayMembers.length > 0) {
             const birthdaySection = document.getElementById('birthdaySection');
