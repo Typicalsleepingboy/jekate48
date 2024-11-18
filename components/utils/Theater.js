@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         const totalMembers = document.createElement("p");
                         totalMembers.className = "text-gray-400 text-lg";
-                        totalMembers.innerHTML = `Total Members: ${show.members.length}`;
+                        totalMembers.innerHTML = `Total Members: ${show.members.length} yang tampil`;
 
                         textContainer.appendChild(theaterName);
                         textContainer.appendChild(showDate);

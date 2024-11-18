@@ -36,8 +36,19 @@
     align-items: center;
 }
 
-/* Fallback background while images load */
+
+#upcoming-theater {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+#upcoming-birthdays {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    align-self: start;
+}
+
+
 .carousel-container {
     background-color: #1a1a1a;
 }
-
