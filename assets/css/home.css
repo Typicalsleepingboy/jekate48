@@ -5,6 +5,12 @@
     overflow: hidden;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #carousel {
     position: relative;
     width: 100%;
@@ -51,4 +57,8 @@
 
 .carousel-container {
     background-color: #1a1a1a;
+}
+
+footer {
+    margin-top: auto;
 }

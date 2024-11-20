@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,19 @@
     <meta name="author" content="JEKATE48">
     <meta property="og:image:height" content="512">
     <meta property="og:image:width" content="512">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1133957893528485949/1308125578263531540/logo.png?ex=673cce61&is=673b7ce1&hm=7e6dbbf4f43f1cc40b7a114fe225f2d9a4e7e716b0f031837bf69ce46d3da74e&">
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/attachments/1133957893528485949/1308125578263531540/logo.png?ex=673cce61&is=673b7ce1&hm=7e6dbbf4f43f1cc40b7a114fe225f2d9a4e7e716b0f031837bf69ce46d3da74e&">
     <meta property="og:title" content="JEKATE48">
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
 </head>
 
+
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-4 bg-gray-800">
-        <div class="text-2xl font-bold"><a href="/home">JEKATE48</a> <span class="text-lg text-sm font-thin">fanmade Website</span></div>
+        <div class="text-2xl font-bold"><a href="/home">JEKATE48</a> <span class="text-lg text-sm font-thin">fanmade
+                Website</span></div>
+        </div>
+
         <div class="md:hidden flex items-center">
             <button id="hamburger-icon" class="text-white">
                 <i class="fas fa-bars"></i>
@@ -39,66 +45,35 @@
         <a href="/components/page/ssk" class="block text-white hover:text-pink-500">Sousenkyo</a>
     </div>
 
-    <section class="p-4 md:p-8">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 px-2">
-            Detail Theater
-        </h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Left Column - Theater Image -->
-            <div class="md:col-span-1 bg-gray-800 rounded-lg p-4">
-                <div id="loadingSkeleton" class="text-center">Loading...</div>
-                <div id="theaterDetails" class="hidden">
-                    <img id="setlistBanner" class="w-full rounded-lg mb-4" src="" alt="Setlist Banner">
-                </div>
-            </div>
-    
-            <div class="md:col-span-2 bg-gray-800 rounded-lg p-4">
-                <div id="theaterDetails2" class="hidden space-y-6">
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2">
-                            <h1 id="setlistName" class="text-3xl font-bold"></h1>
-                            <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">Show Theater</span>
-                        </div>
-                        <p class="text-gray-300" id="setlistDescription"></p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-gray-400">Jumlah member</p>
-                            <p class="text-xl" id="memberCount"></p>
-                        </div>
-                        <div>
-                            <p class="text-gray-400">Tanggal</p>
-                            <p class="text-xl" id="showDate"></p>
-                            <p class="text-xl" id="showTime"></p>
-                        </div>
-                    </div>
-                    <div id="birthdaySection" class="hidden bg-gray-700 rounded-lg p-4">
-                        <h3 class="font-bold mb-4">🎂 Seitansai</h3>
-                        <div class="flex items-center gap-4">
-                            <img id="birthdayMemberImage" src="" alt="" class="w-16 h-16 object-cover rounded-full">
-                            <p>Show ini merupakan seitansai <span id="birthdayMembers"></span></p>
-                        </div>
-                    </div>
-                    <!-- <div class="space-y-3">
-                        <p class="font-bold">🎟️ Tiket theater</p>
-                        <button class="w-full bg-pink-600 hover:bg-pink-500 text-white py-3 rounded-lg transition"id="ticketButtonOffline">
-                            🎟️ Tiket Offline
-                        </button>
-                        <button class="w-full bg-blue-500 hover:bg-blue-300 text-white py-3 rounded-lg transition"id="ticketButtonOnline">
-                            🎟️ Tiket Online di Showroom
-                        </button>
-                    </div> -->
-                </div>
-            </div>
+    <section class="flex flex-col md:flex-row items-center justify-center p-8 md:p-16">
+        <div class="text-left md:w-1/2 space-y-6">
+            <h1 class="text-5xl font-bold mb-4">About JEKATE48</h1>
+            <p class="text-lg leading-relaxed">
+                Selamat datang di JEKATE48 Fanmade Website, platform yang didedikasikan untuk para penggemar JKT48.
+                Kami berkomitmen untuk memberikan pengalaman digital terbaik untuk semua penggemar grup idola favorit
+                Anda.
+                Mulai dari berita terbaru, jadwal teater, hingga merchandise, semua dapat Anda temukan di sini.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Situs ini dibuat dengan penuh cinta oleh penggemar, untuk penggemar.
+                Harap dicatat bahwa ini adalah situs **tidak resmi** dan bertujuan sebagai dedikasi untuk JKT48.
+                Kami berharap Anda menikmati pengalaman Anda di sini dan tetap mendukung grup kesayangan kita bersama!
+            </p>
+            <p class="text-lg leading-relaxed">
+                Website ini dikembangkan oleh
+                <a href="https://x.com/Typicalsleeping" target="_blank" class="text-pink-500 hover:text-pink-700">
+                    Typicalsleepingboy
+                </a>
+            </p>
         </div>
-    
-        <div class="mt-8 bg-gray-800 rounded-lg p-4">
-            <h2 class="text-2xl font-bold mb-4">👥 Daftar Member</h2>
-            <div id="membersList" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4"></div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+            <img src="/assets/css/image/logo.png" alt="JKT48"
+                class="rounded-lg shadow-lg max-w-full md:max-w-[300px] lg:max-w-[400px] mx-auto">
         </div>
     </section>
 
-    <footer class="bg-gray-800 p-8 mt-auto">
+
+    <footer class="bg-gray-800 p-8">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
             <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade
                     Website</span></div>
@@ -106,7 +81,8 @@
                 <div>
                     <h3 class="font-semibold mb-4">News</h3>
                     <ul class="space-y-2">
-                        <li><a href="/components/page/about" class="text-gray-400 hover:text-white">About JEKATE48</a></li>
+                        <li><a href="/components/page/about" class="text-gray-400 hover:text-white">About JEKATE48</a>
+                        </li>
                         <li><a href="#" class="text-gray-400 hover:text-white">Schedule</a></li>
                     </ul>
                 </div>
@@ -130,7 +106,7 @@
             <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights
                 reserved.</p>
             <div class="flex space-x-4">
-                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.5.8</p>
+                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.5.5</p>
                 <a href="https://github.com/Typicalsleepingboy" class="text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>
@@ -147,12 +123,11 @@
     <script>
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const mobileMenu = document.getElementById('mobile-menu');
-    
+
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-    
     </script>
-    <script src="/components/utils/Theater.js"></script>
 </body>
+
 </html>
