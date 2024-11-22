@@ -21,7 +21,7 @@ async function fetchMembers() {
                     </div>
                     <h3 class="font-semibold text-base mb-1">${member.nama_member}</h3>
                     <p class="text-green-500 text-sm">Active</p>
-                    <a href="/components/detail/member.html?id=${member.id_member}" 
+                    <a href="/components/detail/member?id=${member.id_member}" 
                         class="mt-2 px-4 py-2 bg-pink-500 text-white text-sm rounded-full hover:bg-pink-600 transition-colors">
                         Lihat Profil
                     </a>
