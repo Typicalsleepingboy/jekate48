@@ -1,6 +1,6 @@
 async function fetchAndDisplayVideos() {
     try {
-        // const response = await fetch('https://intensprotectionexenew.vercel.app/api/youtube_jkt48');
+        const response = await fetch('https://intensprotectionexenew.vercel.app/api/youtube_jkt48');
         const data = await response.json();
         
         if (data.success) {
@@ -44,7 +44,8 @@ async function fetchAndDisplayVideos() {
         const container = document.getElementById('youtube-container');
         container.innerHTML = `
             <div class="col-span-3 text-center text-gray-400">
-                <p>Failed to load videos. Please try again later.</p>
+                <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
+                <p>Gagal mendapatkan data youtube 😭.</p>
             </div>
         `;
     }
