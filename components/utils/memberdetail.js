@@ -101,25 +101,25 @@ async function fetchMemberDetail() {
                             </div>`
                 : ''}
 
-                        ${data.socialMedia && data.socialMedia.tiktok ?
+                ${data.socialMedia && data.socialMedia.tiktok ?
                 `<div class="pt-6">
-                                <h2 class="text-xl font-semibold mb-4">TikTok Feed</h2>
-                                <div class="flex justify-start">
-                                    <div class="bg-gray-700 p-4 rounded-lg shadow-lg inline-block">
-                                        <div class="overflow-hidden rounded-lg">
-                                            <iframe
-                                                id="tiktok-feed-iframe"
-                                                src="https://www.tiktok.com/embed/@${getTikTokUsername(data.socialMedia.tiktok)}"
-                                                style="width: 440px; height: 450px; border: none;"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen
-                                                scrolling="no"
-                                            ></iframe>
-                                        </div>
-                                    </div>
+                        <h2 class="text-xl font-semibold mb-4">TikTok Feed</h2>
+                        <div class="flex justify-start">
+                            <div class="bg-gray-700 p-4 rounded-lg shadow-lg inline-block w-full md:w-auto">
+                                <div class="overflow-hidden rounded-lg">
+                                    <iframe
+                                        id="tiktok-feed-iframe"
+                                        src="https://www.tiktok.com/embed/@${getTikTokUsername(data.socialMedia.tiktok)}"
+                                        style="width: 100%; aspect-ratio: 1 / 1.1; border: none;"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        scrolling="no"
+                                    ></iframe>
                                 </div>
-                            </div>`
-                : ''}
+                            </div>
+                        </div>
+                    </div>`
+                : ''}                
                     </div>
                 </div>
             </div>`;
