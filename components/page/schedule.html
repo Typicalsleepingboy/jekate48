@@ -18,9 +18,8 @@
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
 </head>
 
-
 <body class="min-h-screen bg-gray-900 text-white">
-    <nav class="flex items-center justify-between p-4 bg-gray-800">
+    <nav class="flex items-center justify-between p-3 bg-gray-800">
         <div class="text-2xl font-bold"><a href="/home">JEKATE48</a> <span class="text-lg text-sm font-thin">fanmade
                 Website</span></div>
         </div>
@@ -45,35 +44,40 @@
         <a href="/components/page/ssk" class="block text-white hover:text-pink-500">Sousenkyo</a>
     </div>
 
-    <section class="flex flex-col md:flex-row items-center justify-center p-8 md:p-16">
-        <div class="text-left md:w-1/2 space-y-6">
-            <h1 class="text-5xl font-bold mb-4">About JEKATE48</h1>
-            <p class="text-lg leading-relaxed">
-                Selamat datang di JEKATE48 Fanmade Website, platform yang didedikasikan untuk para penggemar JKT48.
-                Kami berkomitmen untuk memberikan pengalaman digital terbaik untuk semua penggemar grup idola favorit
-                Anda.
-                Mulai dari berita terbaru, jadwal teater, hingga merchandise, semua dapat Anda temukan di sini.
-            </p>
-            <p class="text-lg leading-relaxed">
-                Situs ini dibuat dengan penuh cinta oleh penggemar, untuk penggemar.
-                Harap dicatat bahwa ini adalah situs **tidak resmi** dan bertujuan sebagai dedikasi untuk JKT48.
-                Kami berharap Anda menikmati pengalaman Anda di sini dan tetap mendukung grup kesayangan kita bersama!
-            </p>
-            <p class="text-lg leading-relaxed">
-                Website ini dikembangkan oleh
-                <a href="https://x.com/Typicalsleeping" target="_blank" class="text-pink-500 hover:text-pink-700">
-                    Typicalsleepingboy
-                </a>
-            </p>
-        </div>
-        <div class="md:w-1/2 mt-8 md:mt-0">
-            <img src="/assets/css/image/logo.png" alt="JKT48"
-                class="rounded-lg shadow-lg max-w-full md:max-w-[300px] lg:max-w-[400px] mx-auto">
+    <section class="container mx-auto px-4 py-8">
+        <div class="bg-gray-800 rounded-lg p-6 mb-6">
+            <div class="flex flex-wrap items-center text-white mb-4">
+                <span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
+                <span class="mr-4 text-sm md:text-base">Theater Show</span>
+                <span class="w-3 h-3 rounded-full bg-blue-500 mr-2"></span>
+                <span class="text-sm md:text-base">Event Lainnya</span>
+            </div>
+
+            <div class="flex justify-between items-center mb-6">
+                <button id="prev-month" class="text-pink-500 hover:text-pink-400 text-lg md:text-2xl">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h1 id="current-month" class="text-xl md:text-2xl font-bold"></h1>
+                <button id="next-month" class="text-pink-500 hover:text-pink-400 text-lg md:text-2xl">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-7 gap-2 text-center font-bold text-white mb-4 text-xs sm:text-sm md:text-base">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div id="calendar-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
+            </div>
         </div>
     </section>
 
-
-    <footer class="bg-gray-800 p-8">
+    <footer class="bg-gray-800 p-8 mt-auto">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
             <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade
                     Website</span></div>
@@ -106,7 +110,7 @@
             <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights
                 reserved.</p>
             <div class="flex space-x-4">
-                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.5.5</p>
+                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.6.3</p>
                 <a href="https://github.com/Typicalsleepingboy" class="text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>
@@ -127,7 +131,10 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
     </script>
+
+    <script src="/components/utils/schedule.js"></script>
 </body>
 
 </html>

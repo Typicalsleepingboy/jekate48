@@ -1,6 +1,6 @@
 async function fetchAndDisplayVideos() {
     try {
-        const response = await fetch('https://intensprotectionexenew.vercel.app/api/youtube_jkt48');
+        // const response = await fetch('https://intensprotectionexenew.vercel.app/api/youtube_jkt48');
         const data = await response.json();
         
         if (data.success) {

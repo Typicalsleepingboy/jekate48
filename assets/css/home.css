@@ -27,6 +27,8 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
+
+
 .carousel-slide.active {
     opacity: 1;
 }
@@ -61,4 +63,10 @@ body {
 
 footer {
     margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .grid-cols-7 {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
