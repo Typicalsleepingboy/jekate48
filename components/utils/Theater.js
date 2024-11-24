@@ -174,10 +174,12 @@ const fetchData = async () => {
         loadingSkeleton.classList.add('hidden');
         theaterDetails.classList.remove('hidden');
         theaterDetails2.classList.remove('hidden');
-
         document.getElementById('setlistBanner').src = setlistData ? setlistData.image : '';
         document.getElementById('setlistName').textContent = theater.setlist;
-        document.getElementById('setlistDescription').textContent = theater.description || 'Deskripsi belum tersedia.';
+
+        const setlistDescription = setlistData?.description || 'Deskripsi belum tersedia.';
+        document.getElementById('setlistDescription').textContent = setlistDescription;
+
         const { formattedDate, formattedTime } = formatShowDate(theater.date, theater.showInfo);
         document.getElementById('showDate').textContent = `${formattedDate}, ${formattedTime}`;
 
