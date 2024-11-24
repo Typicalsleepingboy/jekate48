@@ -3,6 +3,20 @@ async function getMemberId() {
     return urlParams.get('id');
 }
 
+async function getSSKData(memberId) {
+    try {
+        const response = await fetch('/data/ssk.json');
+        if (!response.ok) {
+            return null;
+        }
+        const sskData = await response.json();
+        return sskData.find(item => item.id === memberId);
+    } catch (error) {
+        console.error('Error fetching SSK data:', error);
+        return null;
+    }
+}
+
 async function fetchMemberDetail() {
     try {
         const memberId = await getMemberId();
@@ -11,31 +25,28 @@ async function fetchMemberDetail() {
             throw new Error('Member ID not found 😭');
         }
 
-        const response = await fetch(`https://intensprotectionexenew.vercel.app/api/member/${memberId}`);
+        const [memberResponse, sskData] = await Promise.all([
+            fetch(`https://intensprotectionexenew.vercel.app/api/member/${memberId}`),
+            getSSKData(memberId)
+        ]);
 
-        if (!response.ok) {
-            throw new Error;
+        if (!memberResponse.ok) {
+            throw new Error('Failed to fetch member data');
         }
 
-        const data = await response.json();
+        const memberData = await memberResponse.json();
         document.getElementById('loading-skeleton').classList.add('hidden');
         const contentContainer = document.getElementById('member-content');
         contentContainer.classList.remove('hidden');
 
-        // Extract TikTok username from URL
-        const getTikTokUsername = (url) => {
-            const match = url.match(/@([^/]+)/);
-            return match ? match[1] : '';
-        };
-
-        contentContainer.innerHTML =
-            `<div class="p-4 md:p-8">
+        contentContainer.innerHTML = `
+            <div class="p-4 md:p-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <!-- Profile Image Section -->
                     <div class="w-full md:w-1/3 lg:w-1/4">
                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
-                            <img src="${data.profileImage || ''}" 
-                                alt="${data.name || 'Member'}" 
+                            <img src="${memberData.profileImage || ''}" 
+                                alt="${memberData.name || 'Member'}" 
                                 class="w-full h-full object-cover"
                                 onerror="this.src='/assets/img/default-avatar.jpg'">
                         </div>
@@ -43,83 +54,80 @@ async function fetchMemberDetail() {
 
                     <div class="flex-1 space-y-6">
                         <div class="space-y-2">
-                            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">${data.name || 'Unknown Member'}</h1>
-                            <p class="text-pink-500 text-lg">${data.nickname || '-'}</p>
+                            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">${memberData.name || 'Unknown Member'}</h1>
+                            <p class="text-pink-500 text-lg">${memberData.nickname || '-'}</p>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div class="bg-gray-700 p-4 rounded-lg">
                                 <p class="text-gray-400 text-sm">Birthday</p>
-                                <p class="font-medium">${data.birthdate || '-'}</p>
+                                <p class="font-medium">${memberData.birthdate || '-'}</p>
                             </div>
                             <div class="bg-gray-700 p-4 rounded-lg">
                                 <p class="text-gray-400 text-sm">Blood Type</p>
-                                <p class="font-medium">${data.bloodType || '-'}</p>
+                                <p class="font-medium">${memberData.bloodType || '-'}</p>
                             </div>
                             <div class="bg-gray-700 p-4 rounded-lg">
                                 <p class="text-gray-400 text-sm">Height</p>
-                                <p class="font-medium">${data.height || '-'}</p>
+                                <p class="font-medium">${memberData.height || '-'}</p>
                             </div>
                             <div class="bg-gray-700 p-4 rounded-lg">
                                 <p class="text-gray-400 text-sm">Zodiac</p>
-                                <p class="font-medium">${data.zodiac || '-'}</p>
+                                <p class="font-medium">${memberData.zodiac || '-'}</p>
                             </div>
                         </div>
 
-                        ${data.socialMedia ?
-                `<div class="pt-6">
+                        ${memberData.socialMedia ? `
+                            <div class="pt-6">
                                 <h2 class="text-xl font-semibold mb-4">Social Media</h2>
                                 <div class="flex flex-wrap gap-4">
-                                    ${data.socialMedia.twitter ?
-                    `<a href="${data.socialMedia.twitter}" 
+                                    ${memberData.socialMedia.twitter ? `
+                                        <a href="${memberData.socialMedia.twitter}" 
                                             target="_blank" 
                                             rel="noopener noreferrer" 
                                             class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
                                                 <i class="fab fa-twitter"></i>
                                                 <span class="hidden sm:inline">Twitter</span>
-                                        </a>`
-                    : ''}
-                                    ${data.socialMedia.instagram ?
-                    `<a href="${data.socialMedia.instagram}" 
+                                        </a>
+                                    ` : ''}
+                                    ${memberData.socialMedia.instagram ? `
+                                        <a href="${memberData.socialMedia.instagram}" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
                                             class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
                                                 <i class="fab fa-instagram"></i>
                                                 <span class="hidden sm:inline">Instagram</span>
-                                        </a>`
-                    : ''}
-                                    ${data.socialMedia.tiktok ?
-                    `<a href="${data.socialMedia.tiktok}" 
+                                        </a>
+                                    ` : ''}
+                                    ${memberData.socialMedia.tiktok ? `
+                                        <a href="${memberData.socialMedia.tiktok}" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
                                             class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
                                                 <i class="fab fa-tiktok"></i>
                                                 <span class="hidden sm:inline">TikTok</span>
-                                        </a>`
-                    : ''}
+                                        </a>
+                                    ` : ''}
                                 </div>
-                            </div>`
-                : ''}
+                            </div>
+                        ` : ''}
 
-                ${data.socialMedia && data.socialMedia.tiktok ?
-                `<div class="pt-6">
-                        <h2 class="text-xl font-semibold mb-4">TikTok Feed</h2>
-                        <div class="flex justify-start">
-                            <div class="bg-gray-700 p-4 rounded-lg shadow-lg inline-block w-full md:w-auto">
-                                <div class="overflow-hidden rounded-lg">
+                        ${sskData?.data?.url_video ? `
+                            <div class="pt-6">
+                                <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-crown mr-2"></i>Sousenkyo 2024</h2>
+                                <div class="aspect-video w-full rounded-lg overflow-hidden">
                                     <iframe
-                                        id="tiktok-feed-iframe"
-                                        src="https://www.tiktok.com/embed/@${getTikTokUsername(data.socialMedia.tiktok)}"
-                                        style="width: 100%; aspect-ratio: 1 / 1.1; border: none;"
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/${sskData.data.url_video}"
+                                        title="YouTube video player"
+                                        frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen
-                                        scrolling="no"
                                     ></iframe>
                                 </div>
                             </div>
-                        </div>
-                    </div>`
-                : ''}                
+                        ` : ''}
                     </div>
                 </div>
             </div>`;
@@ -130,13 +138,12 @@ async function fetchMemberDetail() {
 
         const contentContainer = document.getElementById('member-content');
         contentContainer.classList.remove('hidden');
-        contentContainer.innerHTML =
-            `<div class="flex flex-col items-center justify-center p-8 text-center">
+        contentContainer.innerHTML = `
+            <div class="flex flex-col items-center justify-center p-8 text-center">
                 <div class="rounded-lg p-8 max-w-md w-full">
                     <i class="fas fa-exclamation-circle text-4xl text-pink-500 mb-4"></i>
                     <h2 class="text-xl font-bold mb-2">Oops!</h2>
                     <p class="text-gray-400 mb-4">Gagal mendapatkan data member 😭</p>
-                    <p class="text-sm text-gray-500 mb-6">${error.message}</p>
                     <a href="/components/page/members" 
                         class="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors">
                         <i class="fas fa-arrow-left"></i>
