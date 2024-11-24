@@ -40,22 +40,37 @@ async function fetchMemberDetail() {
         contentContainer.classList.remove('hidden');
 
         contentContainer.innerHTML = `
-            <div class="p-4 md:p-8">
+            <div class="p-4 md:p-8 relative">
                 <div class="flex flex-col md:flex-row gap-8">
-                    <!-- Profile Image Section -->
                     <div class="w-full md:w-1/3 lg:w-1/4">
-                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
-                            <img src="${memberData.profileImage || ''}" 
-                                alt="${memberData.name || 'Member'}" 
-                                class="w-full h-full object-cover"
-                                onerror="this.src='/assets/img/default-avatar.jpg'">
+                        <div class="relative">
+                            <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                                <img src="${memberData.profileImage || ''}" 
+                                    alt="${memberData.name || 'Member'}" 
+                                    class="w-full h-full object-cover"
+                                    onerror="this.src='/assets/img/default-avatar.jpg'">
+                            </div>
+                            <div class="mt-4 md:hidden flex justify-center">
+                                <a href="https://ssk.jkt48.com/2024/id/vote" 
+                                    class="inline-flex items-center px-6 py-2 rounded-full bg-pink-500 hover:bg-pink-600 transition-colors text-white font-medium shadow-lg w-full justify-center">
+                                    Vote
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="flex-1 space-y-6">
-                        <div class="space-y-2">
-                            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">${memberData.name || 'Unknown Member'}</h1>
-                            <p class="text-pink-500 text-lg">${memberData.nickname || '-'}</p>
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-2">
+                                <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">${memberData.name || 'Unknown Member'}</h1>
+                                <p class="text-pink-500 text-lg">${memberData.nickname || '-'}</p>
+                            </div>
+                            <div class="hidden md:block">
+                                <a href="https://ssk.jkt48.com/2024/id/vote" 
+                                    class="inline-flex items-center px-6 py-2 rounded-full bg-pink-500 hover:bg-pink-600 transition-colors text-white font-medium shadow-lg">
+                                    Vote
+                                </a>
+                            </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
