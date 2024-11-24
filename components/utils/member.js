@@ -52,10 +52,11 @@ async function fetchMembers() {
 
 const loadingSkeleton = `
     <div class="animate-pulse flex flex-col items-center">
-        <div class="w-40 h-40 bg-gray-700 rounded-lg mb-3"></div>
-        <div class="h-8 bg-gray-700/30 backdrop-blur-sm rounded-lg w-32"></div>
+        <div class="w-24 h-24 md:w-40 md:h-40 bg-gray-700 rounded-lg mb-2"></div>
+        <div class="h-6 bg-gray-700/30 rounded-lg w-20 md:w-32"></div>
     </div>
 `.repeat(4);
+
 
 document.getElementById('core-members').innerHTML = loadingSkeleton;
 document.getElementById('trainee-members').innerHTML = loadingSkeleton;
