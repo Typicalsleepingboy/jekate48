@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const profileId = person.profileLink.split("/")[4].split("?")[0];
                 const link = document.createElement("a");
-                link.href = `/components/detail/member?id=${profileId}`;
+                link.href = `/member/${profileId}`;
                 link.target = "_self"; // Buka di tab yang sama
                 link.rel = "noopener noreferrer";
                 link.textContent = person.name;

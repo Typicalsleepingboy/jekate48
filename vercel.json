@@ -21,7 +21,10 @@
       "source": "/ssk",
       "destination": "/components/page/ssk"
     },
-    
+    {
+      "source": "/member/:profileId",
+      "destination": "/components/detail/member?id=:profileId"
+    },
     {
       "source": "/schedule/month/:month",
       "destination": "/components/page/schedule/month/:month"
