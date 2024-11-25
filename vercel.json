@@ -21,10 +21,7 @@
       "source": "/ssk",
       "destination": "/components/page/ssk"
     },
-    {
-      "source": "/theater/:setlist",
-      "destination": "/components/detail/theater?setlist=:setlist"
-    },
+    
     {
       "source": "/schedule/month/:month",
       "destination": "/components/page/schedule/month/:month"
