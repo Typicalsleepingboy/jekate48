@@ -21,7 +21,7 @@ async function fetchMembers() {
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-1/2 rounded-b-lg"></div>
                     </div>
                     <div class="text-center w-full">
-                        <a href="/components/detail/member?id=${member.id_member}" 
+                        <a href="/member?id=${member.id_member}" 
                             class="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 inline-block hover:bg-white/20 transition-all duration-200">
                             <h3 class="text-sm text-white">${member.nama_member}</h3>
                         </a>

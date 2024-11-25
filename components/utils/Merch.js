@@ -66,7 +66,7 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
 
             if (item.link) {
                 button.onclick = () => {
-                    window.location.href = `/components/detail/news?id=${item.link}`;
+                    window.location.href = `/news/${item.link}`;
                 };
             } else {
                 button.disabled = true;

@@ -22,6 +22,22 @@
       "destination": "/components/page/ssk"
     },
     {
+      "source": "/theater/:setlist",
+      "destination": "/components/detail/theater?setlist=:setlist"
+    },
+    {
+      "source": "/schedule/month/:month",
+      "destination": "/components/page/schedule/month/:month"
+    },
+    {
+      "source": "/member/:id",
+      "destination": "/components/detail/member?id=:id"
+    },
+    {
+      "source": "/news/:id",
+      "destination": "/components/detail/news?id=:id"
+    },
+    {
       "source": "/:path*/:slug",
       "destination": "/:path*/:slug.html"
     },

@@ -159,7 +159,7 @@ async function fetchMemberDetail() {
                     <i class="fas fa-exclamation-circle text-4xl text-pink-500 mb-4"></i>
                     <h2 class="text-xl font-bold mb-2">Oops!</h2>
                     <p class="text-gray-400 mb-4">Gagal mendapatkan data member 😭</p>
-                    <a href="/components/page/members" 
+                    <a href="/members" 
                         class="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors">
                         <i class="fas fa-arrow-left"></i>
                         Kembali ke daftar member

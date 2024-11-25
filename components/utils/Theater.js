@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         const textContainer = document.createElement("div");
 
                         const theaterName = document.createElement("a");
-                        theaterName.href = `/components/detail/theater?setlist=${show.setlist}`;
+                        theaterName.href = `/theater/${show.setlist}`;
                         theaterName.className = "font-bold text-lg text-white-400";
                         theaterName.innerHTML = `${show.setlist}`;
 

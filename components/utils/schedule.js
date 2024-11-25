@@ -27,7 +27,7 @@ function renderCalendar(year, month) {
     document.getElementById('current-month').textContent =
         new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
 
-    window.history.pushState({}, '', `/components/page/schedule/month/${month + 1}`);
+    window.history.pushState({}, '', `/schedule/month/${month + 1}`);
 
     const calendarGrid = document.getElementById('calendar-grid');
     calendarGrid.innerHTML = '';
