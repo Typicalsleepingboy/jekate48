@@ -11,7 +11,7 @@
     },
     {
       "source": "/news",
-      "destination": "/components/page/news",
+      "destination": "/components/page/news"
     },
     {
       "source": "/schedule",
