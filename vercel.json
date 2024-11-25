@@ -6,6 +6,22 @@
       "destination": "/home.html"
     },
     {
+      "source": "/members",
+      "destination": "/components/page/members"
+    },
+    {
+      "source": "/news",
+      "destination": "/components/page/news"
+    },
+    {
+      "source": "/schedule",
+      "destination": "/components/page/schedule"
+    },
+    {
+      "source": "/ssk",
+      "destination": "/components/page/ssk"
+    },
+    {
       "source": "/:path*/:slug",
       "destination": "/:path*/:slug.html"
     },
