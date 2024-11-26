@@ -38,6 +38,10 @@
       "destination": "/components/detail/member?id=:profileId"
     },
     {
+      "source": "/theater/:setlist",
+      "destination": "/components/detail/theater?setlist=:setlist"
+    },
+    {
       "source": "/schedule/month/:month",
       "destination": "/components/page/schedule/month/:month"
     },

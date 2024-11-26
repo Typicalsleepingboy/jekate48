@@ -66,6 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     loadingSkeletonTheater.classList.add("hidden");
                     theaterList.classList.remove("hidden");
 
+                    if (!apiData || apiData.length === 0) {
+                        const noTheaterMessage = document.createElement("div");
+                        noTheaterMessage.className = "col-span-3 text-center text-gray-400";
+                        noTheaterMessage.innerHTML = `
+                            <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
+                            <p>Tidak ada theater 😭.</p>
+                        `;
+                        theaterList.appendChild(noTheaterMessage);
+                        return;
+                    }
+
                     apiData.forEach(show => {
                         const theaterItem = document.createElement("div");
                         theaterItem.className = "flex flex-col md:flex-row justify-between items-start border-b border-gray-700 pb-4";
@@ -82,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         const textContainer = document.createElement("div");
 
                         const theaterName = document.createElement("a");
-                        theaterName.href = `/theater/${show.setlist}`;
+                        theaterName.href = `/theater/${encodeURIComponent(show.setlist)}`;
                         theaterName.className = "font-bold text-lg text-white-400";
                         theaterName.innerHTML = `${show.setlist}`;
 
@@ -139,10 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
-
 // theater detail
-const params = new URLSearchParams(window.location.search);
-const setlist = params.get('setlist');
+const pathSegments = window.location.pathname.split('/');
+const setlist = pathSegments[pathSegments.length - 1];
 
 const fetchData = async () => {
     const loadingSkeleton = document.getElementById('loadingSkeleton');
