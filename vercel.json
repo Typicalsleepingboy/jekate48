@@ -34,6 +34,10 @@
       "destination": "/components/page/ssk"
     },
     {
+      "source": "/maintenance",
+      "destination": "/middleware/maintenance"
+    },
+    {
       "source": "/member/:profileId",
       "destination": "/components/detail/member?id=:profileId"
     },
@@ -64,6 +68,10 @@
     {
       "source": "/components/detail/:slug",
       "destination": "/components/detail/:slug.html"
+    },
+    {
+      "source": "/middleware/:slug",
+      "destination": "/middleware/:slug.html"
     },
     {
       "source": "/components/page/:slug",

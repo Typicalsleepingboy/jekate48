@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  font-family: 'Arial', sans-serif;
+}
+
+.maintenance-container {
+  text-align: center;
+}
+
+.maintenance-content img {
+  width: 200px;
+  height: auto;
+}
+
+.maintenance-content h1 {
+  font-size: 2.5em;
+  margin: 20px 0;
+  color: #333;
+}
+
+.maintenance-content p {
+  font-size: 1.2em;
+  color: #666;
+}
