@@ -151,9 +151,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // theater detail
-const pathSegments = window.location.pathname.split('/');
-const setlist = pathSegments[pathSegments.length - 1];
-
+function getSetlist() {
+    const pathSegments = window.location.pathname.split('/');
+    const setlist = pathSegments[pathSegments.length - 1];
+    const decodedSetlist = decodeURIComponent(setlist);
+    return decodedSetlist;
+}
 const fetchData = async () => {
     const loadingSkeleton = document.getElementById('loadingSkeleton');
     const theaterDetails = document.getElementById('theaterDetails');
@@ -167,7 +170,7 @@ const fetchData = async () => {
     try {
         const theaterResponse = await fetch('https://intensprotectionexenew.vercel.app/api/theater');
         const theaters = await theaterResponse.json();
-        const theater = theaters.find(t => t.setlist === setlist);
+        const theater = theaters.find(t => decodeURIComponent(t.setlist) === setlist);
 
         if (!theater) {
             loadingSkeleton.textContent = 'Teater tidak ditemukan.';
