@@ -1,11 +1,11 @@
-const isMaintenance = true;  
+const isMaintenance = false;  
 
 if (isMaintenance) {
-  if (window.location.pathname !== '/middleware/maintenance.html') {
-    window.location.href = "/middleware/maintenance.html";
+  if (window.location.pathname !== '/maintenance') {
+    window.location.href = "/maintenance";
   }
 } else {
-  if (window.location.pathname === '/middleware/maintenance.html') {
+  if (window.location.pathname === '/maintenance') {
     window.location.href = "/";
   }
 }
