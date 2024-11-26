@@ -158,6 +158,8 @@ function getSetlist() {
     return decodedSetlist;
 }
 const fetchData = async () => {
+    const setlist = getSetlist();
+    
     const loadingSkeleton = document.getElementById('loadingSkeleton');
     const theaterDetails = document.getElementById('theaterDetails');
     const theaterDetails2 = document.getElementById('theaterDetails2');
