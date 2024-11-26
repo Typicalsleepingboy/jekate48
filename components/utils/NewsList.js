@@ -28,7 +28,7 @@ async function fetchLatestNews() {
             `;
             newsCard.style.cursor = 'pointer';
             newsCard.addEventListener('click', () => {
-                window.location.href = `/news?id=${news.berita_id}`;
+                window.location.href = `/news/${news.berita_id}`;
             });
 
             newsContainer.appendChild(newsCard);
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', fetchLatestNews);
 
 
 // news detail
-const urlParams = new URLSearchParams(window.location.search);
-const newsId = urlParams.get('id');
+const pathSegments = window.location.pathname.split('/');
+const newsId = pathSegments[pathSegments.length - 1];
 let apiUrl = `https://intensprotectionexenew.vercel.app/api/news/detail/${newsId}`;
 
 async function fetchNewsDetails() {

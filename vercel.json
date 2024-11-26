@@ -18,6 +18,18 @@
       "destination": "/components/page/schedule"
     },
     {
+      "source": "/about",
+      "destination": "/components/page/about"
+    },
+    {
+      "source": "/terms",
+      "destination": "/components/page/terms"
+    },
+    {
+      "source": "/support",
+      "destination": "/components/page/support"
+    },
+    {
       "source": "/ssk",
       "destination": "/components/page/ssk"
     },
@@ -32,10 +44,6 @@
     {
       "source": "/member/:id",
       "destination": "/components/detail/member?id=:id"
-    },
-    {
-      "source": "/news/:id",
-      "destination": "/components/detail/news?id=:id"
     },
     {
       "source": "/news/:id",
