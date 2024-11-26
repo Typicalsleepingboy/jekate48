@@ -106,7 +106,7 @@ async function fetchNewsDetails() {
         }
 
         articleElement.innerHTML += `
-            <a href="https://jkt48.com/news/detail/id/${newsId}" class="w-full mt-4 px-4 py-2 bg-pink-500 rounded-full hover:bg-pink-600">Lihat di web JEKATE48</a>
+            <a href="https://jkt48.com/news/detail/id/${newsId}" class="w-full mt-4 px-4 py-2 bg-pink-500 rounded-full hover:bg-pink-600">Lihat di web JKT48</a>
         `;
 
         newsDetailContainer.appendChild(articleElement);
