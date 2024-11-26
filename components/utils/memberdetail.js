@@ -1,6 +1,6 @@
 async function getMemberId() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('id');
+    const pathSegments = window.location.pathname.split('/');
+    return pathSegments[pathSegments.length - 1];
 }
 
 async function getSSKData(memberId) {

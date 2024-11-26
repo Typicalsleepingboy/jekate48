@@ -38,6 +38,10 @@
       "destination": "/components/detail/news?id=:id"
     },
     {
+      "source": "/news/:id",
+      "destination": "/components/detail/news?id=:id"
+    },
+    {
       "source": "/:path*/:slug",
       "destination": "/:path*/:slug.html"
     },
