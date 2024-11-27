@@ -52,7 +52,7 @@ async function fetchMemberDetail() {
                             </div>
                             <div class="mt-4 md:hidden flex justify-center">
                                 <a href="https://ssk.jkt48.com/2024/id/vote" 
-                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 transition-colors text-white font-medium shadow-lg w-full justify-center">
+                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300  text-white font-medium shadow-lg w-full justify-center">
                                     Vote
                                 </a>
                             </div>
@@ -67,7 +67,7 @@ async function fetchMemberDetail() {
                             </div>
                             <div class="hidden md:block">
                                 <a href="https://ssk.jkt48.com/2024/id/vote" 
-                                    class="inline-flex items-center px-6 py-2 rounded-full bg-pink-500 hover:bg-pink-600 transition-colors text-white font-medium shadow-lg">
+                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 transition-colors text-white font-medium shadow-lg">
                                     Vote
                                 </a>
                             </div>
