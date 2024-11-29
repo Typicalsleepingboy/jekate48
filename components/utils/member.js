@@ -7,10 +7,16 @@ async function fetchMembers() {
         if (!Array.isArray(data)) {
             throw new Error('Data is not in the expected format');
         }
+
+        const membersJSON = await fetch('/data/member.json').then(res => res.json());
+
         document.getElementById('core-members').innerHTML = '';
         document.getElementById('trainee-members').innerHTML = '';
 
         data.forEach(member => {
+            const matchedMember = membersJSON.find(jsonMember => jsonMember.name === member.nama_member);
+            const generation = matchedMember ? matchedMember.generation : 'Unknown';
+
             const memberCard = `
                 <div class="flex flex-col items-center text-center">
                     <div class="relative w-40 h-40 mb-2">
@@ -19,6 +25,9 @@ async function fetchMembers() {
                             onerror="this.src='/assets/img/default-avatar.jpg'"
                             class="w-full h-full object-cover rounded-lg shadow-lg">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-1/2 rounded-b-lg"></div>
+                        <div class="absolute bottom-2 left-2 bg-white/10 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white">
+                            ${generation}
+                        </div>
                     </div>
                     <div class="text-center w-full">
                         <a href="/member/${member.id_member}" 
@@ -28,7 +37,6 @@ async function fetchMembers() {
                     </div>
                 </div>
             `;
-
             if (member.kategori === "Anggota JKT48") {
                 document.getElementById('core-members').innerHTML += memberCard;
             } else if (member.kategori === "Trainee JKT48") {
@@ -56,7 +64,6 @@ const loadingSkeleton = `
         <div class="h-6 bg-gray-700/30 rounded-lg w-20 md:w-32"></div>
     </div>
 `.repeat(4);
-
 
 document.getElementById('core-members').innerHTML = loadingSkeleton;
 document.getElementById('trainee-members').innerHTML = loadingSkeleton;
