@@ -1,0 +1,20 @@
+{
+    "short_name": "JEKATE48",
+    "name": "JEKATE48 fanmade Website",
+    "icons": [
+        {
+            "src": "/assets/css/image/favlogo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/css/image/favlogo512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1a202c",  
+    "theme_color": "#1a202c"
+}
