@@ -10,7 +10,10 @@
     <link href="/assets/css/home.css" rel="stylesheet">
     <link rel="icon" href="/assets/css/image/favlogo.png" />
     <meta name="author" content="JEKATE48">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/989168672708919317/1312077173955493950/screenshot-1732893954685.png?ex=674b2e97&is=6749dd17&hm=59742c403323d862a6baf46c1ce0efb6a1f8085d2c92cbb27612b831a5e7317f&">
+    <meta property="og:image:height" content="961">
+    <meta property="og:image:width" content="1905">
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/attachments/989168672708919317/1312077173955493950/screenshot-1732893954685.png?ex=674b2e97&is=6749dd17&hm=59742c403323d862a6baf46c1ce0efb6a1f8085d2c92cbb27612b831a5e7317f&">
     <meta property="og:title" content="JEKATE48">
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
 </head>
@@ -34,11 +37,23 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
+ <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
         <a href="/news" class="block text-white hover:text-pink-500">News</a>
         <a href="/members" class="block text-white hover:text-pink-500">Members</a>
         <a href="/schedule" class="block text-white hover:text-pink-500">Schedule</a>
         <a href="/ssk" class="block text-white hover:text-pink-500">Sousenkyo</a>
+    </div>
+
+    <div id="progressContainer" class="relative w-full h-1 bg-gray-700">
+        <div id="progressBar" class="absolute h-1 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300"
+            style="width: 0%;">
+        </div>
+    </div>
+
+    <div id="progressContainer" class="relative w-full h-1 bg-gray-700">
+        <div id="progressBar" class="absolute h-1 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300"
+            style="width: 0%;">
+        </div>
     </div>
 
     <div class="carousel-container bg-gray-800">
@@ -65,87 +80,88 @@
     </div>
 
     <section class="p-8 relative">
-        <div class="absolute inset-0 bg-gradient-to-l from-gray-800 via-transparent to-transparent"></div> 
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-800 via-transparent to-transparent"></div> 
-    
+        <div class="absolute inset-0 bg-gradient-to-l from-gray-800 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-800 via-transparent to-transparent"></div>
+
         <div class="text-center mb-16 relative z-10">
             <h2 class="text-4xl font-bold text-white mb-4"><i class="fa-solid fa-people-group mr-2"></i>48 GROUP</h2>
             <p class="text-xl text-gray-400">Part of AKB48's first overseas sister group.</p>
         </div>
-    
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="http://www.akb48teamtp.com/"><img src="/assets/css/image/AKBTP.png" alt="AKB48TP logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="https://www.ske48.co.jp/"><img src="/assets/css/image/ske48.png" alt="SKE48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="http://www.nmb48.com/"><img src="/assets/css/image/nmb48.png" alt="NMB48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow mt-8 md:mt-0">
                     <a href="http://www.hkt48.jp/"><img src="/assets/css/image/hkt48.png" alt="HKT48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="https://www.stu48.com/"><img src="/assets/css/image/stu48.png" alt="STU48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow mt-8 md:mt-0">
                     <a href="http://www.bnk48.com/"><img src="/assets/css/image/bnk48.png" alt="BNK48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="col-span-2 sm:col-span-3 md:col-span-2 row-span-2 flex items-center justify-center">
-                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div
+                        class="bg-gray-700 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow transform hover:scale-105">
                         <a href="https://www.akb48.co.jp/"><img src="/assets/css/image/akb48.png" alt="AKB48 logo"
                                 class="w-full h-auto" loading="lazy" /></a>
                     </div>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="https://mnl48.ph/"><img src="/assets/css/image/mnl48.png" alt="MNL48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow mt-8 md:mt-0">
                     <a href="https://cgm48official.com/"><img src="/assets/css/image/CGM48.png" alt="CGM48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="https://klp48.my/"><img src="/assets/css/image/klp48.png" alt="KLP48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow mt-8 md:mt-0">
                     <a href="http://www.akb48-china.com/"><img src="/assets/css/image/AKBSH.png" alt="Team SH logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
-    
+
                 <div class="bg-gray-700 p-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <a href="https://ngt48.jp/"><img src="/assets/css/image/ngt48.png" alt="NGT48 logo"
                             class="w-full h-auto" loading="lazy" /></a>
                 </div>
             </div>
         </div>
-    
+
         <div class="text-center max-w-3xl mx-auto mt-16 relative z-10">
             <p class="text-gray-400">Collaborate with sister groups across Asia, bringing the best idol entertainment
                 experience to fans worldwide</p>
         </div>
     </section>
-    
-    
+
+
 
     <section class="p-8">
         <h2 class="text-3xl font-bold mb-6"> <i class="far fa-newspaper mr-2"></i>Latest News</h2>
@@ -319,11 +335,10 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
     </script>
 
-
-    <script src="/components/utils/youtube.js"></script> 
+    <script src="/progress.js"></script>
+    <script src="/components/utils/youtube.js"></script>
     <script src="/middleware/middleware.js"></script>
     <script src="/components/utils/banner.js"></script>
     <script src="/components/utils/NewRelease.js"></script>

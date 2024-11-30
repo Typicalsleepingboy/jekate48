@@ -32,7 +32,9 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-
+#progressBar {
+    transition: width 0.2s ease-out;
+  }
 
 .carousel-slide.active {
     opacity: 1;

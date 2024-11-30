@@ -10,6 +10,8 @@
     <link href="/assets/css/home.css" rel="stylesheet">
     <link rel="icon" href="/assets/css/image/favlogo.png" />
     <meta name="author" content="JEKATE48">
+    <meta property="og:image:height" content="961">
+    <meta property="og:image:width" content="1905">
     <meta property="og:image" content="https://cdn.discordapp.com/attachments/989168672708919317/1312077173955493950/screenshot-1732893954685.png?ex=674b2e97&is=6749dd17&hm=59742c403323d862a6baf46c1ce0efb6a1f8085d2c92cbb27612b831a5e7317f&">
     <meta property="og:title" content="JEKATE48">
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
@@ -34,11 +36,17 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
+ <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
         <a href="/news" class="block text-white hover:text-pink-500">News</a>
         <a href="/members" class="block text-white hover:text-pink-500">Members</a>
         <a href="/schedule" class="block text-white hover:text-pink-500">Schedule</a>
         <a href="/ssk" class="block text-white hover:text-pink-500">Sousenkyo</a>
+    </div>
+
+    <div id="progressContainer" class="relative w-full h-1 bg-gray-700">
+        <div id="progressBar" class="absolute h-1 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300"
+            style="width: 0%;">
+        </div>
     </div>
 
     <section class="p-8">
@@ -123,6 +131,7 @@
 
     <script src="/components/utils/NewsList.js"></script>
     <script src="/middleware/middleware.js"></script>
+    <script src="/progress.js"></script>
     <script src="/security/typicalsleepingboy.js"></script>
 </body>
 
