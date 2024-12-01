@@ -19,7 +19,7 @@ async function fetchMembers() {
 
             const memberCard = `
                 <div class="flex flex-col items-center text-center">
-                    <div class="relative w-40 h-40 mb-2">
+                    <div class="relative w-full max-w-sm  mb-2">
                         <img src="https://jkt48.com${member.ava_member}" 
                             alt="${member.nama_member}" 
                             onerror="this.src='/assets/img/default-avatar.jpg'"
@@ -60,8 +60,9 @@ async function fetchMembers() {
 
 const loadingSkeleton = `
     <div class="animate-pulse flex flex-col items-center">
-        <div class="w-24 h-24 md:w-40 md:h-40 bg-gray-700 rounded-lg mb-2"></div>
-        <div class="h-6 bg-gray-700/30 rounded-lg w-20 md:w-32"></div>
+        <div class="w-full max-w-sm h-full bg-gray-700 rounded-lg mb-2"></div>
+        <div class="h-6 bg-gray-700/30 rounded-lg w-32 mb-2"></div>
+        <div class="h-6 bg-gray-700/30 rounded-lg w-24"></div>
     </div>
 `.repeat(4);
 

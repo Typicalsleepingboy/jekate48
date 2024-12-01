@@ -35,6 +35,7 @@ body {
 #progressBar {
     transition: width 0.2s ease-out;
   }
+  
 
 .carousel-slide.active {
     opacity: 1;

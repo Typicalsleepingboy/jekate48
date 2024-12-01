@@ -16,8 +16,8 @@
         content="https://cdn.discordapp.com/attachments/989168672708919317/1312077173955493950/screenshot-1732893954685.png?ex=674b2e97&is=6749dd17&hm=59742c403323d862a6baf46c1ce0efb6a1f8085d2c92cbb27612b831a5e7317f&">
     <meta property="og:title" content="JEKATE48">
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 </head>
-
 
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-3 bg-gray-800">
@@ -41,7 +41,7 @@
                     Mypage
                 </button>
             </a>
-            <a href="/login.html">
+            <a href="/login">
                 <button
                     class="px-4 py-2 border border-pink-300 text-pink-300 rounded-full hover:bg-pink-300 hover:text-gray-800 transition duration-300">
                     Login
@@ -49,6 +49,7 @@
             </a>
         </div>
     </nav>
+    
     <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
         <a href="/news" class="block text-white hover:text-pink-500">News</a>
         <a href="/members" class="block text-white hover:text-pink-500">Members</a>
@@ -67,23 +68,68 @@
             </button>
         </a>
     </div>
-
+    
     <div id="progressContainer" class="relative w-full h-1 bg-gray-700">
         <div id="progressBar" class="absolute h-1 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300"
             style="width: 0%;">
         </div>
     </div>
 
-    <section class="p-8">
-        <div id="news-detail-container">
-        </div>
-        <div id="loading-skeleton-newsdetail" class="bg-gray-800 p-6 rounded-lg animate-pulse">
-            <div class="w-8 h-8 bg-gray-600 rounded-full mb-4"></div>
-            <div class="h-6 bg-gray-600 rounded mb-2"></div>
-            <div class="h-4 bg-gray-600 rounded w-1/3"></div>
+    <section class="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <div class="flex flex-col lg:flex-row w-full max-w-4xl bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+            <div class="relative w-full lg:w-1/2">
+                <div class="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-500 opacity-30"></div>
+                <img id="oshimen-photo" 
+                    class="w-full h-64 sm:h-80 lg:h-full object-cover transform transition-transform duration-300 hover:scale-105" 
+                    src="" 
+                    alt="Oshimen Photo">
+                <div class="absolute bottom-4 left-4 bg-black bg-opacity-50 p-2 rounded-lg">
+                    <h2 id="user-oshimen" class="text-white text-lg font-bold">Your Oshimen: Loading...</h2>
+                </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between space-y-6 w-full lg:w-1/2">
+                <div>
+                    <h1 id="welcome-message" class="text-2xl sm:text-3xl font-bold text-pink-300 mb-2">Welcome, Loading...</h1>
+                    <p id="user-name" class="text-gray-400 text-sm mb-4">Your Name: Loading...</p>
+                </div>
+    
+                <div class="bg-gray-700 p-4 sm:p-5 rounded-lg space-y-3">
+                    <h3 class="text-lg sm:text-xl font-bold text-pink-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 sm:h-6 w-5 sm:w-6 mr-2 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                        Membership Information
+                    </h3>
+                    <div class="space-y-2">
+                        <p class="flex items-center text-sm sm:text-base">
+                            <span class="font-semibold mr-2">Number:</span>
+                            <span id="membership-number" class="text-gray-300">Loading...</span>
+                        </p>
+                        <p class="flex items-center text-sm sm:text-base">
+                            <span class="font-semibold mr-2">Expires:</span>
+                            <span id="membership-expiry" class="text-yellow-400">27 August 2024</span>
+                        </p>
+                        <p class="flex items-center text-sm sm:text-base">
+                            <span class="font-semibold mr-2">Theater Visits:</span>
+                            <span id="theater-count" class="text-green-400">Loading...</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-lg sm:text-xl font-bold text-pink-300 mb-3">Your Membership Barcode</h3>
+                    <svg id="barcode" class="w-full max-w-xs mx-auto p-2 rounded-lg"></svg>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/home" 
+                        class="inline-block px-6 py-2 bg-red-500 text-white font-semibold text-sm sm:text-base rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
+                        Logout
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-
+    
+    
     <footer class="bg-gray-800 p-8 mt-auto">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
             <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade
@@ -113,7 +159,6 @@
                 </div>
             </div>
         </div>
-        </div>
         <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights
                 reserved.</p>
@@ -139,13 +184,12 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        
     </script>
 
-
-    <script src="/components/utils/NewsList.js"></script>
     <script src="/progress.js"></script>
-    <script src="/security/typicalsleepingboy.js"></script>
-    <script src="/middleware/middleware.js"></script>
+    <script src="/components/utils/mypage.js"></script>
 </body>
 
 </html>
+

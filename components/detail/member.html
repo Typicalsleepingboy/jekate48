@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,33 +12,59 @@
     <meta name="author" content="JEKATE48">
     <meta property="og:image:height" content="961">
     <meta property="og:image:width" content="1905">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/989168672708919317/1312077173955493950/screenshot-1732893954685.png?ex=674b2e97&is=6749dd17&hm=59742c403323d862a6baf46c1ce0efb6a1f8085d2c92cbb27612b831a5e7317f&">
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/attachments/989168672708919317/1312077173955493950/screenshot-1732893954685.png?ex=674b2e97&is=6749dd17&hm=59742c403323d862a6baf46c1ce0efb6a1f8085d2c92cbb27612b831a5e7317f&">
     <meta property="og:title" content="JEKATE48">
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
 </head>
 
 <body class="min-h-screen bg-gray-900 text-white flex flex-col">
-    <nav class="flex items-center justify-between p-4 bg-gray-800">
-        <div class="text-2xl font-bold"><a href="/home">JEKATE48</a> <span
-                class="text-lg text-sm font-thin">fanmade Website</span></div>
+    <nav class="flex items-center justify-between p-3 bg-gray-800">
+        <div class="text-2xl font-bold">
+            <a href="/home">JEKATE48</a>
+            <span class="text-lg text-sm font-thin">fanmade Website</span>
+        </div>
         <div class="md:hidden flex items-center">
             <button id="hamburger-icon" class="text-white">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <div id="nav-links" class="hidden md:flex space-x-6">
+        <div id="nav-links" class="hidden md:flex items-center space-x-6">
             <a href="/news" class="hover:text-pink-500">News</a>
             <a href="/members" class="hover:text-pink-500">Members</a>
             <a href="/schedule" class="hover:text-pink-500">Schedule</a>
             <a href="/ssk" class="hover:text-pink-500">Sousenkyo</a>
+            <a href="/mypage">
+                <button
+                    class="px-4 py-2 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 text-gray-800 rounded-full hover:opacity-90">
+                    Mypage
+                </button>
+            </a>
+            <a href="/login.html">
+                <button
+                    class="px-4 py-2 border border-pink-300 text-pink-300 rounded-full hover:bg-pink-300 hover:text-gray-800 transition duration-300">
+                    Login
+                </button>
+            </a>
         </div>
     </nav>
-
- <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
+    <div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-3 space-y-4">
         <a href="/news" class="block text-white hover:text-pink-500">News</a>
         <a href="/members" class="block text-white hover:text-pink-500">Members</a>
         <a href="/schedule" class="block text-white hover:text-pink-500">Schedule</a>
         <a href="/ssk" class="block text-white hover:text-pink-500">Sousenkyo</a>
+        <a href="/mypage" class="block">
+            <button
+                class="w-full px-4 py-2 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 text-gray-800 rounded-full hover:opacity-90">
+                Mypage
+            </button>
+        </a>
+        <a href="/login" class="block">
+            <button
+                class="w-full px-4 py-2 border border-pink-300 text-pink-300 rounded-full hover:bg-pink-300 hover:text-gray-800 transition duration-300">
+                Login
+            </button>
+        </a>
     </div>
 
     <div id="progressContainer" class="relative w-full h-1 bg-gray-700">
@@ -53,12 +80,12 @@
                     <div class="absolute top-4 right-4 md:top-8 md:right-8">
                         <div class="w-20 h-8 bg-gray-700 rounded-full"></div>
                     </div>
-    
+
                     <div class="flex flex-col md:flex-row gap-8">
                         <div class="w-full md:w-1/3 lg:w-1/4">
                             <div class="aspect-square bg-gray-700 rounded-lg"></div>
                         </div>
-    
+
                         <div class="flex-1 space-y-6">
                             <div class="space-y-2">
                                 <div class="h-10 bg-gray-700 rounded w-3/4"></div>
@@ -91,7 +118,7 @@
     </section>
 
     <footer class="bg-gray-800 p-8 mt-auto">
-                <div class="flex flex-col md:flex-row justify-between items-start mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-start mb-8">
             <div class="text-2xl font-bold mb-6 md:mb-0">JEKATE48 <span class="text-lg text-base font-thin">fanmade
                     Website</span></div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -113,7 +140,7 @@
                 <div>
                     <h3 class="font-semibold mb-4">Contact</h3>
                     <ul class="space-y-2">
-                      <li><a href="/terms" class="text-gray-400 hover:text-white">Terms</a></li>
+                        <li><a href="/terms" class="text-gray-400 hover:text-white">Terms</a></li>
                         <li><a href="/support" class="text-gray-400 hover:text-white">Support</a></li>
                     </ul>
                 </div>
@@ -124,7 +151,7 @@
             <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights
                 reserved.</p>
             <div class="flex space-x-4">
-              <p class="text-gray-400 mb-4 md:mb-0">Version : 0.6.9</p>
+                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.7.5</p>
                 <a href="https://github.com/Typicalsleepingboy" class="text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>

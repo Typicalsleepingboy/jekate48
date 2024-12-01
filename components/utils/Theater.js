@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         noTheaterMessage.className = "col-span-3 text-center text-gray-400";
                         noTheaterMessage.innerHTML = `
                             <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                            <p>Tidak ada theater 😭.</p>
+                            <p>Lagi Tidak ada theater 😭.</p>
                         `;
                         theaterList.appendChild(noTheaterMessage);
                         return;

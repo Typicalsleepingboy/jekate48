@@ -18,6 +18,14 @@
       "destination": "/components/page/schedule"
     },
     {
+      "source": "/mypage",
+      "destination": "/components/login/mypage"
+    },
+    {
+      "source": "/login",
+      "destination": "/components/login/login"
+    },
+    {
       "source": "/about",
       "destination": "/components/page/about"
     },
