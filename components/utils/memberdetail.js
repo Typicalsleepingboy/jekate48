@@ -143,20 +143,25 @@ async function fetchMemberDetail() {
                             </div>
                         ` : ''}
 
-                        <div class="pt-6">
-                            <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-crown mr-2"></i>Sousenkyo 2024</h2>
-                            <div class="aspect-video w-full rounded-lg overflow-hidden">
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src="https://www.youtube.com/embed/${sskData?.data?.url_video || memberJsonData?.video_perkenalan || ''}"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
+                        ${sskData?.data?.url_video || memberIntroductionVideo ? `
+                            <div class="pt-6">
+                                <h2 class="text-xl font-semibold mb-4">
+                                    <i class="fa-solid fa-crown mr-2"></i>
+                                    ${sskData?.data?.url_video ? 'Sousenkyo 2024' : 'Introduction Video'}
+                                </h2>
+                                <div class="aspect-video w-full rounded-lg overflow-hidden">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/${sskData?.data?.url_video || memberIntroductionVideo}"
+                                        title="${sskData?.data?.url_video ? 'Sousenkyo Video' : 'Introduction Video'}"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
                             </div>
-                        </div>
+                        ` : ''}
                     </div>
                 </div>
             </div>`;
