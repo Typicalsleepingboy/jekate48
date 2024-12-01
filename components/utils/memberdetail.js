@@ -47,7 +47,7 @@ async function fetchMemberDetail() {
                             <div class="relative w-full max-w-sm rounded-lg shadow-lg">
                                 <img src="${memberData.profileImage || ''}" 
                                     alt="${memberData.name || 'Member'}" 
-                                    class="w-full max-w-sm object-cover"
+                                    class="w-full max-w-sm object-cover rounded-lg"
                                     onerror="this.src='/assets/img/default-avatar.jpg'">
                             </div>
                             <div class="mt-4 md:hidden flex justify-center">
