@@ -17,6 +17,20 @@ async function getSSKData(memberId) {
     }
 }
 
+async function getMemberJsonData(name) {
+    try {
+        const response = await fetch('/data/member.json');
+        if (!response.ok) {
+            return null;
+        }
+        const memberData = await response.json();
+        return memberData.find(member => member.name === name);
+    } catch (error) {
+        console.error('Error fetching member.json data:', error);
+        return null;
+    }
+}
+
 async function fetchMemberDetail() {
     try {
         const memberId = await getMemberId();
@@ -25,29 +39,21 @@ async function fetchMemberDetail() {
             throw new Error('Member ID not found 😭');
         }
 
-        const [memberResponse, sskData, memberJsonResponse] = await Promise.all([
+        const [memberResponse, sskData] = await Promise.all([
             fetch(`https://intensprotectionexenew.vercel.app/api/member/${memberId}`),
-            getSSKData(memberId),
-            fetch('/data/member.json')
+            getSSKData(memberId)
         ]);
 
         if (!memberResponse.ok) {
             throw new Error('Failed to fetch member data');
         }
 
-        const [memberData, memberJson] = await Promise.all([
-            memberResponse.json(),
-            memberJsonResponse.ok ? memberJsonResponse.json() : []
-        ]);
+        const memberData = await memberResponse.json();
+        const memberJsonData = await getMemberJsonData(memberData.name);
 
         document.getElementById('loading-skeleton').classList.add('hidden');
         const contentContainer = document.getElementById('member-content');
         contentContainer.classList.remove('hidden');
-
-        // Mencari video dari member.json jika tidak ada data di ssk.json
-        let videoUrl = sskData?.data?.url_video ? 
-            `https://www.youtube.com/embed/${sskData.data.url_video}` : 
-            memberJson.find(member => member.name === memberData.name)?.video_perkenalan;
 
         contentContainer.innerHTML = `
             <div class="p-4 md:p-8 relative">
@@ -102,13 +108,48 @@ async function fetchMemberDetail() {
                             </div>
                         </div>
 
+                        ${memberData.socialMedia ? `
+                            <div class="pt-6">
+                                <h2 class="text-xl font-semibold mb-4">Social Media</h2>
+                                <div class="flex flex-wrap gap-4">
+                                    ${memberData.socialMedia.twitter ? `
+                                        <a href="${memberData.socialMedia.twitter}" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
+                                                <i class="fab fa-twitter"></i>
+                                                <span class="hidden sm:inline">Twitter</span>
+                                        </a>
+                                    ` : ''}
+                                    ${memberData.socialMedia.instagram ? `
+                                        <a href="${memberData.socialMedia.instagram}" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
+                                                <i class="fab fa-instagram"></i>
+                                                <span class="hidden sm:inline">Instagram</span>
+                                        </a>
+                                    ` : ''}
+                                    ${memberData.socialMedia.tiktok ? `
+                                        <a href="${memberData.socialMedia.tiktok}" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
+                                                <i class="fab fa-tiktok"></i>
+                                                <span class="hidden sm:inline">TikTok</span>
+                                        </a>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        ` : ''}
+
                         <div class="pt-6">
                             <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-crown mr-2"></i>Sousenkyo 2024</h2>
                             <div class="aspect-video w-full rounded-lg overflow-hidden">
                                 <iframe
                                     width="100%"
                                     height="100%"
-                                    src="${videoUrl || ''}"
+                                    src="https://www.youtube.com/embed/${sskData?.data?.url_video || memberJsonData?.video_perkenalan || ''}"
                                     title="YouTube video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
