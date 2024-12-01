@@ -17,16 +17,15 @@ async function getSSKData(memberId) {
     }
 }
 
-async function getMemberJsonData(name) {
+async function getMemberJsonData() {
     try {
         const response = await fetch('/data/member.json');
         if (!response.ok) {
             return null;
         }
-        const memberData = await response.json();
-        return memberData.find(member => member.name === name);
+        return await response.json();
     } catch (error) {
-        console.error('Error fetching member.json data:', error);
+        console.error('Error fetching member JSON data:', error);
         return null;
     }
 }
@@ -39,9 +38,10 @@ async function fetchMemberDetail() {
             throw new Error('Member ID not found 😭');
         }
 
-        const [memberResponse, sskData] = await Promise.all([
+        const [memberResponse, sskData, memberJsonData] = await Promise.all([
             fetch(`https://intensprotectionexenew.vercel.app/api/member/${memberId}`),
-            getSSKData(memberId)
+            getSSKData(memberId),
+            getMemberJsonData(),
         ]);
 
         if (!memberResponse.ok) {
@@ -49,7 +49,8 @@ async function fetchMemberDetail() {
         }
 
         const memberData = await memberResponse.json();
-        const memberJsonData = await getMemberJsonData(memberData.name);
+        const memberJsonItem = memberJsonData?.find(item => item.name === memberData.name);
+        const memberIntroductionVideo = memberJsonItem?.video_perkenalan || '';
 
         document.getElementById('loading-skeleton').classList.add('hidden');
         const contentContainer = document.getElementById('member-content');
@@ -68,7 +69,7 @@ async function fetchMemberDetail() {
                             </div>
                             <div class="mt-4 md:hidden flex justify-center">
                                 <a href="https://ssk.jkt48.com/2024/id/vote" 
-                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 text-white font-medium shadow-lg w-full justify-center">
+                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300  text-white font-medium shadow-lg w-full justify-center">
                                     Vote
                                 </a>
                             </div>
@@ -143,7 +144,7 @@ async function fetchMemberDetail() {
                             </div>
                         ` : ''}
 
-                        ${sskData?.data?.url_video || memberIntroductionVideo ? `
+                        ${(sskData?.data?.url_video || memberIntroductionVideo) ? `
                             <div class="pt-6">
                                 <h2 class="text-xl font-semibold mb-4">
                                     <i class="fa-solid fa-crown mr-2"></i>
@@ -177,11 +178,6 @@ async function fetchMemberDetail() {
                     <i class="fas fa-exclamation-circle text-4xl text-pink-500 mb-4"></i>
                     <h2 class="text-xl font-bold mb-2">Oops!</h2>
                     <p class="text-gray-400 mb-4">Gagal mendapatkan data member 😭</p>
-                    <a href="/members" 
-                        class="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors">
-                        <i class="fas fa-arrow-left"></i>
-                        Kembali ke daftar member
-                    </a>
                 </div>
             </div>`;
     }
