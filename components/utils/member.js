@@ -59,10 +59,10 @@ async function fetchMembers() {
 }
 
 const loadingSkeleton = `
-    <div class="animate-pulse flex flex-col items-center">
-        <div class="w-full max-w-sm h-full bg-gray-700 rounded-lg mb-2"></div>
-        <div class="h-6 bg-gray-700/30 rounded-lg w-32 mb-2"></div>
-        <div class="h-6 bg-gray-700/30 rounded-lg w-24"></div>
+    <div class="animate-pulse flex flex-col items-center text-center">
+        <div class="w-full h-40 sm:h-48 bg-gray-700 rounded-lg mb-4"></div>
+        <div class="h-6 bg-gray-700/30 rounded-lg w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-700/20 rounded-lg w-1/2"></div>
     </div>
 `.repeat(4);
 
