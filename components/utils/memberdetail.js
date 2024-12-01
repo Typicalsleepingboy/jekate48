@@ -44,7 +44,7 @@ async function fetchMemberDetail() {
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="w-full md:w-1/3 lg:w-1/4">
                         <div class="relative">
-                            <div class="relative w-full max-w-sm shadow-lg">
+                            <div class="relative w-full max-w-sm rounded-lg shadow-lg">
                                 <img src="${memberData.profileImage || ''}" 
                                     alt="${memberData.name || 'Member'}" 
                                     class="w-full max-w-sm object-cover"
