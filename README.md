@@ -25,6 +25,6 @@ Jelajahi lebih lanjut di [JEKATE48](https://jekate48.site/).
 Kami sangat menghargai dukungan Anda. Jangan ragu untuk mengunjungi website kami dan bergabung dengan komunitas kami untuk mendapatkan pengalaman terbaik sebagai penggemar JKT48!
 
 - [Kunjungi Website](https://jekate48.site/)
-- Ikuti kami di [Discord]([https://discord.gg/jkt48](https://discord.gg/KbjC6zw5jg))
+- Ikuti kami di [Discord](https://discord.gg/KbjC6zw5jg)
 
 
