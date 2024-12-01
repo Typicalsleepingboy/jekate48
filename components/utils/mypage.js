@@ -4,9 +4,8 @@ const oshimen = localStorage.getItem("userOshimen");
 if (!userName || !oshimen) {
     window.location.href = "/login";
 } else {
-    document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
-    document.getElementById("user-name").textContent = `Your Name: ${userName}`;
-    document.getElementById("user-oshimen").textContent = `Your Oshimen: ${oshimen}`;
+    document.getElementById("welcome-message").textContent = `Welcome, ${userName}! Dukung selalu oshi kamu yaaa`;
+    document.getElementById("user-oshimen").textContent = `${oshimen}`;
     document.getElementById("membership-anggota").textContent = `Anggota Platinum`;
     let membershipNumber = localStorage.getItem("membershipNumber");
     if (!membershipNumber) {

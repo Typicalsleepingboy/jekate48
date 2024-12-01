@@ -84,13 +84,11 @@
                     src="" 
                     alt="Oshimen Photo">
                 <div class="absolute bottom-4 left-4 bg-white/10 backdrop-blur-sm rounded-lg p-2 ">
-                    <h2 id="user-oshimen" class="text-white text-lg font-bold">Your Oshimen: Loading...</h2>
                 </div>
             </div>
             <div class="p-6 flex flex-col justify-between space-y-6 w-full lg:w-1/2">
                 <div>
-                    <h1 id="welcome-message" class="text-2xl sm:text-3xl font-bold text-pink-300 mb-2">Welcome, Loading...</h1>
-                    <p id="user-name" class="text-gray-400 text-sm mb-4">Your Name: Loading...</p>
+                    <h1 id="welcome-message" class="text-xl sm:text-xl font-bold text-pink-300 mb-2">Welcome, Loading...</h1>
                 </div>
     
                 <div class="bg-gray-700 p-4 sm:p-5 rounded-lg space-y-3">
@@ -101,6 +99,10 @@
                         My Page Information
                     </h3>
                     <div class="space-y-2">
+                        <p class="flex items-center text-sm sm:text-base">
+                            <span class="font-semibold mr-2">Anggota yang paling disukai:</span>
+                            <span id="user-oshimen" class="text-gray-300">Loading...</span>
+                        </p>
                         <p class="flex items-center text-sm sm:text-base">
                             <span class="font-semibold mr-2">Nomor anggota:</span>
                             <span id="membership-number" class="text-gray-300">Loading...</span>
@@ -120,7 +122,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <h3 class="text-lg sm:text-xl font-bold text-pink-300 mb-3">Your Membership Barcode</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-pink-300 mb-3">My Page Barcode</h3>
                     <svg id="barcode" class="w-full max-w-xs mx-auto p-2 rounded-lg"></svg>
                 </div>
                 <div class="text-center mt-4">
@@ -192,6 +194,7 @@
     </script>
 
     <script src="/progress.js"></script>
+    <script src="/security/typicalsleepingboy.js"></script>
     <script src="/components/utils/mypage.js"></script>
 </body>
 
