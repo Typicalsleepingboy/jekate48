@@ -7,6 +7,7 @@ if (!userName || !oshimen) {
     document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
     document.getElementById("user-name").textContent = `Your Name: ${userName}`;
     document.getElementById("user-oshimen").textContent = `Your Oshimen: ${oshimen}`;
+    document.getElementById("membership-anggota").textContent = `Anggota Platinum`;
     let membershipNumber = localStorage.getItem("membershipNumber");
     if (!membershipNumber) {
         membershipNumber = `JEKATE48-${Math.floor(100000 + Math.random() * 900000).toString()}`;
