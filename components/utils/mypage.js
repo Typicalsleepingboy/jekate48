@@ -48,3 +48,8 @@ if (!userName || !oshimen) {
 
     fetchMemberData();
 }
+
+document.getElementById("logoutButton").addEventListener("click", () => {
+    localStorage.clear();
+    window.location.href = "/login";
+});

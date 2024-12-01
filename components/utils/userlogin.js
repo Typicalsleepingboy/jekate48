@@ -1,3 +1,11 @@
+const loggedInUser = localStorage.getItem("userName");
+const loggedInOshimen = localStorage.getItem("userOshimen");
+
+// Jika sudah login, langsung arahkan ke /mypage
+if (loggedInUser && loggedInOshimen) {
+    window.location.href = "/mypage";
+}
+
 const oshimenSelect = document.getElementById('oshimen');
 async function loadOshimen() {
     const memberEndpoint = '/data/member.json';
