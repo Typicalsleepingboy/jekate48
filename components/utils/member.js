@@ -25,7 +25,7 @@ async function fetchMembers() {
                             onerror="this.src='/assets/img/default-avatar.jpg'"
                             class="w-full h-full object-cover rounded-lg shadow-lg">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-1/2 rounded-b-lg"></div>
-                        <div class="absolute bottom-2 left-2 bg-white/10 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-white">
+                        <div class="absolute bottom-2 left-2 bg-gradient-to-r from-pink-300/85 via-purple-300/85 to-cyan-300/85 rounded-lg px-2 py-1 text-xs text-gray-900">
                             ${generation}
                         </div>
                     </div>
