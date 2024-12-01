@@ -2,7 +2,7 @@ const userName = localStorage.getItem("userName");
 const oshimen = localStorage.getItem("userOshimen");
 
 if (!userName || !oshimen) {
-    window.location.href = "login.html";
+    window.location.href = "/login";
 } else {
     document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
     document.getElementById("user-name").textContent = `Your Name: ${userName}`;

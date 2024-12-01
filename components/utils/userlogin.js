@@ -26,5 +26,5 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     }
     localStorage.setItem("userName", name);
     localStorage.setItem("userOshimen", oshimen);
-    window.location.href = "mypage.html";
+    window.location.href = "/mypage";
 });
