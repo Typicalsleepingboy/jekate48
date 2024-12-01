@@ -17,20 +17,6 @@ async function getSSKData(memberId) {
     }
 }
 
-async function getMemberDataFromJson(memberName) {
-    try {
-        const response = await fetch('/data/member.json');
-        if (!response.ok) {
-            throw new Error('Failed to fetch member.json');
-        }
-        const memberData = await response.json();
-        return memberData.find(member => member.name === memberName);
-    } catch (error) {
-        console.error('Error fetching member.json:', error);
-        return null;
-    }
-}
-
 async function fetchMemberDetail() {
     try {
         const memberId = await getMemberId();
@@ -39,55 +25,29 @@ async function fetchMemberDetail() {
             throw new Error('Member ID not found 😭');
         }
 
-        const [memberResponse, sskData] = await Promise.all([
+        const [memberResponse, sskData, memberJsonResponse] = await Promise.all([
             fetch(`https://intensprotectionexenew.vercel.app/api/member/${memberId}`),
-            getSSKData(memberId)
+            getSSKData(memberId),
+            fetch('/data/member.json')
         ]);
 
         if (!memberResponse.ok) {
             throw new Error('Failed to fetch member data');
         }
 
-        const memberData = await memberResponse.json();
-        const contentContainer = document.getElementById('member-content');
+        const [memberData, memberJson] = await Promise.all([
+            memberResponse.json(),
+            memberJsonResponse.ok ? memberJsonResponse.json() : []
+        ]);
+
         document.getElementById('loading-skeleton').classList.add('hidden');
+        const contentContainer = document.getElementById('member-content');
         contentContainer.classList.remove('hidden');
 
-        let videoEmbedHtml = '';
-        if (sskData?.data?.url_video) {
-            // Jika data SSK ada
-            videoEmbedHtml = `
-                <div class="aspect-video w-full rounded-lg overflow-hidden">
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/${sskData.data.url_video}"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-            `;
-        } else {
-            // Jika data SSK tidak ada, cari di member.json
-            const fallbackMemberData = await getMemberDataFromJson(memberData.name);
-            if (fallbackMemberData?.video_perkenalan) {
-                videoEmbedHtml = `
-                    <div class="aspect-video w-full rounded-lg overflow-hidden">
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src="https://www.youtube.com/embed/${new URL(fallbackMemberData.video_perkenalan).searchParams.get('v')}"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                `;
-            }
-        }
+        // Mencari video dari member.json jika tidak ada data di ssk.json
+        let videoUrl = sskData?.data?.url_video ? 
+            `https://www.youtube.com/embed/${sskData.data.url_video}` : 
+            memberJson.find(member => member.name === memberData.name)?.video_perkenalan;
 
         contentContainer.innerHTML = `
             <div class="p-4 md:p-8 relative">
@@ -102,7 +62,7 @@ async function fetchMemberDetail() {
                             </div>
                             <div class="mt-4 md:hidden flex justify-center">
                                 <a href="https://ssk.jkt48.com/2024/id/vote" 
-                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300  text-white font-medium shadow-lg w-full justify-center">
+                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 text-white font-medium shadow-lg w-full justify-center">
                                     Vote
                                 </a>
                             </div>
@@ -123,14 +83,46 @@ async function fetchMemberDetail() {
                             </div>
                         </div>
 
-                        ${videoEmbedHtml}
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-gray-700 p-4 rounded-lg">
+                                <p class="text-gray-400 text-sm">Birthday</p>
+                                <p class="font-medium">${memberData.birthdate || '-'}</p>
+                            </div>
+                            <div class="bg-gray-700 p-4 rounded-lg">
+                                <p class="text-gray-400 text-sm">Blood Type</p>
+                                <p class="font-medium">${memberData.bloodType || '-'}</p>
+                            </div>
+                            <div class="bg-gray-700 p-4 rounded-lg">
+                                <p class="text-gray-400 text-sm">Height</p>
+                                <p class="font-medium">${memberData.height || '-'}</p>
+                            </div>
+                            <div class="bg-gray-700 p-4 rounded-lg">
+                                <p class="text-gray-400 text-sm">Zodiac</p>
+                                <p class="font-medium">${memberData.zodiac || '-'}</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-crown mr-2"></i>Sousenkyo 2024</h2>
+                            <div class="aspect-video w-full rounded-lg overflow-hidden">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src="${videoUrl || ''}"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
     } catch (error) {
         console.error('Error fetching member details:', error);
         document.getElementById('loading-skeleton').classList.add('hidden');
+
         const contentContainer = document.getElementById('member-content');
         contentContainer.classList.remove('hidden');
         contentContainer.innerHTML = `
