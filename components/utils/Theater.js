@@ -13,7 +13,6 @@ function formatShowDate(dateString, showInfo) {
     return { formattedDate, formattedTime };
 }
 
-
 function getShowStatus(showInfo) {
     const now = new Date();
     const today = new Date();
@@ -23,7 +22,7 @@ function getShowStatus(showInfo) {
     tomorrow.setDate(tomorrow.getDate() + 1);
 
     const [_, datePart, timePart] = showInfo.split(" ");
-    const showDateTime = new Date(`${datePart}T${timePart}:00`);
+    const showDateTime = new Date(`${datePart}T${timePart}:00+07:00`); // Make sure to set timezone (+07:00)
 
     const showDateOnly = new Date(showDateTime);
     showDateOnly.setHours(0, 0, 0, 0);
@@ -51,8 +50,6 @@ function getShowStatus(showInfo) {
     return null;
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const loadingSkeletonTheater = document.getElementById("loading-skeleton-theater");
     const theaterList = document.getElementById("theater-list");
@@ -67,13 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     theaterList.classList.remove("hidden");
 
                     if (!apiData || apiData.length === 0) {
-                        const noTheaterMessage = document.createElement("div");
-                        noTheaterMessage.className = "col-span-3 text-center text-gray-400";
-                        noTheaterMessage.innerHTML = `
-                            <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                            <p>Lagi Tidak ada theater 😭.</p>
-                        `;
-                        theaterList.appendChild(noTheaterMessage);
+                        const noDataImage = document.createElement("img");
+                        noDataImage.src = "https://res.cloudinary.com/dlx2zm7ha/image/upload/v1733508715/allactkiuu9tmtrqfumi.png";
+                        noDataImage.alt = "No Data Found";
+                        noDataImage.className = "mx-auto mt-6";
+
+                        const noDataText = document.createElement("p");
+                        noDataText.textContent = "Tidak ada data theater.";
+                        noDataText.className = "text-center text-gray-500 mt-4";
+
+                        theaterList.appendChild(noDataImage);
+                        theaterList.appendChild(noDataText);
                         return;
                     }
 
@@ -149,119 +150,3 @@ document.addEventListener("DOMContentLoaded", () => {
             loadingSkeletonTheater.textContent = "Gagal mendapatkan data theater 😭.";
         });
 });
-
-// theater detail
-function getSetlist() {
-    const pathSegments = window.location.pathname.split('/');
-    const setlist = pathSegments[pathSegments.length - 1];
-    const decodedSetlist = decodeURIComponent(setlist);
-    return decodedSetlist;
-}
-const fetchData = async () => {
-    const setlist = getSetlist();
-    
-    const loadingSkeleton = document.getElementById('loadingSkeleton');
-    const theaterDetails = document.getElementById('theaterDetails');
-    const theaterDetails2 = document.getElementById('theaterDetails2');
-
-    if (!setlist) {
-        loadingSkeleton.textContent = 'Setlist tidak ditemukan.';
-        return;
-    }
-
-    try {
-        const theaterResponse = await fetch('https://intensprotectionexenew.vercel.app/api/theater');
-        const theaters = await theaterResponse.json();
-        const theater = theaters.find(t => decodeURIComponent(t.setlist) === setlist);
-
-        if (!theater) {
-            loadingSkeleton.textContent = 'Teater tidak ditemukan.';
-            return;
-        }
-
-        const memberResponse = await fetch('/data/member.json');
-        const members = await memberResponse.json();
-
-        const setlistResponse = await fetch('/data/theater.json');
-        const setlists = await setlistResponse.json();
-        const setlistData = setlists.find(s => s.setlist === theater.setlist);
-
-        loadingSkeleton.classList.add('hidden');
-        theaterDetails.classList.remove('hidden');
-        theaterDetails2.classList.remove('hidden');
-        document.getElementById('setlistBanner').src = setlistData ? setlistData.image : '';
-        document.getElementById('setlistName').textContent = theater.setlist;
-
-        const setlistDescription = setlistData?.description || 'Deskripsi belum tersedia.';
-        document.getElementById('setlistDescription').textContent = setlistDescription;
-
-        const { formattedDate, formattedTime } = formatShowDate(theater.date, theater.showInfo);
-        document.getElementById('showDate').textContent = `${formattedDate}, ${formattedTime}`;
-
-        document.getElementById('memberCount').textContent = theater.members.length;
-
-        const createMemberCard = (memberName, memberData) => {
-            return `
-                <div class="flex flex-col items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
-                    <div class="w-full aspect-square mb-2 rounded-lg overflow-hidden">
-                        ${memberData && memberData.img_alt ? 
-                    `<img src="${memberData.img_alt}" alt="${memberName}" class="w-full h-full object-cover">` :
-                    `<div class="w-full h-full bg-red-600 flex items-center justify-center">
-                                <span class="text-white text-xl font-bold">JKT48</span>
-                        </div>`
-                }
-                    </div>
-                    <p class="text-sm text-center text-white font-medium">${memberName || "Tidak Diketahui"}</p>
-                </div>
-            `;
-        };
-
-        const membersList = document.getElementById('membersList');
-
-        if (!theater.members || theater.members.length === 0) {
-            membersList.innerHTML = `
-            <div class="flex flex-col items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
-                    <div class="w-full aspect-square mb-2 rounded-lg overflow-hidden">
-                <div class="w-full h-full bg-red-600 flex items-center justify-center">
-                    <span class="text-white text-xl font-bold">JKT48</span>
-                </div>
-            </div>
-            `;
-        } else {
-            membersList.innerHTML = theater.members.map(memberName => {
-                const memberData = members.find(m => m.name === memberName);
-                return createMemberCard(memberName, memberData);
-            }).join('');
-        }
-
-        if (theater.birthdayMembers && theater.birthdayMembers.length > 0) {
-            const birthdaySection = document.getElementById('birthdaySection');
-            birthdaySection.classList.remove('hidden');
-
-            const birthdayMembers = document.getElementById('birthdayMembers');
-            birthdayMembers.innerHTML = theater.birthdayMembers
-                .map(memberName => `<span class="font-medium">${memberName}</span>`)
-                .join(', ');
-
-            const birthdayMemberImage = document.getElementById('birthdayMemberImage');
-            const firstBirthdayMember = members.find(m => m.name === theater.birthdayMembers[0]);
-            birthdayMemberImage.src = firstBirthdayMember?.img_alt || 'https://jkt48.com/images/logo.svg';
-        }
-
-        // const ticketButtonOffline = document.getElementById('ticketButtonOffline');
-        // const ticketButtonOnline = document.getElementById('ticketButtonOnline');
-
-        // ticketButtonOffline.addEventListener('click', () => {
-        //     window.location.href = 'https://jkt48.com/images/logo.svg';
-        // });
-
-        // ticketButtonOnline.addEventListener('click', () => {
-        //     window.location.href = '/path/to/online/ticket';
-        // });
-    } catch (error) {
-        loadingSkeleton.textContent = 'Gagal mendapatkan data theater 😭';
-        console.error(error);
-    }
-};
-
-document.addEventListener('DOMContentLoaded', fetchData);

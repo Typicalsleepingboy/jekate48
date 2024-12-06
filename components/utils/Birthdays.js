@@ -2,9 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadingSkeleton = document.getElementById("loading-skeleton-birthdays");
     const birthdayList = document.getElementById("birthday-list");
 
+    function parseDate(indonesianDate) {
+        const months = {
+            Januari: "01", Februari: "02", Maret: "03", April: "04", Mei: "05", Juni: "06",
+            Juli: "07", Agustus: "08", September: "09", Oktober: "10", November: "11", Desember: "12"
+        };
+
+        const [day, month, year] = indonesianDate.split(" ");
+        const monthNumber = months[month];
+
+        if (!monthNumber) {
+            console.error("Invalid month in date:", indonesianDate);
+            return null;
+        }
+
+        return `${year}-${monthNumber}-${day.padStart(2, "0")}`;
+    }
+
     function getBirthdayStatus(birthdate) {
+        const parsedDate = parseDate(birthdate);
+        if (!parsedDate) return null;
+
         const today = new Date();
-        const nextBirthday = new Date(birthdate);
+        const nextBirthday = new Date(parsedDate);
         nextBirthday.setFullYear(today.getFullYear());
 
         if (nextBirthday < today) {
@@ -15,20 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         if (diffDays === 0) {
-            return {
-                text: "Hari Ini",
-                color: "bg-green-500"
-            };
+            return { text: "Hari Ini", color: "bg-green-500" };
         } else if (diffDays === 1) {
-            return {
-                text: "Besok",
-                color: "bg-yellow-500"
-            };
+            return { text: "Besok", color: "bg-yellow-500" };
         } else if (diffDays === 2) {
-            return {
-                text: "2 Hari Lagi",
-                color: "bg-blue-500"
-            };
+            return { text: "2 Hari Lagi", color: "bg-blue-500" };
         }
 
         return null;
@@ -39,6 +50,21 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             loadingSkeleton.classList.add("hidden");
             birthdayList.classList.remove("hidden");
+
+            if (!data || data.length === 0) {
+                const noDataImage = document.createElement("img");
+                noDataImage.src = "https://res.cloudinary.com/dlx2zm7ha/image/upload/v1733508715/allactkiuu9tmtrqfumi.png";
+                noDataImage.alt = "No Data Found";
+                noDataImage.className = "mx-auto mt-6";
+
+                const noDataText = document.createElement("p");
+                noDataText.textContent = "Tidak ada data ulang tahun.";
+                noDataText.className = "text-center text-gray-500 mt-4";
+
+                birthdayList.appendChild(noDataImage);
+                birthdayList.appendChild(noDataText);
+                return;
+            }
 
             data.forEach(person => {
                 const birthdayItem = document.createElement("div");
@@ -60,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const profileId = person.profileLink.split("/")[4].split("?")[0];
                 const link = document.createElement("a");
                 link.href = `/member/${profileId}`;
-                link.target = "_self"; // Buka di tab yang sama
+                link.target = "_self";
                 link.rel = "noopener noreferrer";
                 link.textContent = person.name;
                 nameElement.appendChild(link);
