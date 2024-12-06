@@ -1,4 +1,4 @@
-const isMaintenance = true;  
+const isMaintenance = false;  
 
 if (isMaintenance) {
   if (window.location.pathname !== '/maintenance') {
