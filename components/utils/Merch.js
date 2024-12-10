@@ -61,7 +61,21 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
             title.textContent = item.title;
 
             const button = document.createElement('button');
-            button.classList.add('w-full', 'mt-4', 'px-4', 'py-2', 'bg-pink-500', 'rounded-full', 'hover:bg-pink-600');
+            button.classList.add(
+              'w-full',
+              'mt-4',
+              'px-4',
+              'py-2',
+              'bg-gradient-to-r',
+              'from-pink-300',
+              'via-purple-300',
+              'to-cyan-300',
+              'rounded-full',
+              'hover:from-pink-400',
+              'hover:via-purple-400',
+              'hover:to-cyan-400'
+            );
+
             button.textContent = 'Order Now';
 
             if (item.link) {
