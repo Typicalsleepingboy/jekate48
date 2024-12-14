@@ -1,186 +1,503 @@
+function _0x4c61(_0x2b7116, _0x5e6f88) {
+    const _0x41675c = _0x1972();
+    return _0x4c61 = function (_0x5d544a, _0x555358) {
+        _0x5d544a = _0x5d544a - (-0xd9 + -0x2 * 0x10e2 + 0x23fb);
+        let _0x56df9d = _0x41675c[_0x5d544a];
+        return _0x56df9d;
+    }, _0x4c61(_0x2b7116, _0x5e6f88);
+}
+(function (_0x4c6b22, _0x1472bb) {
+    const _0x130c39 = _0x4c61, _0x320a36 = _0x4c6b22();
+    while (!![]) {
+        try {
+            const _0xa87d69 = parseInt(_0x130c39(0x2cb)) / (-0x1 * 0x223f + -0x8a4 * -0x1 + 0x199c) + -parseInt(_0x130c39(0x1a0)) / (0x1f36 + -0x15c5 + -0x96f) + parseInt(_0x130c39(0x19a)) / (0x8cb + 0x76 * 0x25 + -0x2 * 0xceb) * (-parseInt(_0x130c39(0x17d)) / (0x10ef + -0x2560 + 0x1 * 0x1475)) + parseInt(_0x130c39(0x1f6)) / (0x4cd * -0x6 + 0x1 * 0x4cc + 0x1807) * (-parseInt(_0x130c39(0x230)) / (-0x3af * -0x5 + 0x266c + 0x1 * -0x38d1)) + parseInt(_0x130c39(0x222)) / (0xc81 * -0x1 + -0x61c + 0x952 * 0x2) + -parseInt(_0x130c39(0x235)) / (0x15 * -0x2d + -0xa1f + 0xdd8) + parseInt(_0x130c39(0x1e9)) / (-0x20f0 + -0x11 * -0x1f5 + -0x26 * 0x2) * (parseInt(_0x130c39(0x1f4)) / (-0x12ff + -0x51b * 0x5 + -0x2c9 * -0x10));
+            if (_0xa87d69 === _0x1472bb)
+                break;
+            else
+                _0x320a36['push'](_0x320a36['shift']());
+        } catch (_0x2f44f7) {
+            _0x320a36['push'](_0x320a36['shift']());
+        }
+    }
+}(_0x1972, -0x38793 * -0x5 + -0x1 * 0x7cfcf + 0x36207 * 0x1));
 async function getMemberId() {
-    const pathSegments = window.location.pathname.split('/');
-    return pathSegments[pathSegments.length - 1];
+    const _0x2b624d = _0x4c61, _0x119c89 = {
+            'fQUcu': function (_0x5dac2a, _0x315867) {
+                return _0x5dac2a - _0x315867;
+            }
+        }, _0x2bda8f = window[_0x2b624d(0x21b)][_0x2b624d(0x2ab)][_0x2b624d(0x26c)]('/');
+    return _0x2bda8f[_0x119c89[_0x2b624d(0x190)](_0x2bda8f[_0x2b624d(0x1d5)], -0x171 * 0x2 + 0x798 + -0x4b5 * 0x1)];
 }
-
-async function getSSKData(memberId) {
+async function getSSKData(_0x335120) {
+    const _0x1fd3c0 = _0x4c61, _0x1f2c8f = {
+            'kPcri': function (_0x3fc0a5, _0x1a3bd7) {
+                return _0x3fc0a5(_0x1a3bd7);
+            },
+            'ZNbYI': _0x1fd3c0(0x270) + _0x1fd3c0(0x24f),
+            'ExSec': _0x1fd3c0(0x21c) + _0x1fd3c0(0x20a) + _0x1fd3c0(0x1db)
+        };
     try {
-        const response = await fetch('/data/ssk.json');
-        if (!response.ok) {
+        const _0xcb09d4 = await _0x1f2c8f[_0x1fd3c0(0x215)](fetch, _0x1f2c8f[_0x1fd3c0(0x243)]);
+        if (!_0xcb09d4['ok'])
             return null;
-        }
-        const sskData = await response.json();
-        return sskData.find(item => item.id === memberId);
-    } catch (error) {
-        console.error('Error fetching SSK data:', error);
-        return null;
+        const _0x4f1c0f = await _0xcb09d4[_0x1fd3c0(0x24f)]();
+        return _0x4f1c0f[_0x1fd3c0(0x220)](_0x1cae19 => _0x1cae19['id'] === _0x335120);
+    } catch (_0x196d78) {
+        return console[_0x1fd3c0(0x208)](_0x1f2c8f[_0x1fd3c0(0x27f)], _0x196d78), null;
     }
 }
-
 async function getMemberJsonData() {
+    const _0x46982d = _0x4c61, _0x54e374 = {
+            'afHtq': function (_0x568efe, _0x1ef470) {
+                return _0x568efe(_0x1ef470);
+            },
+            'uudqS': _0x46982d(0x25d) + _0x46982d(0x164),
+            'RJaVq': _0x46982d(0x21c) + _0x46982d(0x1f7) + _0x46982d(0x274) + 'a:'
+        };
     try {
-        const response = await fetch('/data/member.json');
-        if (!response.ok) {
+        const _0x5d7275 = await _0x54e374[_0x46982d(0x165)](fetch, _0x54e374[_0x46982d(0x1fc)]);
+        if (!_0x5d7275['ok'])
             return null;
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching member JSON data:', error);
-        return null;
+        return await _0x5d7275[_0x46982d(0x24f)]();
+    } catch (_0x23c2b3) {
+        return console[_0x46982d(0x208)](_0x54e374[_0x46982d(0x2c8)], _0x23c2b3), null;
     }
 }
-
 async function fetchMemberDetail() {
+    const _0x67d272 = _0x4c61, _0x5437fc = {
+            'qmyPu': function (_0x5368cb) {
+                return _0x5368cb();
+            },
+            'mTRiS': _0x67d272(0x299) + _0x67d272(0x2d0) + '😭',
+            'BfcWZ': function (_0x521dec, _0x4fcdde) {
+                return _0x521dec(_0x4fcdde);
+            },
+            'LimpT': function (_0x3aad9a, _0xf5fbd) {
+                return _0x3aad9a(_0xf5fbd);
+            },
+            'BhOcJ': _0x67d272(0x17a) + _0x67d272(0x1f9) + _0x67d272(0x22d),
+            'KJlyn': _0x67d272(0x183) + _0x67d272(0x2a5),
+            'RqmBY': _0x67d272(0x2c4),
+            'OPMdw': _0x67d272(0x20e) + _0x67d272(0x185),
+            'PiFFv': _0x67d272(0x189),
+            'uEYzC': _0x67d272(0x1fb) + _0x67d272(0x223),
+            'HxbWq': _0x67d272(0x240) + _0x67d272(0x168),
+            'ZkGyC': _0x67d272(0x258) + _0x67d272(0x29c),
+            'sWUJq': _0x67d272(0x240) + _0x67d272(0x18c),
+            'YbAGd': _0x67d272(0x21c) + _0x67d272(0x1f7) + _0x67d272(0x211)
+        };
     try {
-        const memberId = await getMemberId();
-
-        if (!memberId) {
-            throw new Error('Member ID not found 😭');
-        }
-
-        const [memberResponse, sskData, memberJsonData] = await Promise.all([
-            fetch(`https://intensprotectionexenew.vercel.app/api/member/${memberId}`),
-            getSSKData(memberId),
-            getMemberJsonData(),
+        const _0x26c9ad = await _0x5437fc[_0x67d272(0x285)](getMemberId);
+        if (!_0x26c9ad)
+            throw new Error(_0x5437fc[_0x67d272(0x278)]);
+        const [_0x10b301, _0x417baf, _0x28968b] = await Promise[_0x67d272(0x1e6)]([
+            _0x5437fc[_0x67d272(0x1aa)](fetch, _0x67d272(0x280) + _0x67d272(0x182) + _0x67d272(0x21f) + _0x67d272(0x200) + _0x67d272(0x1ce) + _0x67d272(0x1a7) + _0x26c9ad),
+            _0x5437fc[_0x67d272(0x1ff)](getSSKData, _0x26c9ad),
+            _0x5437fc[_0x67d272(0x285)](getMemberJsonData)
         ]);
-
-        if (!memberResponse.ok) {
-            throw new Error('Failed to fetch member data');
-        }
-
-        const memberData = await memberResponse.json();
-        const memberJsonItem = memberJsonData?.find(item => item.name === memberData.name);
-        const memberIntroductionVideo = memberJsonItem?.video_perkenalan || '';
-
-        document.getElementById('loading-skeleton').classList.add('hidden');
-        const contentContainer = document.getElementById('member-content');
-        contentContainer.classList.remove('hidden');
-
-        contentContainer.innerHTML = `
-            <div class="p-4 md:p-8 relative">
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div class="w-full md:w-1/3 lg:w-1/4">
-                        <div class="relative">
-                            <div class="relative w-full max-w-sm rounded-lg shadow-lg">
-                                <img src="${memberData.profileImage || ''}" 
-                                    alt="${memberData.name || 'Member'}" 
-                                    class="w-full max-w-sm object-cover rounded-lg"
-                                    onerror="this.src='/assets/img/default-avatar.jpg'">
-                            </div>
-                            <div class="mt-4 md:hidden flex justify-center">
-                                <a href="https://ssk.jkt48.com/2024/id/vote" 
-                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300  text-white font-medium shadow-lg w-full justify-center">
-                                    Vote
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex-1 space-y-6">
-                        <div class="flex items-start justify-between">
-                            <div class="space-y-2">
-                                <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">${memberData.name || 'Unknown Member'}</h1>
-                                <p class="text-pink-500 text-lg">${memberData.nickname || '-'}</p>
-                            </div>
-                            <div class="hidden md:block">
-                                <a href="https://ssk.jkt48.com/2024/id/vote" 
-                                    class="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 transition-colors text-white font-medium shadow-lg">
-                                    Vote
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="bg-gray-700 p-4 rounded-lg">
-                                <p class="text-gray-400 text-sm">Birthday</p>
-                                <p class="font-medium">${memberData.birthdate || '-'}</p>
-                            </div>
-                            <div class="bg-gray-700 p-4 rounded-lg">
-                                <p class="text-gray-400 text-sm">Blood Type</p>
-                                <p class="font-medium">${memberData.bloodType || '-'}</p>
-                            </div>
-                            <div class="bg-gray-700 p-4 rounded-lg">
-                                <p class="text-gray-400 text-sm">Height</p>
-                                <p class="font-medium">${memberData.height || '-'}</p>
-                            </div>
-                            <div class="bg-gray-700 p-4 rounded-lg">
-                                <p class="text-gray-400 text-sm">Zodiac</p>
-                                <p class="font-medium">${memberData.zodiac || '-'}</p>
-                            </div>
-                        </div>
-
-                        ${memberData.socialMedia ? `
-                            <div class="pt-6">
-                                <h2 class="text-xl font-semibold mb-4">Social Media</h2>
-                                <div class="flex flex-wrap gap-4">
-                                    ${memberData.socialMedia.twitter ? `
-                                        <a href="${memberData.socialMedia.twitter}" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer" 
-                                            class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
-                                                <i class="fab fa-twitter"></i>
-                                                <span class="hidden sm:inline">Twitter</span>
-                                        </a>
-                                    ` : ''}
-                                    ${memberData.socialMedia.instagram ? `
-                                        <a href="${memberData.socialMedia.instagram}" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
-                                                <i class="fab fa-instagram"></i>
-                                                <span class="hidden sm:inline">Instagram</span>
-                                        </a>
-                                    ` : ''}
-                                    ${memberData.socialMedia.tiktok ? `
-                                        <a href="${memberData.socialMedia.tiktok}" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            class="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
-                                                <i class="fab fa-tiktok"></i>
-                                                <span class="hidden sm:inline">TikTok</span>
-                                        </a>
-                                    ` : ''}
-                                </div>
-                            </div>
-                        ` : ''}
-
-                        ${(sskData?.data?.url_video || memberIntroductionVideo) ? `
-                            <div class="pt-6">
-                                <h2 class="text-xl font-semibold mb-4">
-                                    <i class="fa-solid fa-crown mr-2"></i>
-                                    ${sskData?.data?.url_video ? 'Sousenkyo 2024' : 'Introduction Video'}
-                                </h2>
-                                <div class="aspect-video w-full rounded-lg overflow-hidden">
-                                    <iframe
-                                        width="100%"
-                                        height="100%"
-                                        src="https://www.youtube.com/embed/${sskData?.data?.url_video || memberIntroductionVideo}"
-                                        title="${sskData?.data?.url_video ? 'Sousenkyo Video' : 'Introduction Video'}"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
-                                    ></iframe>
-                                </div>
-                            </div>
-                        ` : ''}
-                    </div>
-                </div>
-            </div>`;
-    } catch (error) {
-        console.error('Error fetching member details:', error);
-        document.getElementById('loading-skeleton').classList.add('hidden');
-
-        const contentContainer = document.getElementById('member-content');
-        contentContainer.classList.remove('hidden');
-        contentContainer.innerHTML = `
-            <div class="flex flex-col items-center justify-center p-8 text-center">
-                <div class="rounded-lg p-8 max-w-md w-full">
-                    <i class="fas fa-exclamation-circle text-4xl text-pink-500 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Oops!</h2>
-                    <p class="text-gray-400 mb-4">Gagal mendapatkan data member 😭</p>
-                </div>
-            </div>`;
+        if (!_0x10b301['ok'])
+            throw new Error(_0x5437fc[_0x67d272(0x19f)]);
+        const _0x353609 = await _0x10b301[_0x67d272(0x24f)](), _0x58cba9 = _0x28968b?.[_0x67d272(0x220)](_0x2a3a18 => _0x2a3a18[_0x67d272(0x2b1)] === _0x353609[_0x67d272(0x2b1)]), _0x12770d = _0x58cba9?.[_0x67d272(0x246) + _0x67d272(0x271)] || '';
+        document[_0x67d272(0x29a) + _0x67d272(0x2a8)](_0x5437fc[_0x67d272(0x1d8)])[_0x67d272(0x244)][_0x67d272(0x212)](_0x5437fc[_0x67d272(0x1f5)]);
+        const _0x156290 = document[_0x67d272(0x29a) + _0x67d272(0x2a8)](_0x5437fc[_0x67d272(0x1ef)]);
+        _0x156290[_0x67d272(0x244)][_0x67d272(0x287)](_0x5437fc[_0x67d272(0x1f5)]), _0x156290[_0x67d272(0x1cb)] = _0x67d272(0x28a) + _0x67d272(0x265) + _0x67d272(0x1fe) + _0x67d272(0x163) + _0x67d272(0x259) + _0x67d272(0x26b) + _0x67d272(0x265) + _0x67d272(0x234) + _0x67d272(0x173) + _0x67d272(0x26f) + _0x67d272(0x276) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x1c7) + _0x67d272(0x251) + _0x67d272(0x203) + _0x67d272(0x1de) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2d7) + _0x67d272(0x161) + _0x67d272(0x2bf) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x265) + _0x67d272(0x1cd) + _0x67d272(0x2dd) + _0x67d272(0x2cf) + _0x67d272(0x1bd) + _0x67d272(0x1ec) + _0x67d272(0x1a1) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1fd) + _0x67d272(0x23d) + (_0x353609[_0x67d272(0x261) + 'ge'] || '') + (_0x67d272(0x286) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2cd) + _0x67d272(0x272)) + (_0x353609[_0x67d272(0x2b1)] || _0x5437fc[_0x67d272(0x245)]) + (_0x67d272(0x286) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x23f) + _0x67d272(0x15f) + _0x67d272(0x16d) + _0x67d272(0x17c) + _0x67d272(0x294) + _0x67d272(0x1b0) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1b7) + _0x67d272(0x239) + _0x67d272(0x18d) + _0x67d272(0x1d6) + _0x67d272(0x195) + _0x67d272(0x22a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1e1) + _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x1c7) + _0x67d272(0x213) + _0x67d272(0x2b0) + _0x67d272(0x221) + _0x67d272(0x2b4) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x184) + _0x67d272(0x277) + _0x67d272(0x2c3) + _0x67d272(0x1b9) + _0x67d272(0x180) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x227) + _0x67d272(0x1b6) + _0x67d272(0x282) + _0x67d272(0x1b2) + _0x67d272(0x1ee) + _0x67d272(0x1bc) + _0x67d272(0x1dd) + _0x67d272(0x1ad) + _0x67d272(0x175) + _0x67d272(0x2b6) + _0x67d272(0x20d) + _0x67d272(0x1d0) + _0x67d272(0x209) + _0x67d272(0x2a7) + _0x67d272(0x2d3) + _0x67d272(0x201) + _0x67d272(0x281) + _0x67d272(0x1a1) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x191) + _0x67d272(0x27d) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x24d) + _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x2d2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x16e) + _0x67d272(0x26b) + _0x67d272(0x1e2) + _0x67d272(0x2af) + _0x67d272(0x26b) + _0x67d272(0x17e) + _0x67d272(0x2ad) + _0x67d272(0x233) + _0x67d272(0x2a6) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x20c) + _0x67d272(0x1cf) + _0x67d272(0x1f8) + _0x67d272(0x257) + _0x67d272(0x1b5) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x17e) + _0x67d272(0x1c1) + _0x67d272(0x25b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2c6) + _0x67d272(0x28d) + _0x67d272(0x25e) + _0x67d272(0x2a0) + _0x67d272(0x18f) + _0x67d272(0x22b)) + (_0x353609[_0x67d272(0x2b1)] || _0x5437fc[_0x67d272(0x198)]) + (_0x67d272(0x238) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x292) + _0x67d272(0x266) + _0x67d272(0x2d5) + _0x67d272(0x2bd) + '>') + (_0x353609[_0x67d272(0x27c)] || '-') + (_0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x199) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x237) + _0x67d272(0x27a) + _0x67d272(0x196) + _0x67d272(0x1e3) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x184) + _0x67d272(0x277) + _0x67d272(0x2c3) + _0x67d272(0x1b9) + _0x67d272(0x180) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x227) + _0x67d272(0x1b6) + _0x67d272(0x282) + _0x67d272(0x1b2) + _0x67d272(0x1ee) + _0x67d272(0x1bc) + _0x67d272(0x1dd) + _0x67d272(0x1ad) + _0x67d272(0x175) + _0x67d272(0x2b6) + _0x67d272(0x20d) + _0x67d272(0x2d6) + _0x67d272(0x1e7) + _0x67d272(0x19d) + _0x67d272(0x225) + _0x67d272(0x29f) + _0x67d272(0x236) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x177) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x214) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1e1) + _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x226) + _0x67d272(0x296) + _0x67d272(0x26b) + _0x67d272(0x24e) + _0x67d272(0x1bf) + _0x67d272(0x2db) + _0x67d272(0x193) + _0x67d272(0x267) + _0x67d272(0x290) + _0x67d272(0x2a3) + _0x67d272(0x24a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2d7) + _0x67d272(0x293) + _0x67d272(0x1d3) + _0x67d272(0x1bd) + _0x67d272(0x1a1) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1d7) + _0x67d272(0x18a) + _0x67d272(0x1da) + _0x67d272(0x1e5) + _0x67d272(0x26a) + _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1f0) + _0x67d272(0x1e8) + _0x67d272(0x2b9)) + (_0x353609[_0x67d272(0x16b)] || '-') + (_0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x199) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x237) + _0x67d272(0x27a) + _0x67d272(0x2be) + _0x67d272(0x248) + _0x67d272(0x171) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1c6) + _0x67d272(0x2da) + _0x67d272(0x1c9) + _0x67d272(0x210) + _0x67d272(0x28c) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1c6) + _0x67d272(0x1c5) + _0x67d272(0x23c)) + (_0x353609[_0x67d272(0x1ed)] || '-') + (_0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x199) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x237) + _0x67d272(0x27a) + _0x67d272(0x2be) + _0x67d272(0x248) + _0x67d272(0x171) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1c6) + _0x67d272(0x2da) + _0x67d272(0x1c9) + _0x67d272(0x192) + _0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2b8) + _0x67d272(0x289) + _0x67d272(0x2ae)) + (_0x353609[_0x67d272(0x264)] || '-') + (_0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x199) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x237) + _0x67d272(0x27a) + _0x67d272(0x2be) + _0x67d272(0x248) + _0x67d272(0x171) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1c6) + _0x67d272(0x2da) + _0x67d272(0x1c9) + _0x67d272(0x27e) + _0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2b8) + _0x67d272(0x289) + _0x67d272(0x2ae)) + (_0x353609[_0x67d272(0x28b)] || '-') + (_0x67d272(0x254) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x199) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1e1) + _0x67d272(0x166) + _0x67d272(0x26b) + _0x67d272(0x22e)) + (_0x353609[_0x67d272(0x26d) + 'a'] ? _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x1c7) + _0x67d272(0x18b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26e) + _0x67d272(0x186) + _0x67d272(0x1f2) + _0x67d272(0x232) + _0x67d272(0x249) + _0x67d272(0x1b4) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x1c7) + _0x67d272(0x16c) + _0x67d272(0x263) + _0x67d272(0x2dc) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + (_0x353609[_0x67d272(0x26d) + 'a'][_0x67d272(0x29e)] ? _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1b3) + _0x353609[_0x67d272(0x26d) + 'a'][_0x67d272(0x29e)] + (_0x67d272(0x286) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x218) + _0x67d272(0x179) + _0x67d272(0x1a2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x20f) + _0x67d272(0x25f) + _0x67d272(0x194) + _0x67d272(0x1a5) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x23f) + _0x67d272(0x219) + _0x67d272(0x282) + _0x67d272(0x242) + _0x67d272(0x1bb) + _0x67d272(0x2be) + _0x67d272(0x17b) + _0x67d272(0x1af) + _0x67d272(0x2c7) + _0x67d272(0x273) + _0x67d272(0x1f3) + _0x67d272(0x1a1) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x262) + _0x67d272(0x269) + _0x67d272(0x2ba) + _0x67d272(0x2b2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1f1) + _0x67d272(0x2c2) + _0x67d272(0x28f) + _0x67d272(0x1d9) + _0x67d272(0x25c) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x24d) + _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x169)) : '') + (_0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x169)) + (_0x353609[_0x67d272(0x26d) + 'a'][_0x67d272(0x202)] ? _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1b3) + _0x353609[_0x67d272(0x26d) + 'a'][_0x67d272(0x202)] + (_0x67d272(0x286) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x218) + _0x67d272(0x179) + _0x67d272(0x1a2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x20f) + _0x67d272(0x25f) + _0x67d272(0x194) + _0x67d272(0x181) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x216) + _0x67d272(0x234) + _0x67d272(0x1a8) + _0x67d272(0x229) + _0x67d272(0x1ab) + _0x67d272(0x2ac) + _0x67d272(0x1ae) + _0x67d272(0x16a) + _0x67d272(0x22f) + _0x67d272(0x16f) + _0x67d272(0x2a2) + _0x67d272(0x2b2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x27b) + _0x67d272(0x2a4) + _0x67d272(0x207) + _0x67d272(0x231) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x188) + _0x67d272(0x2aa) + _0x67d272(0x2de) + _0x67d272(0x15e) + _0x67d272(0x295) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x205) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b)) : '') + (_0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x169)) + (_0x353609[_0x67d272(0x26d) + 'a'][_0x67d272(0x252)] ? _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1b3) + _0x353609[_0x67d272(0x26d) + 'a'][_0x67d272(0x252)] + (_0x67d272(0x286) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x218) + _0x67d272(0x179) + _0x67d272(0x1a2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x20f) + _0x67d272(0x25f) + _0x67d272(0x194) + _0x67d272(0x181) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x216) + _0x67d272(0x234) + _0x67d272(0x1a8) + _0x67d272(0x229) + _0x67d272(0x1ab) + _0x67d272(0x2ac) + _0x67d272(0x1ae) + _0x67d272(0x16a) + _0x67d272(0x22f) + _0x67d272(0x16f) + _0x67d272(0x2a2) + _0x67d272(0x2b2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x27b) + _0x67d272(0x279) + _0x67d272(0x206) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x187) + _0x67d272(0x19b) + _0x67d272(0x174) + _0x67d272(0x2c1) + _0x67d272(0x1dc) + _0x67d272(0x160) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x29b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x19e)) : '') + (_0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x199) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1a3) + _0x67d272(0x2d4) + _0x67d272(0x26b) + _0x67d272(0x1d2)) : '') + (_0x67d272(0x166) + _0x67d272(0x26b) + _0x67d272(0x22e)) + (_0x417baf?.[_0x67d272(0x1e4)]?.[_0x67d272(0x23a)] || _0x12770d ? _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x204) + _0x67d272(0x1c7) + _0x67d272(0x18b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26e) + _0x67d272(0x186) + _0x67d272(0x1f2) + _0x67d272(0x224) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2b5) + _0x67d272(0x1ca) + _0x67d272(0x1c2) + _0x67d272(0x2b7) + _0x67d272(0x19c) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + '\x20' + (_0x417baf?.[_0x67d272(0x1e4)]?.[_0x67d272(0x23a)] ? _0x5437fc[_0x67d272(0x250)] : _0x5437fc[_0x67d272(0x24c)]) + (_0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x288) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x2b3) + _0x67d272(0x2bc) + _0x67d272(0x2bb) + _0x67d272(0x21a) + _0x67d272(0x24b) + _0x67d272(0x29d) + _0x67d272(0x2b2) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x23b) + _0x67d272(0x2a9) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1a9) + _0x67d272(0x298) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x247) + _0x67d272(0x1c4) + _0x67d272(0x2c0) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x21e) + _0x67d272(0x253) + _0x67d272(0x1d1) + _0x67d272(0x2d1)) + (_0x417baf?.[_0x67d272(0x1e4)]?.[_0x67d272(0x23a)] || _0x12770d) + (_0x67d272(0x1eb) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x260)) + (_0x417baf?.[_0x67d272(0x1e4)]?.[_0x67d272(0x23a)] ? _0x5437fc[_0x67d272(0x2ce)] : _0x5437fc[_0x67d272(0x24c)]) + (_0x67d272(0x1eb) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1c3) + _0x67d272(0x2c9) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x162) + _0x67d272(0x176) + _0x67d272(0x1df) + _0x67d272(0x2d8) + _0x67d272(0x18e) + _0x67d272(0x20b) + _0x67d272(0x1ea) + _0x67d272(0x217) + _0x67d272(0x1ba) + _0x67d272(0x172) + _0x67d272(0x1ac) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x1a4) + _0x67d272(0x1d4) + _0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x241) + _0x67d272(0x228) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x16e) + _0x67d272(0x26b) + _0x67d272(0x26b) + _0x67d272(0x226) + _0x67d272(0x2b2) + _0x67d272(0x26b) + _0x67d272(0x22e)) : '') + (_0x67d272(0x28a) + _0x67d272(0x26b) + _0x67d272(0x17f) + _0x67d272(0x26b) + _0x67d272(0x1e1) + _0x67d272(0x28a) + _0x67d272(0x1e0));
+    } catch (_0x65b6d6) {
+        console[_0x67d272(0x208)](_0x5437fc[_0x67d272(0x21d)], _0x65b6d6), document[_0x67d272(0x29a) + _0x67d272(0x2a8)](_0x5437fc[_0x67d272(0x1d8)])[_0x67d272(0x244)][_0x67d272(0x212)](_0x5437fc[_0x67d272(0x1f5)]);
+        const _0x3466c3 = document[_0x67d272(0x29a) + _0x67d272(0x2a8)](_0x5437fc[_0x67d272(0x1ef)]);
+        _0x3466c3[_0x67d272(0x244)][_0x67d272(0x287)](_0x5437fc[_0x67d272(0x1f5)]), _0x3466c3[_0x67d272(0x1cb)] = _0x67d272(0x28a) + _0x67d272(0x265) + _0x67d272(0x234) + _0x67d272(0x2a1) + _0x67d272(0x167) + _0x67d272(0x1c8) + _0x67d272(0x1b8) + _0x67d272(0x255) + _0x67d272(0x1be) + _0x67d272(0x26b) + _0x67d272(0x2b3) + _0x67d272(0x1a6) + _0x67d272(0x283) + _0x67d272(0x170) + _0x67d272(0x28e) + _0x67d272(0x26b) + _0x67d272(0x2b5) + _0x67d272(0x268) + _0x67d272(0x25a) + _0x67d272(0x291) + _0x67d272(0x1cc) + _0x67d272(0x275) + _0x67d272(0x22c) + _0x67d272(0x256) + _0x67d272(0x26b) + _0x67d272(0x2ca) + _0x67d272(0x1c0) + _0x67d272(0x2c5) + _0x67d272(0x23e) + _0x67d272(0x2d9) + _0x67d272(0x2b2) + _0x67d272(0x26b) + _0x67d272(0x1b1) + _0x67d272(0x1fa) + _0x67d272(0x284) + _0x67d272(0x178) + _0x67d272(0x197) + _0x67d272(0x2cc) + _0x67d272(0x297) + _0x67d272(0x26b) + _0x67d272(0x1e1) + _0x67d272(0x28a) + _0x67d272(0x1e0);
     }
 }
-
+function _0x1972() {
+    const _0x5b9307 = [
+        'ass=\x22text-',
+        '\x22pt-6\x22>\x0a\x20\x20',
+        'Video',
+        '=\x27/assets/',
+        'clipboard-',
+        '-4xl\x20font-',
+        'fQUcu',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20V',
+        'sm\x22>Height',
+        'ols-1\x20sm:g',
+        'r\x20noreferr',
+        't-avatar.j',
+        'hidden\x20md:',
+        'ndapatkan\x20',
+        'uEYzC',
+        '\x20\x20\x20</div>\x0a',
+        '129cVUCFP',
+        'pan\x20class=',
+        '</i>\x0a\x20\x20\x20\x20\x20',
+        'rs\x20text-wh',
+        '\x20\x20\x20\x20',
+        'BhOcJ',
+        '1760860TmMBWF',
+        '\x22>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'k\x22\x20\x0a\x20\x20\x20\x20\x20\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20</',
+        '\x20\x20\x20\x20\x20allow',
+        'er\x22\x20\x0a\x20\x20\x20\x20\x20',
+        's=\x22rounded',
+        'er/',
+        'items-cent',
+        '\x20\x20\x20\x20\x20\x20widt',
+        'BfcWZ',
+        'x-4\x20py-2\x20b',
+        'ure\x22\x0a\x20\x20\x20\x20\x20',
+        'o-r\x20from-p',
+        '\x20rounded-f',
+        'full\x20hover',
+        'ed-lg\x22\x0a\x20\x20\x20',
+        '\x20\x20<p\x20class',
+        'ter\x20px-6\x20p',
+        '\x20<a\x20href=\x22',
+        'a</h2>\x0a\x20\x20\x20',
+        'ween\x22>\x0a\x20\x20\x20',
+        'nline-flex',
+        '\x20\x20\x20onerror',
+        'center\x20p-8',
+        '/2024/id/v',
+        'ope;\x20pictu',
+        'px-4\x20py-2\x20',
+        'd-full\x20bg-',
+        'rounded-lg',
+        'er\x22>\x0a\x20\x20\x20\x20\x20',
+        'v\x20class=\x22g',
+        'class=\x22tex',
+        'class=\x22spa',
+        'olid\x20fa-cr',
+        '\x20\x20framebor',
+        'eight=\x22100',
+        '\x22font-medi',
+        '\x20<p\x20class=',
+        'div\x20class=',
+        'r\x20justify-',
+        '-400\x20text-',
+        'lass=\x22fa-s',
+        'innerHTML',
+        'e\x20text-4xl',
+        'ass=\x22relat',
+        'p/api/memb',
+        '=\x22flex\x20ite',
+        '-300\x20\x20text',
+        'youtube.co',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'y-700\x20p-4\x20',
+        'fullscreen',
+        'length',
+        'img/defaul',
+        '\x20\x20\x20\x20\x20<p\x20cl',
+        'KJlyn',
+        '>Twitter</',
+        'gray-400\x20t',
+        'ata:',
+        'ikTok</spa',
+        'gradient-t',
+        'w-1/4\x22>\x0a\x20\x20',
+        'erometer;\x20',
+        '\x20\x20\x20</div>',
+        '\x20\x20\x20\x20</div>',
+        '\x20\x20\x20\x20\x20\x20\x20</d',
+        'block\x22>\x0a\x20\x20',
+        'data',
+        'ext-sm\x22>Bi',
+        'all',
+        'ition-colo',
+        's=\x22font-me',
+        '11430fCJgXN',
+        'rypted-med',
+        '\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
+        '\x20shadow-lg',
+        'bloodType',
+        'y-2\x20rounde',
+        'OPMdw',
+        '\x20\x20\x20<p\x20clas',
+        '<span\x20clas',
+        'ont-semibo',
+        'ion-colors',
+        '13540AeAuEm',
+        'RqmBY',
+        '5SUcucQ',
+        'hing\x20membe',
+        'ms-start\x20j',
+        'fetch\x20memb',
+        '=\x22text-gra',
+        'Unknown\x20Me',
+        'uudqS',
+        '\x20\x20\x20\x20\x20<img\x20',
+        'ass=\x22p-4\x20m',
+        'LimpT',
+        '.vercel.ap',
+        '-full\x20just',
+        'instagram',
+        ':w-1/3\x20lg:',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20<',
+        '/a>\x0a\x20\x20\x20\x20\x20\x20',
+        'tok\x22></i>\x0a',
+        'tagram\x22></',
+        'error',
+        '-white\x20fon',
+        'hing\x20SSK\x20d',
+        'write;\x20enc',
+        '<div\x20class',
+        '00\x20to-cyan',
+        'member-con',
+        '\x20\x20\x20\x20\x20\x20\x20\x20re',
+        'sm\x22>Blood\x20',
+        'r\x20details:',
+        'add',
+        '\x22mt-4\x20md:h',
+        '\x20</a>\x0a\x20\x20\x20\x20',
+        'kPcri',
+        '\x20\x20\x20\x20\x20\x20\x20\x20cl',
+        'ia;\x20gyrosc',
+        '\x20\x20\x20\x20\x20\x20\x20tar',
+        'lass=\x22flex',
+        'll\x20rounded',
+        'location',
+        'Error\x20fetc',
+        'YbAGd',
+        '\x20\x20\x20src=\x22ht',
+        'tionexenew',
+        'find',
+        '\x20justify-c',
+        '5255922lxlWoh',
+        'mber',
+        'ld\x20mb-4\x22>\x0a',
+        'ite\x20font-m',
+        '\x20\x20\x20\x20\x20</div',
+        '\x20\x20class=\x22i',
+        'iframe>\x0a\x20\x20',
+        'er\x20gap-2\x20p',
+        'pg\x27\x22>\x0a\x20\x20\x20\x20',
+        'bold\x22>',
+        '-500\x20mb-4\x22',
+        'er\x20data',
+        '\x20\x20\x20\x20\x20\x20',
+        'bg-gray-60',
+        '6400098ysxgHw',
+        'i>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'ld\x20mb-4\x22>S',
+        'x-1\x20space-',
+        'ass=\x22flex\x20',
+        '10566144LpTyXO',
+        'ow-lg\x22>\x0a\x20\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<d',
+        '</h1>\x0a\x20\x20\x20\x20',
+        '=\x22this.src',
+        'url_video',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<i',
+        'um\x22>',
+        'src=\x22',
+        'bold\x20mb-2\x22',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20c',
+        'Sousenkyo\x20',
+        '\x20\x20\x20\x20\x20\x20\x20></',
+        'ter\x20gap-2\x20',
+        'ZNbYI',
+        'classList',
+        'PiFFv',
+        'video_perk',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20h',
+        '0\x20p-4\x20roun',
+        'ocial\x20Medi',
+        '6\x22>\x0a\x20\x20\x20\x20\x20\x20',
+        '-lg\x20overfl',
+        'ZkGyC',
+        '\x20\x20\x20\x20\x20\x20</a>',
+        '\x20\x20\x20\x20\x20\x20\x20<di',
+        'json',
+        'HxbWq',
+        '\x22w-full\x20md',
+        'tiktok',
+        'tps://www.',
+        '</p>\x0a\x20\x20\x20\x20\x20',
+        '\x20text-cent',
+        '></i>\x0a\x20\x20\x20\x20',
+        'ustify-bet',
+        'Introducti',
+        'tive\x22>\x0a\x20\x20\x20',
+        'fa-exclama',
+        'ce-y-2\x22>\x0a\x20',
+        'span>\x0a\x20\x20\x20\x20',
+        '/data/memb',
+        '\x20md:text-3',
+        'l=\x22noopene',
+        '\x20\x20title=\x22',
+        'profileIma',
+        '\x20<i\x20class=',
+        '-wrap\x20gap-',
+        'height',
+        '\x20\x20\x20<div\x20cl',
+        '\x20class=\x22te',
+        'rid-cols-2',
+        'lass=\x22fas\x20',
+        '\x22fab\x20fa-tw',
+        'rthday</p>',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'split',
+        'socialMedi',
+        '<h2\x20class=',
+        'd:flex-row',
+        '/data/ssk.',
+        'enalan',
+        'lt=\x22',
+        '00\x20transit',
+        'r\x20JSON\x20dat',
+        '\x20text-pink',
+        '\x20gap-8\x22>\x0a\x20',
+        'ttps://ssk',
+        'mTRiS',
+        'fab\x20fa-tik',
+        'iv\x20class=\x22',
+        '<i\x20class=\x22',
+        'nickname',
+        'ote\x0a\x20\x20\x20\x20\x20\x20',
+        'sm\x22>Zodiac',
+        'ExSec',
+        'https://in',
+        'ify-center',
+        '\x20items-cen',
+        '-lg\x20p-8\x20ma',
+        'y-400\x20mb-4',
+        'qmyPu',
+        '\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'remove',
+        '\x20\x20\x20</h2>\x0a\x20',
+        'class=\x22fon',
+        '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'zodiac',
+        'Type</p>\x0a\x20',
+        '=\x22text-2xl',
+        'ull\x22>\x0a\x20\x20\x20\x20',
+        'sm:inline\x22',
+        '\x20lg:grid-c',
+        'tion-circl',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<p',
+        'ss=\x22bg-gra',
+        'over\x20round',
+        'm</span>\x0a\x20',
+        '>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'r\x20😭</p>\x0a\x20\x20',
+        'h=\x22100%\x22\x0a\x20',
+        'Member\x20ID\x20',
+        'getElement',
+        '\x20\x20\x20</a>\x0a\x20\x20',
+        'on\x20Video',
+        'ow-hidden\x22',
+        'twitter',
+        'edium\x20shad',
+        'xl\x20lg:text',
+        'flex-col\x20i',
+        'on-colors\x22',
+        'ols-3\x20gap-',
+        'fab\x20fa-ins',
+        'eleton',
+        'y-6\x22>\x0a\x20\x20\x20\x20',
+        't-medium\x20s',
+        'ById',
+        'frame\x0a\x20\x20\x20\x20',
+        'ss=\x22hidden',
+        'pathname',
+        'g-gray-700',
+        'class=\x22fle',
+        't-medium\x22>',
+        'iv>\x0a\x0a\x20\x20\x20\x20\x20',
+        'idden\x20flex',
+        'name',
+        '>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
+        '\x20<div\x20clas',
+        'enter\x22>\x0a\x20\x20',
+        '\x20\x20\x20\x20\x20\x20<i\x20c',
+        'a-purple-3',
+        'own\x20mr-2\x22>',
+        '\x20\x20\x20\x20\x20\x20\x20<p\x20',
+        'dium\x22>',
+        'itter\x22></i',
+        'video\x20w-fu',
+        's=\x22aspect-',
+        '0\x20text-lg\x22',
+        'bg-gray-70',
+        've\x22>\x0a\x20\x20\x20\x20\x20',
+        '%\x22\x0a\x20\x20\x20\x20\x20\x20\x20',
+        ':inline\x22>T',
+        's=\x22hidden\x20',
+        '.jkt48.com',
+        'hidden',
+        't-xl\x20font-',
+        '\x20<h1\x20class',
+        ':bg-gray-6',
+        'RJaVq',
+        'der=\x220\x22\x0a\x20\x20',
+        '\x20\x20\x20\x20\x20\x20<h2\x20',
+        '1699859puYQWK',
+        'data\x20membe',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20a',
+        'sWUJq',
+        '\x20max-w-sm\x20',
+        'not\x20found\x20',
+        'm/embed/',
+        '/div>\x0a\x20\x20\x20\x20',
+        'hadow-lg\x20w',
+        'div>\x0a\x20\x20\x20\x20\x20',
+        'xt-pink-50',
+        '-300\x20trans',
+        '\x20\x20<div\x20cla',
+        'autoplay;\x20',
+        '>Oops!</h2',
+        '\x22text-gray',
+        'rid\x20grid-c',
+        '4\x22>\x0a\x20\x20\x20\x20\x20\x20',
+        'ive\x20w-full',
+        '\x20sm:inline',
+        '\x22>Instagra',
+        'lass=\x22w-fu',
+        'n>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'ss=\x22relati',
+        '\x20\x20\x20\x20\x20\x20\x20\x20al',
+        'd:p-8\x20rela',
+        'er.json',
+        'afHtq',
+        '\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
+        'tems-cente',
+        '2024',
+        '\x20\x20\x20\x20\x20\x20\x20',
+        'ull\x20hover:',
+        'birthdate',
+        '\x22flex\x20flex',
+        'll\x20max-w-s',
+        '</div>\x0a\x20\x20\x20',
+        '0\x20transiti',
+        'x-w-md\x20w-f',
+        'ded-lg\x22>\x0a\x20',
+        're-in-pict',
+        'flex-col\x20m',
+        '\x22hidden\x20sm',
+        'ink-300\x20vi',
+        'low=\x22accel',
+        '\x20\x20\x20\x20Vote\x0a\x20',
+        '\x22>Gagal\x20me',
+        'get=\x22_blan',
+        'Failed\x20to\x20',
+        '0\x20rounded-',
+        'm\x20object-c',
+        '3356PzgAjb',
+        '\x20\x20\x20\x20\x20<div\x20',
+        '\x20</div>\x0a\x20\x20',
+        'ote\x22\x20\x0a\x20\x20\x20\x20',
+        'er\x22\x0a\x20\x20\x20\x20\x20\x20',
+        'tensprotec',
+        'loading-sk',
+        '<a\x20href=\x22h',
+        'tent',
+        '\x22text-xl\x20f',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<s',
+        '\x20<span\x20cla',
+        'Member'
+    ];
+    _0x1972 = function () {
+        return _0x5b9307;
+    };
+    return _0x1972();
+}
 fetchMemberDetail();

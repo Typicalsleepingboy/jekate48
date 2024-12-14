@@ -1,37 +1,133 @@
-const loggedInUser = localStorage.getItem("userName");
-const loggedInOshimen = localStorage.getItem("userOshimen");
-
-if (loggedInUser && loggedInOshimen) {
-    window.location.href = "/mypage";
+const _0x118b64 = _0x2b17;
+(function (_0x678c10, _0x796931) {
+    const _0x4ee1de = _0x2b17, _0x7ef66e = _0x678c10();
+    while (!![]) {
+        try {
+            const _0x42447f = parseInt(_0x4ee1de(0x12b)) / (-0x9d6 * -0x2 + 0x1a0 + -0x1 * 0x154b) + -parseInt(_0x4ee1de(0x11f)) / (0x1add + -0x15f5 + -0x4e6) + -parseInt(_0x4ee1de(0x102)) / (0x336 + -0x19fb + -0x5b2 * -0x4) * (-parseInt(_0x4ee1de(0x116)) / (-0x2f * 0x3a + -0xe70 + -0x66 * -0x3f)) + parseInt(_0x4ee1de(0x124)) / (-0x17e3 + 0x295 * 0x2 + 0x95f * 0x2) * (-parseInt(_0x4ee1de(0x106)) / (0x4 * 0x8f4 + 0x2 * 0x4e6 + -0x2d96)) + parseInt(_0x4ee1de(0xfc)) / (0x26ed + -0x1d1 * 0x3 + -0x2173) + parseInt(_0x4ee1de(0x12e)) / (0x2d3 + 0x700 + -0x9cb) + -parseInt(_0x4ee1de(0x10d)) / (-0xd03 + 0x845 + -0x1 * -0x4c7);
+            if (_0x42447f === _0x796931)
+                break;
+            else
+                _0x7ef66e['push'](_0x7ef66e['shift']());
+        } catch (_0x40e108) {
+            _0x7ef66e['push'](_0x7ef66e['shift']());
+        }
+    }
+}(_0x4299, 0x6e224 + -0x142a7a + 0x18576a));
+function _0x2b17(_0x3d33ad, _0x521fc3) {
+    const _0x53090f = _0x4299();
+    return _0x2b17 = function (_0x29edff, _0xd8df0a) {
+        _0x29edff = _0x29edff - (-0x1 * -0x11b0 + -0x547 + -0xb6f);
+        let _0x22ac5c = _0x53090f[_0x29edff];
+        return _0x22ac5c;
+    }, _0x2b17(_0x3d33ad, _0x521fc3);
 }
-
-const oshimenSelect = document.getElementById('oshimen');
+const loggedInUser = localStorage[_0x118b64(0x120)](_0x118b64(0x10a)), loggedInOshimen = localStorage[_0x118b64(0x120)](_0x118b64(0x12f) + 'n');
+loggedInUser && loggedInOshimen && (window[_0x118b64(0x129)][_0x118b64(0x125)] = _0x118b64(0x103));
+const oshimenSelect = document[_0x118b64(0x121) + _0x118b64(0x12d)](_0x118b64(0xfa));
 async function loadOshimen() {
-    const memberEndpoint = '/data/member.json';
+    const _0x374549 = _0x118b64, _0x3d6b64 = {
+            'pcsiI': _0x374549(0x11c),
+            'EQlRk': _0x374549(0x131) + _0x374549(0x10c),
+            'cuCLm': function (_0x317246, _0x3cca92) {
+                return _0x317246(_0x3cca92);
+            },
+            'AOolZ': _0x374549(0x108) + _0x374549(0x105) + 's:'
+        }, _0x2db1f7 = _0x3d6b64[_0x374549(0x109)];
     try {
-        const response = await fetch(memberEndpoint);
-        const members = await response.json();
-        members.forEach(member => {
-            const option = document.createElement('option');
-            option.value = member.name;
-            option.textContent = member.name;
-            oshimenSelect.appendChild(option);
+        const _0x52b99c = await _0x3d6b64[_0x374549(0x118)](fetch, _0x2db1f7), _0x8ae08c = await _0x52b99c[_0x374549(0xff)]();
+        _0x8ae08c[_0x374549(0x127)](_0x4a83bf => {
+            const _0x220bd9 = _0x374549, _0x5c2a77 = document[_0x220bd9(0x132) + _0x220bd9(0x112)](_0x3d6b64[_0x220bd9(0x111)]);
+            _0x5c2a77[_0x220bd9(0x11d)] = _0x4a83bf[_0x220bd9(0xfd)], _0x5c2a77[_0x220bd9(0x122) + 't'] = _0x4a83bf[_0x220bd9(0xfd)], oshimenSelect[_0x220bd9(0x114) + 'd'](_0x5c2a77);
         });
-    } catch (error) {
-        console.error('Error loading members:', error);
+    } catch (_0x1bfb8a) {
+        console[_0x374549(0x12a)](_0x3d6b64[_0x374549(0x123)], _0x1bfb8a);
     }
 }
-loadOshimen();
-
-document.getElementById("loginForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const oshimen = document.getElementById("oshimen").value;
-    if (!name || !oshimen) {
-        alert("Please fill in your name and select an oshimen.");
+function _0x4299() {
+    const _0x5911b0 = [
+        'ById',
+        '11255376tlAyCk',
+        'userOshime',
+        'shimen.',
+        '/data/memb',
+        'createElem',
+        'oshimen',
+        'addEventLi',
+        '8756881eIDsDq',
+        'name',
+        'zlptl',
+        'json',
+        'submit',
+        'ault',
+        '236286lGNLMA',
+        '/mypage',
+        'Please\x20fil',
+        'ing\x20member',
+        '6zZSkqX',
+        'loginForm',
+        'Error\x20load',
+        'EQlRk',
+        'userName',
+        'ilCKl',
+        'er.json',
+        '7033194qWjELY',
+        'yPWnL',
+        'ipcfB',
+        'setItem',
+        'pcsiI',
+        'ent',
+        'l\x20in\x20your\x20',
+        'appendChil',
+        'stener',
+        '24gikuSL',
+        'name\x20and\x20s',
+        'cuCLm',
+        'dWvGD',
+        'trim',
+        'brcnS',
+        'option',
+        'value',
+        'preventDef',
+        '2360658SrqNNx',
+        'getItem',
+        'getElement',
+        'textConten',
+        'AOolZ',
+        '5929565ElyRfD',
+        'href',
+        'macvZ',
+        'forEach',
+        'JWCvD',
+        'location',
+        'error',
+        '741987ShchiF',
+        'elect\x20an\x20o'
+    ];
+    _0x4299 = function () {
+        return _0x5911b0;
+    };
+    return _0x4299();
+}
+loadOshimen(), document[_0x118b64(0x121) + _0x118b64(0x12d)](_0x118b64(0x107))[_0x118b64(0xfb) + _0x118b64(0x115)](_0x118b64(0x100), _0x4735b2 => {
+    const _0x49a6d5 = _0x118b64, _0x52c251 = {
+            'JWCvD': _0x49a6d5(0xfd),
+            'dWvGD': _0x49a6d5(0xfa),
+            'ilCKl': function (_0x47cf30, _0x2903ee) {
+                return _0x47cf30 || _0x2903ee;
+            },
+            'brcnS': function (_0x868348, _0x523b56) {
+                return _0x868348(_0x523b56);
+            },
+            'yPWnL': _0x49a6d5(0x104) + _0x49a6d5(0x113) + _0x49a6d5(0x117) + _0x49a6d5(0x12c) + _0x49a6d5(0x130),
+            'macvZ': _0x49a6d5(0x10a),
+            'ipcfB': _0x49a6d5(0x12f) + 'n',
+            'zlptl': _0x49a6d5(0x103)
+        };
+    _0x4735b2[_0x49a6d5(0x11e) + _0x49a6d5(0x101)]();
+    const _0x2c97d1 = document[_0x49a6d5(0x121) + _0x49a6d5(0x12d)](_0x52c251[_0x49a6d5(0x128)])[_0x49a6d5(0x11d)][_0x49a6d5(0x11a)](), _0x48f017 = document[_0x49a6d5(0x121) + _0x49a6d5(0x12d)](_0x52c251[_0x49a6d5(0x119)])[_0x49a6d5(0x11d)];
+    if (_0x52c251[_0x49a6d5(0x10b)](!_0x2c97d1, !_0x48f017)) {
+        _0x52c251[_0x49a6d5(0x11b)](alert, _0x52c251[_0x49a6d5(0x10e)]);
         return;
     }
-    localStorage.setItem("userName", name);
-    localStorage.setItem("userOshimen", oshimen);
-    window.location.href = "/mypage";
+    localStorage[_0x49a6d5(0x110)](_0x52c251[_0x49a6d5(0x126)], _0x2c97d1), localStorage[_0x49a6d5(0x110)](_0x52c251[_0x49a6d5(0x10f)], _0x48f017), window[_0x49a6d5(0x129)][_0x49a6d5(0x125)] = _0x52c251[_0x49a6d5(0xfe)];
 });

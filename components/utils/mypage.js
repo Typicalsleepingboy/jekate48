@@ -1,55 +1,152 @@
-const userName = localStorage.getItem("userName");
-const oshimen = localStorage.getItem("userOshimen");
-
-if (!userName || !oshimen) {
-    window.location.href = "/login";
-} else {
-    document.getElementById("welcome-message").textContent = `Welcome, ${userName}! Dukung selalu oshi kamu yaaa`;
-    document.getElementById("user-oshimen").textContent = `${oshimen}`;
-    document.getElementById("membership-anggota").textContent = `Anggota Platinum`;
-    let membershipNumber = localStorage.getItem("membershipNumber");
-    if (!membershipNumber) {
-        membershipNumber = `JEKATE48-${Math.floor(100000 + Math.random() * 900000).toString()}`;
-        localStorage.setItem("membershipNumber", membershipNumber);
-    }
-
-    document.getElementById("membership-number").textContent = membershipNumber;
-    JsBarcode("#barcode", membershipNumber.replace("JEKATE48-", ""), {
-        format: "CODE39",
-        lineColor: "#000",
-        width: 2,
-        height: 50,
-        displayValue: true,
-    });
-    let theaterCount = localStorage.getItem("theaterCount");
-    if (!theaterCount) {
-        theaterCount = Math.floor(Math.random() * 50) + 1;
-        localStorage.setItem("theaterCount", theaterCount);
-    }
-
-    document.getElementById("theater-count").textContent = `${theaterCount}`;
-    async function fetchMemberData() {
+function _0xa09d(_0x28da46, _0x423c28) {
+    const _0x3da90d = _0x1287();
+    return _0xa09d = function (_0x52650d, _0x138848) {
+        _0x52650d = _0x52650d - (0xac4 + 0x340 + -0x37 * 0x3a);
+        let _0x59b5c2 = _0x3da90d[_0x52650d];
+        return _0x59b5c2;
+    }, _0xa09d(_0x28da46, _0x423c28);
+}
+const _0x113098 = _0xa09d;
+(function (_0x5a7067, _0x18ddc3) {
+    const _0xe47db5 = _0xa09d, _0x1655d8 = _0x5a7067();
+    while (!![]) {
         try {
-            const response = await fetch("/data/member.json");
-            if (!response.ok) throw new Error("Network response was not ok");
-            const members = await response.json();
-            const oshimenData = members.find((member) => member.name === oshimen);
-            if (oshimenData) {
-                document.getElementById("oshimen-photo").src = oshimenData.img_alt || "https://jkt48.com/images/logo.svg";
-                document.getElementById("oshimen-photo").alt = oshimenData.name;
-            } else {
-                document.getElementById("oshimen-photo").src = "https://jkt48.com/images/logo.svg";
-            }
-        } catch (error) {
-            console.error("Error fetching member data:", error);
-            document.getElementById("oshimen-photo").src = "https://jkt48.com/images/logo.svg";
+            const _0x4d7045 = parseInt(_0xe47db5(0x1d3)) / (-0x986 + -0x1c18 + 0x1 * 0x259f) + parseInt(_0xe47db5(0x1ca)) / (0x14b * -0xb + 0x1199 * 0x2 + 0x3 * -0x6fd) * (-parseInt(_0xe47db5(0x1cb)) / (0x195f + -0x2f4 + -0x1668)) + -parseInt(_0xe47db5(0x1b5)) / (0x1cdf + 0x1b * 0xa7 + -0x4 * 0xb9e) * (parseInt(_0xe47db5(0x1b1)) / (0x1d41 + 0x751 * -0x1 + 0x1f * -0xb5)) + -parseInt(_0xe47db5(0x1b9)) / (-0x1 * 0x16e6 + 0x137d + -0x3 * -0x125) * (parseInt(_0xe47db5(0x1d4)) / (-0x22f6 + -0x596 * -0x1 + 0x1d67)) + parseInt(_0xe47db5(0x1c4)) / (0x1c7e + -0x313 + -0x1963) + parseInt(_0xe47db5(0x190)) / (-0xc59 + 0xaf6 * 0x2 + 0x4c5 * -0x2) + parseInt(_0xe47db5(0x1c6)) / (-0xa62 + 0x1805 + 0x3b * -0x3b);
+            if (_0x4d7045 === _0x18ddc3)
+                break;
+            else
+                _0x1655d8['push'](_0x1655d8['shift']());
+        } catch (_0x329a38) {
+            _0x1655d8['push'](_0x1655d8['shift']());
         }
     }
-
+}(_0x1287, -0x4a421 + 0x1e4ed + -0xc * -0xb24a));
+const userName = localStorage[_0x113098(0x1cc)](_0x113098(0x1c7)), oshimen = localStorage[_0x113098(0x1cc)](_0x113098(0x1d7) + 'n');
+if (!userName || !oshimen)
+    window[_0x113098(0x1a5)][_0x113098(0x1d8)] = _0x113098(0x19d);
+else {
+    document[_0x113098(0x18e) + _0x113098(0x19e)](_0x113098(0x1c5) + _0x113098(0x19b))[_0x113098(0x1b4) + 't'] = _0x113098(0x1bc) + userName + (_0x113098(0x195) + _0x113098(0x1d5) + _0x113098(0x1bd)), document[_0x113098(0x18e) + _0x113098(0x19e)](_0x113098(0x1b3) + 'en')[_0x113098(0x1b4) + 't'] = '' + oshimen, document[_0x113098(0x18e) + _0x113098(0x19e)](_0x113098(0x1a2) + _0x113098(0x1a0))[_0x113098(0x1b4) + 't'] = _0x113098(0x1c2) + _0x113098(0x1c0);
+    let membershipNumber = localStorage[_0x113098(0x1cc)](_0x113098(0x1a2) + _0x113098(0x1b2));
+    !membershipNumber && (membershipNumber = _0x113098(0x1bb) + Math[_0x113098(0x199)](0xd49f + 0x9193 * -0x5 + -0x1c4f0 * -0x2 + Math[_0x113098(0x192)]() * (0xb * -0x4612 + 0x1a6b36 + -0x9acd0))[_0x113098(0x1c9)](), localStorage[_0x113098(0x1b8)](_0x113098(0x1a2) + _0x113098(0x1b2), membershipNumber));
+    document[_0x113098(0x18e) + _0x113098(0x19e)](_0x113098(0x1a2) + _0x113098(0x1b0))[_0x113098(0x1b4) + 't'] = membershipNumber, JsBarcode(_0x113098(0x1ac), membershipNumber[_0x113098(0x196)](_0x113098(0x1bb), ''), {
+        'format': _0x113098(0x1d0),
+        'lineColor': _0x113098(0x18f),
+        'width': 0x2,
+        'height': 0x32,
+        'displayValue': !![]
+    });
+    let theaterCount = localStorage[_0x113098(0x1cc)](_0x113098(0x1d1) + 'nt');
+    !theaterCount && (theaterCount = Math[_0x113098(0x199)](Math[_0x113098(0x192)]() * (0xa * -0x1bb + 0x409 * -0x1 + -0x1589 * -0x1)) + (-0x1e77 + 0xe34 + 0x1044), localStorage[_0x113098(0x1b8)](_0x113098(0x1d1) + 'nt', theaterCount));
+    document[_0x113098(0x18e) + _0x113098(0x19e)](_0x113098(0x1a9) + _0x113098(0x1ad))[_0x113098(0x1b4) + 't'] = '' + theaterCount;
+    async function fetchMemberData() {
+        const _0xd41f55 = _0x113098, _0x150c36 = {
+                'XDkpH': function (_0x1c7f5a, _0x16fa3f) {
+                    return _0x1c7f5a(_0x16fa3f);
+                },
+                'oYfxU': _0xd41f55(0x193) + _0xd41f55(0x1ce),
+                'KtEth': _0xd41f55(0x1bf) + _0xd41f55(0x1a8) + _0xd41f55(0x1b7),
+                'VtONT': _0xd41f55(0x1a1) + _0xd41f55(0x1be),
+                'DlFBL': _0xd41f55(0x19f) + _0xd41f55(0x1d9) + _0xd41f55(0x1a3) + _0xd41f55(0x1ab),
+                'EoDlJ': _0xd41f55(0x19c) + _0xd41f55(0x1af) + _0xd41f55(0x1d6)
+            };
+        try {
+            const _0x4b8765 = await _0x150c36[_0xd41f55(0x1ba)](fetch, _0x150c36[_0xd41f55(0x198)]);
+            if (!_0x4b8765['ok'])
+                throw new Error(_0x150c36[_0xd41f55(0x1a6)]);
+            const _0x398287 = await _0x4b8765[_0xd41f55(0x197)](), _0x236e1b = _0x398287[_0xd41f55(0x1a7)](_0x70a51c => _0x70a51c[_0xd41f55(0x1c1)] === oshimen);
+            _0x236e1b ? (document[_0xd41f55(0x18e) + _0xd41f55(0x19e)](_0x150c36[_0xd41f55(0x194)])[_0xd41f55(0x1d2)] = _0x236e1b[_0xd41f55(0x1aa)] || _0x150c36[_0xd41f55(0x1da)], document[_0xd41f55(0x18e) + _0xd41f55(0x19e)](_0x150c36[_0xd41f55(0x194)])[_0xd41f55(0x1cf)] = _0x236e1b[_0xd41f55(0x1c1)]) : document[_0xd41f55(0x18e) + _0xd41f55(0x19e)](_0x150c36[_0xd41f55(0x194)])[_0xd41f55(0x1d2)] = _0x150c36[_0xd41f55(0x1da)];
+        } catch (_0x5d1139) {
+            console[_0xd41f55(0x1b6)](_0x150c36[_0xd41f55(0x1ae)], _0x5d1139), document[_0xd41f55(0x18e) + _0xd41f55(0x19e)](_0x150c36[_0xd41f55(0x194)])[_0xd41f55(0x1d2)] = _0x150c36[_0xd41f55(0x1da)];
+        }
+    }
     fetchMemberData();
 }
-
-document.getElementById("logoutButton").addEventListener("click", () => {
-    localStorage.clear();
-    window.location.href = "/login";
+document[_0x113098(0x18e) + _0x113098(0x19e)](_0x113098(0x19a) + 'on')[_0x113098(0x191) + _0x113098(0x1a4)](_0x113098(0x1c3), () => {
+    const _0x915dfd = _0x113098, _0x9b3c2a = { 'ZBMmq': _0x915dfd(0x19d) };
+    localStorage[_0x915dfd(0x1cd)](), window[_0x915dfd(0x1a5)][_0x915dfd(0x1d8)] = _0x9b3c2a[_0x915dfd(0x1c8)];
 });
+function _0x1287() {
+    const _0x417d1a = [
+        'JEKATE48-',
+        'Welcome,\x20',
+        '\x20kamu\x20yaaa',
+        'oto',
+        'Network\x20re',
+        'atinum',
+        'name',
+        'Anggota\x20Pl',
+        'click',
+        '4726536lJDxXW',
+        'welcome-me',
+        '1911300jQdWHM',
+        'userName',
+        'ZBMmq',
+        'toString',
+        '2zxClbJ',
+        '1681782rZbTWD',
+        'getItem',
+        'clear',
+        'er.json',
+        'alt',
+        'CODE39',
+        'theaterCou',
+        'src',
+        '635202ZaEjJs',
+        '177373KbUCeH',
+        'elalu\x20oshi',
+        'r\x20data:',
+        'userOshime',
+        'href',
+        't48.com/im',
+        'DlFBL',
+        'getElement',
+        '#000',
+        '4651137riMkeS',
+        'addEventLi',
+        'random',
+        '/data/memb',
+        'VtONT',
+        '!\x20Dukung\x20s',
+        'replace',
+        'json',
+        'oYfxU',
+        'floor',
+        'logoutButt',
+        'ssage',
+        'Error\x20fetc',
+        '/login',
+        'ById',
+        'https://jk',
+        '-anggota',
+        'oshimen-ph',
+        'membership',
+        'ages/logo.',
+        'stener',
+        'location',
+        'KtEth',
+        'find',
+        'sponse\x20was',
+        'theater-co',
+        'img_alt',
+        'svg',
+        '#barcode',
+        'unt',
+        'EoDlJ',
+        'hing\x20membe',
+        '-number',
+        '5sqYiKC',
+        'Number',
+        'user-oshim',
+        'textConten',
+        '1691468bndFgy',
+        'error',
+        '\x20not\x20ok',
+        'setItem',
+        '138yxdhJw',
+        'XDkpH'
+    ];
+    _0x1287 = function () {
+        return _0x417d1a;
+    };
+    return _0x1287();
+}

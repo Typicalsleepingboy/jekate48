@@ -1,23 +1,103 @@
-async function fetchAndDisplayMV() {
-    const defaultTitle = '[MV] Laptime Masa Remaja - JKT48 2024 Version';
-    
-    try {
-        const response = await fetch('https://intensprotectionexenew.vercel.app/api/video');
-        const data = await response.json();
-        const mvVideo = data.find(video => video.title.includes('[MV]') && !video.title.includes('BEHIND'));
-        
-        const titleElement = document.getElementById('mvTitle');
-        
-        if (mvVideo) {
-            const cleanTitle = mvVideo.title.replace('[MV]', '').trim();
-            titleElement.textContent = cleanTitle;
-        } else {
-            titleElement.textContent = defaultTitle;
+const _0x369709 = _0xd08e;
+function _0xd08e(_0x46fd59, _0x54552e) {
+    const _0x593792 = _0x293a();
+    return _0xd08e = function (_0x16e1a4, _0x364208) {
+        _0x16e1a4 = _0x16e1a4 - (0x2037 + 0x206e + -0x4008 * 0x1);
+        let _0x53f9b3 = _0x593792[_0x16e1a4];
+        return _0x53f9b3;
+    }, _0xd08e(_0x46fd59, _0x54552e);
+}
+function _0x293a() {
+    const _0x10202c = [
+        '678752NkvErH',
+        'maja\x20-\x20JKT',
+        '12ANdsiR',
+        '6707YlpmSE',
+        'rbiOY',
+        'https://in',
+        '.vercel.ap',
+        'IYKFe',
+        '11300047iDySXE',
+        'IXEFN',
+        'zwfhu',
+        'DOMContent',
+        'p/api/vide',
+        'find',
+        '56qEQVag',
+        'mvTitle',
+        'json',
+        'tensprotec',
+        '[MV]',
+        '2amMsnS',
+        '2931780NgEtLR',
+        'includes',
+        '956108agYYoE',
+        'title',
+        '[MV]\x20Lapti',
+        'textConten',
+        'ById',
+        '9vAReVe',
+        'bXMgH',
+        'ta:',
+        'BEHIND',
+        'hing\x20MV\x20da',
+        'trim',
+        'getElement',
+        '48\x202024\x20Ve',
+        'replace',
+        'error',
+        'me\x20Masa\x20Re',
+        '26gDjRGf',
+        '1722dZpHDs',
+        'rsion',
+        'Loaded',
+        '2116716LpUiUA',
+        'addEventLi',
+        'tionexenew',
+        'Error\x20fetc',
+        'stener',
+        '12275bdgQKu',
+        'brmeG'
+    ];
+    _0x293a = function () {
+        return _0x10202c;
+    };
+    return _0x293a();
+}
+(function (_0x337256, _0x301baf) {
+    const _0x2aa764 = _0xd08e, _0x45cab1 = _0x337256();
+    while (!![]) {
+        try {
+            const _0x250ad1 = -parseInt(_0x2aa764(0xb7)) / (0x1230 + 0x16 * 0x1b + -0x1481) * (-parseInt(_0x2aa764(0xc7)) / (0xc3a * 0x2 + 0x1b76 + 0xcfa * -0x4)) + parseInt(_0x2aa764(0xb6)) / (-0x1 * -0x12d2 + 0x1998 + -0x2c67) * (parseInt(_0x2aa764(0xca)) / (-0xca0 + -0x18f4 + 0x2598)) + parseInt(_0x2aa764(0xb2)) / (-0x26d4 + 0x127 * 0x1e + 0x447) * (-parseInt(_0x2aa764(0xaa)) / (-0x1d61 + 0x3 * 0x5c5 + 0xc18)) + -parseInt(_0x2aa764(0xc2)) / (0x1bce + -0x3bd + -0x180a) * (parseInt(_0x2aa764(0xb4)) / (0x2118 + -0xc1 * -0x3 + -0x1 * 0x2353)) + -parseInt(_0x2aa764(0x9e)) / (0x749 + -0x14b7 + 0xd77) * (-parseInt(_0x2aa764(0xc8)) / (-0x132a + -0x14de + -0x2812 * -0x1)) + parseInt(_0x2aa764(0xbc)) / (-0x1 * -0x13b5 + -0x4d2 * -0x2 + -0x1d4e) + -parseInt(_0x2aa764(0xad)) / (-0x183a + -0x4 * 0x316 + 0x249e) * (parseInt(_0x2aa764(0xa9)) / (0xcab + -0x1d0 * -0x2 + 0x16 * -0xbd));
+            if (_0x250ad1 === _0x301baf)
+                break;
+            else
+                _0x45cab1['push'](_0x45cab1['shift']());
+        } catch (_0x48f906) {
+            _0x45cab1['push'](_0x45cab1['shift']());
         }
-    } catch (error) {
-        console.error('Error fetching MV data:', error);
-        document.getElementById('mvTitle').textContent = defaultTitle;
+    }
+}(_0x293a, -0x94e0b + 0xb9302 + -0x13744 * -0x5));
+async function fetchAndDisplayMV() {
+    const _0x2c0013 = _0xd08e, _0x13a23d = {
+            'zwfhu': _0x2c0013(0xcc) + _0x2c0013(0xa8) + _0x2c0013(0xb5) + _0x2c0013(0xa5) + _0x2c0013(0xab),
+            'brmeG': function (_0x1d3ca5, _0x268ee8) {
+                return _0x1d3ca5(_0x268ee8);
+            },
+            'bXMgH': _0x2c0013(0xb9) + _0x2c0013(0xc5) + _0x2c0013(0xaf) + _0x2c0013(0xba) + _0x2c0013(0xc0) + 'o',
+            'IYKFe': _0x2c0013(0xc3),
+            'IXEFN': _0x2c0013(0xc6),
+            'rbiOY': _0x2c0013(0xb0) + _0x2c0013(0xa2) + _0x2c0013(0xa0)
+        }, _0x4f1187 = _0x13a23d[_0x2c0013(0xbe)];
+    try {
+        const _0x36adff = await _0x13a23d[_0x2c0013(0xb3)](fetch, _0x13a23d[_0x2c0013(0x9f)]), _0x40e3c5 = await _0x36adff[_0x2c0013(0xc4)](), _0x3829f3 = _0x40e3c5[_0x2c0013(0xc1)](_0x263b9c => _0x263b9c[_0x2c0013(0xcb)][_0x2c0013(0xc9)](_0x2c0013(0xc6)) && !_0x263b9c[_0x2c0013(0xcb)][_0x2c0013(0xc9)](_0x2c0013(0xa1))), _0x9bb453 = document[_0x2c0013(0xa4) + _0x2c0013(0x9d)](_0x13a23d[_0x2c0013(0xbb)]);
+        if (_0x3829f3) {
+            const _0x436332 = _0x3829f3[_0x2c0013(0xcb)][_0x2c0013(0xa6)](_0x13a23d[_0x2c0013(0xbd)], '')[_0x2c0013(0xa3)]();
+            _0x9bb453[_0x2c0013(0xcd) + 't'] = _0x436332;
+        } else
+            _0x9bb453[_0x2c0013(0xcd) + 't'] = _0x4f1187;
+    } catch (_0x46b365) {
+        console[_0x2c0013(0xa7)](_0x13a23d[_0x2c0013(0xb8)], _0x46b365), document[_0x2c0013(0xa4) + _0x2c0013(0x9d)](_0x13a23d[_0x2c0013(0xbb)])[_0x2c0013(0xcd) + 't'] = _0x4f1187;
     }
 }
-
-document.addEventListener('DOMContentLoaded', fetchAndDisplayMV);
+document[_0x369709(0xae) + _0x369709(0xb1)](_0x369709(0xbf) + _0x369709(0xac), fetchAndDisplayMV);

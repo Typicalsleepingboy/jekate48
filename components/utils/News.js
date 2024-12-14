@@ -1,42 +1,178 @@
-async function fetchLatestNews() {
-            try {
-                const response = await fetch('https://intensprotectionexenew.vercel.app/api/news');
-                const data = await response.json();
-                
-                const latestNews = data.berita.slice(0, 3);
-            
-                const newsContainer = document.getElementById('newsContainer');
-                newsContainer.innerHTML = ''; 
-                
-                latestNews.forEach(news => {
-                    const newsCard = document.createElement('div');
-                    newsCard.className = 'bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300';
-                    
-                    newsCard.innerHTML = `
-                        <div class="flex items-center mb-4">
-                            <img src="https://res.cloudinary.com/haymzm4wp/image/upload/assets/jkt48${news.badge_url}" alt="News Badge" class="w-20 h-5 mr-2 rounded-full"/>
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">${news.judul}</h3>
-                        <p class="text-gray-400">${news.waktu}</p>
-                    `;
-                    newsCard.style.cursor = 'pointer';
-                    newsCard.addEventListener('click', () => {
-                        window.location.href = `/news/${news.berita_id}`;
-                    });
-                    
-                    newsContainer.appendChild(newsCard);
-                });
-                
-            } catch (error) {
-                console.error('Error fetching news:', error);
-                const newsContainer = document.getElementById('newsContainer');
-                newsContainer.innerHTML = `
-                    <div class="col-span-3 text-center text-gray-400">
-                        <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                        <p>Gagal mendapatkan data news 😭.</p>
-                    </div>
-                `;
-            }
+const _0x502e28 = _0x5106;
+function _0x5106(_0x44d079, _0x1ca25a) {
+    const _0x3cfba1 = _0x1fc0();
+    return _0x5106 = function (_0x39768e, _0x1f4e3c) {
+        _0x39768e = _0x39768e - (-0xee1 + 0x1 * 0x12a + 0xef1);
+        let _0x53a5c8 = _0x3cfba1[_0x39768e];
+        return _0x53a5c8;
+    }, _0x5106(_0x44d079, _0x1ca25a);
+}
+(function (_0xe9f926, _0x19e941) {
+    const _0x109f51 = _0x5106, _0xf784d3 = _0xe9f926();
+    while (!![]) {
+        try {
+            const _0x455444 = parseInt(_0x109f51(0x1a7)) / (0x6b3 + -0x53 * -0x13 + -0xcdb) * (parseInt(_0x109f51(0x13f)) / (-0x14 * -0x29 + -0x158 + -0x1da)) + parseInt(_0x109f51(0x16f)) / (0x1e1c + 0x1bf * 0x15 + -0x10b1 * 0x4) * (parseInt(_0x109f51(0x13b)) / (0x124f + 0xc3d * 0x1 + -0x1e88)) + -parseInt(_0x109f51(0x152)) / (-0x9 * -0x24b + -0x1ab * -0x3 + 0x3a9 * -0x7) * (parseInt(_0x109f51(0x16c)) / (0x231f + 0x1b26 + -0x3e3f)) + parseInt(_0x109f51(0x162)) / (-0xd * 0x25d + -0x1 * 0x2667 + 0x4527) + -parseInt(_0x109f51(0x166)) / (0x472 * 0x5 + 0x3ab + 0x1 * -0x19dd) * (-parseInt(_0x109f51(0x184)) / (-0x15bb + -0xd5f + 0x2323)) + parseInt(_0x109f51(0x153)) / (0x1b57 + -0x1 * -0x150a + -0x3057) + -parseInt(_0x109f51(0x164)) / (0x2cb + 0x191 * -0x11 + 0x17e1);
+            if (_0x455444 === _0x19e941)
+                break;
+            else
+                _0xf784d3['push'](_0xf784d3['shift']());
+        } catch (_0x3c76a3) {
+            _0xf784d3['push'](_0xf784d3['shift']());
         }
-        document.addEventListener('DOMContentLoaded', fetchLatestNews);
+    }
+}(_0x1fc0, 0x1 * 0x65028 + 0xca732 + -0xb1cad));
+async function fetchLatestNews() {
+    const _0x8c78f6 = _0x5106, _0x3e4bb3 = {
+            'dLzbQ': _0x8c78f6(0x1ab),
+            'sAfgL': _0x8c78f6(0x186) + _0x8c78f6(0x13e) + _0x8c78f6(0x141) + _0x8c78f6(0x17d) + _0x8c78f6(0x15b) + _0x8c78f6(0x180) + _0x8c78f6(0x1a9) + _0x8c78f6(0x196),
+            'DomTZ': _0x8c78f6(0x1a0),
+            'PCvBD': _0x8c78f6(0x14f),
+            'OrpLS': function (_0x56bcdd, _0x13f2c9) {
+                return _0x56bcdd(_0x13f2c9);
+            },
+            'DAewN': _0x8c78f6(0x193) + _0x8c78f6(0x19f) + _0x8c78f6(0x172) + _0x8c78f6(0x187) + _0x8c78f6(0x1aa),
+            'AmKoO': _0x8c78f6(0x15f) + _0x8c78f6(0x18a),
+            'bWQkh': _0x8c78f6(0x173) + _0x8c78f6(0x17f)
+        };
+    try {
+        const _0x5813d3 = await _0x3e4bb3[_0x8c78f6(0x159)](fetch, _0x3e4bb3[_0x8c78f6(0x161)]), _0x22098a = await _0x5813d3[_0x8c78f6(0x15d)](), _0x1711da = _0x22098a[_0x8c78f6(0x156)][_0x8c78f6(0x167)](-0x152e + -0x1 * 0x2239 + -0xd * -0x443, -0x21fd * -0x1 + 0x907 * -0x1 + -0x1 * 0x18f3), _0x31573b = document[_0x8c78f6(0x146) + _0x8c78f6(0x174)](_0x3e4bb3[_0x8c78f6(0x145)]);
+        _0x31573b[_0x8c78f6(0x17e)] = '', _0x1711da[_0x8c78f6(0x15a)](_0x3a06bb => {
+            const _0xda2f98 = _0x8c78f6, _0x2900de = document[_0xda2f98(0x17a) + _0xda2f98(0x176)](_0x3e4bb3[_0xda2f98(0x150)]);
+            _0x2900de[_0xda2f98(0x18c)] = _0x3e4bb3[_0xda2f98(0x144)], _0x2900de[_0xda2f98(0x17e)] = _0xda2f98(0x175) + _0xda2f98(0x19c) + _0xda2f98(0x16a) + _0xda2f98(0x1ae) + _0xda2f98(0x18e) + _0xda2f98(0x19a) + _0xda2f98(0x154) + _0xda2f98(0x19c) + _0xda2f98(0x19c) + _0xda2f98(0x1af) + _0xda2f98(0x17b) + _0xda2f98(0x168) + _0xda2f98(0x1a5) + _0xda2f98(0x190) + _0xda2f98(0x185) + _0xda2f98(0x155) + '48' + _0x3a06bb[_0xda2f98(0x1ac)] + (_0xda2f98(0x18d) + _0xda2f98(0x158) + _0xda2f98(0x13d) + _0xda2f98(0x19b) + _0xda2f98(0x13a) + _0xda2f98(0x170) + _0xda2f98(0x19c) + _0xda2f98(0x19c) + _0xda2f98(0x13c) + _0xda2f98(0x148) + _0xda2f98(0x140) + _0xda2f98(0x195) + _0xda2f98(0x19c) + _0xda2f98(0x19c) + _0xda2f98(0x14e) + _0xda2f98(0x19c) + _0xda2f98(0x19c) + _0xda2f98(0x188) + _0xda2f98(0x198) + _0xda2f98(0x199) + _0xda2f98(0x183) + _0xda2f98(0x1a4)) + _0x3a06bb[_0xda2f98(0x181)] + (_0xda2f98(0x16b) + _0xda2f98(0x19c) + _0xda2f98(0x19c) + _0xda2f98(0x151) + _0xda2f98(0x163) + _0xda2f98(0x143)) + _0x3a06bb[_0xda2f98(0x1a8)] + (_0xda2f98(0x16d) + _0xda2f98(0x19c) + _0xda2f98(0x17c)), _0x2900de[_0xda2f98(0x1a2)][_0xda2f98(0x19d)] = _0x3e4bb3[_0xda2f98(0x142)], _0x2900de[_0xda2f98(0x14c) + _0xda2f98(0x192)](_0x3e4bb3[_0xda2f98(0x14b)], () => {
+                const _0x305d5b = _0xda2f98;
+                window[_0x305d5b(0x14a)][_0x305d5b(0x194)] = _0x305d5b(0x1a6) + _0x3a06bb[_0x305d5b(0x197)];
+            }), _0x31573b[_0xda2f98(0x147) + 'd'](_0x2900de);
+        });
+    } catch (_0x13de01) {
+        console[_0x8c78f6(0x157)](_0x3e4bb3[_0x8c78f6(0x15c)], _0x13de01);
+        const _0x46143b = document[_0x8c78f6(0x146) + _0x8c78f6(0x174)](_0x3e4bb3[_0x8c78f6(0x145)]);
+        _0x46143b[_0x8c78f6(0x17e)] = _0x8c78f6(0x175) + _0x8c78f6(0x19c) + _0x8c78f6(0x160) + _0x8c78f6(0x165) + _0x8c78f6(0x15e) + _0x8c78f6(0x1a1) + _0x8c78f6(0x171) + _0x8c78f6(0x154) + _0x8c78f6(0x19c) + _0x8c78f6(0x191) + _0x8c78f6(0x179) + _0x8c78f6(0x16e) + _0x8c78f6(0x182) + _0x8c78f6(0x149) + _0x8c78f6(0x14d) + _0x8c78f6(0x154) + _0x8c78f6(0x19c) + _0x8c78f6(0x169) + _0x8c78f6(0x1ad) + _0x8c78f6(0x178) + _0x8c78f6(0x18f) + _0x8c78f6(0x19e) + _0x8c78f6(0x19c) + _0x8c78f6(0x18b) + _0x8c78f6(0x175) + _0x8c78f6(0x177);
+    }
+}
+function _0x1fc0() {
+    const _0x2b93ae = [
+        'Loaded',
+        'ner',
+        '\x20\x20\x20\x20</div>',
+        'className',
+        '\x22\x20alt=\x22New',
+        'x\x20items-ce',
+        'a\x20news\x20😭.<',
+        'mzm4wp/ima',
+        '\x20\x20\x20\x20\x20\x20<i\x20c',
+        'stener',
+        'https://in',
+        'href',
+        'le\x22></i>\x0a\x20',
+        'n-300',
+        'berita_id',
+        'ass=\x22text-',
+        'xl\x20font-se',
+        'nter\x20mb-4\x22',
+        '\x20h-5\x20mr-2\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'cursor',
+        '/p>\x0a\x20\x20\x20\x20\x20\x20',
+        'tensprotec',
+        'pointer',
+        'enter\x20text',
+        'style',
+        'DOMContent',
+        '2\x22>',
+        'ry.com/hay',
+        '/news/',
+        '64111bGDpTO',
+        'waktu',
+        'rs\x20duratio',
+        'p/api/news',
+        'div',
+        'badge_url',
+        'agal\x20menda',
+        'class=\x22fle',
+        '<img\x20src=\x22',
+        'rounded-fu',
+        '360qTMxVN',
+        '\x20\x20\x20\x20<i\x20cla',
+        'lass=\x22w-20',
+        '0\x20p-6\x20roun',
+        '2ujeCYN',
+        '-info-circ',
+        'ded-lg\x20hov',
+        'DomTZ',
+        '400\x22>',
+        'sAfgL',
+        'AmKoO',
+        'getElement',
+        'appendChil',
+        'ss=\x22fas\x20fa',
+        'e\x20text-2xl',
+        'location',
+        'PCvBD',
+        'addEventLi',
+        '\x20mb-2\x22></i',
+        '\x20\x20\x20</div>\x0a',
+        'click',
+        'dLzbQ',
+        '<p\x20class=\x22',
+        '1055wTqVVx',
+        '9422060Ddhxcj',
+        '>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
+        'assets/jkt',
+        'berita',
+        'error',
+        's\x20Badge\x22\x20c',
+        'OrpLS',
+        'forEach',
+        '-700\x20trans',
+        'bWQkh',
+        'json',
+        'n-3\x20text-c',
+        'newsContai',
+        '\x20<div\x20clas',
+        'DAewN',
+        '788606kmlqDe',
+        'text-gray-',
+        '10286661zRjqec',
+        's=\x22col-spa',
+        '562424FFMuPk',
+        'slice',
+        's.cloudina',
+        '\x20\x20\x20\x20\x20\x20<p>G',
+        '\x20\x20\x20\x20\x20<div\x20',
+        '</h3>\x0a\x20\x20\x20\x20',
+        '8490SxDqeJ',
+        '</p>\x0a\x20\x20\x20\x20\x20',
+        'fa-exclama',
+        '2235SdROlE',
+        'll\x22/>\x0a\x20\x20\x20\x20',
+        '-gray-400\x22',
+        'tionexenew',
+        'Error\x20fetc',
+        'ById',
+        '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'ent',
+        '\x20\x20\x20\x20\x20\x20\x20',
+        'patkan\x20dat',
+        'lass=\x22fas\x20',
+        'createElem',
+        'https://re',
+        '\x20\x20\x20\x20\x20',
+        'er:bg-gray',
+        'innerHTML',
+        'hing\x20news:',
+        'ition-colo',
+        'judul',
+        'tion-circl',
+        'mibold\x20mb-',
+        '72jaYWzv',
+        'ge/upload/',
+        'bg-gray-80',
+        '.vercel.ap',
+        '\x20\x20\x20\x20<h3\x20cl'
+    ];
+    _0x1fc0 = function () {
+        return _0x2b93ae;
+    };
+    return _0x1fc0();
+}
+document[_0x502e28(0x14c) + _0x502e28(0x192)](_0x502e28(0x1a3) + _0x502e28(0x189), fetchLatestNews);

@@ -1,72 +1,263 @@
-async function fetchMembers() {
-    try {
-        const response = await fetch('https://intensprotectionexenew.vercel.app/api/member');
-        const responseData = await response.json();
-        const data = responseData.members?.member;
-
-        if (!Array.isArray(data)) {
-            throw new Error('Data is not in the expected format');
+const _0x5cd92c = _0x10b8;
+(function (_0x288b88, _0x39017f) {
+    const _0xd9a658 = _0x10b8, _0x4a36ba = _0x288b88();
+    while (!![]) {
+        try {
+            const _0x4cef84 = -parseInt(_0xd9a658(0x1df)) / (0x2 * 0x1369 + -0x6 * -0x41 + 0x2857 * -0x1) + parseInt(_0xd9a658(0x1ea)) / (-0x399 + 0x129c + 0x17 * -0xa7) * (parseInt(_0xd9a658(0x1fa)) / (-0x1 * -0x2b2 + 0x254 * -0x2 + -0x1 * -0x1f9)) + parseInt(_0xd9a658(0x235)) / (-0x1a84 * 0x1 + -0xc71 + 0x26f9) * (-parseInt(_0xd9a658(0x176)) / (0x1 * 0xd2b + -0x225b + 0x1535 * 0x1)) + -parseInt(_0xd9a658(0x1d3)) / (-0x4bd * -0x1 + -0x239e + 0x1b * 0x125) + -parseInt(_0xd9a658(0x219)) / (-0x2560 + 0x616 + 0x1f51) + -parseInt(_0xd9a658(0x1cd)) / (-0xafd + 0xbad + -0xa8) + parseInt(_0xd9a658(0x193)) / (0xe4d + -0x164a + 0x806) * (parseInt(_0xd9a658(0x1ee)) / (0x2392 + 0x26fc + -0x1f6 * 0x26));
+            if (_0x4cef84 === _0x39017f)
+                break;
+            else
+                _0x4a36ba['push'](_0x4a36ba['shift']());
+        } catch (_0x3b6465) {
+            _0x4a36ba['push'](_0x4a36ba['shift']());
         }
-
-        const membersJSON = await fetch('/data/member.json').then(res => res.json());
-
-        document.getElementById('core-members').innerHTML = '';
-        document.getElementById('trainee-members').innerHTML = '';
-
-        data.forEach(member => {
-            const matchedMember = membersJSON.find(jsonMember => jsonMember.name === member.nama_member);
-            const generation = matchedMember ? matchedMember.generation : 'Unknown';
-
-            const memberCard = `
-                <div class="flex flex-col items-center text-center">
-                    <div class="relative w-full max-w-sm  mb-2">
-                        <img src="https://jkt48.com${member.ava_member}" 
-                            alt="${member.nama_member}" 
-                            onerror="this.src='/assets/img/default-avatar.jpg'"
-                            class="w-full h-full object-cover rounded-lg shadow-lg">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-1/2 rounded-b-lg"></div>
-                        <div class="absolute bottom-2 left-2 bg-gradient-to-r from-pink-300/85 via-purple-300/85 to-cyan-300/85 rounded-lg px-2 py-1 text-xs text-gray-900">
-                            ${generation}
-                        </div>
-                    </div>
-                    <div class="text-center w-full">
-                        <a href="/member/${member.id_member}" 
-                            class="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 inline-block hover:bg-white/20 transition-all duration-200">
-                            <h3 class="text-sm text-white">${member.nama_member}</h3>
-                        </a>
-                    </div>
-                </div>
-            `;
-            if (member.kategori === "Anggota JKT48") {
-                document.getElementById('core-members').innerHTML += memberCard;
-            } else if (member.kategori === "Trainee JKT48") {
-                document.getElementById('trainee-members').innerHTML += memberCard;
-            }
+    }
+}(_0x3e10, -0x38246 + -0x54cee * 0x2 + 0x1476ad * 0x1));
+function _0x10b8(_0x51184b, _0x3b4309) {
+    const _0x25b0b5 = _0x3e10();
+    return _0x10b8 = function (_0x1b8d90, _0xc60b46) {
+        _0x1b8d90 = _0x1b8d90 - (-0x9c * -0x20 + -0xd56 + -0xc9 * 0x6);
+        let _0x3b2044 = _0x25b0b5[_0x1b8d90];
+        return _0x3b2044;
+    }, _0x10b8(_0x51184b, _0x3b4309);
+}
+async function fetchMembers() {
+    const _0x1835bb = _0x10b8, _0x483237 = {
+            'iJmHp': _0x1835bb(0x1da),
+            'GcTuR': function (_0x5d1173, _0x4621f0) {
+                return _0x5d1173 === _0x4621f0;
+            },
+            'pjUzZ': _0x1835bb(0x1bf) + _0x1835bb(0x22f),
+            'GAfmB': _0x1835bb(0x1c3) + 'rs',
+            'hLhLf': _0x1835bb(0x1aa) + _0x1835bb(0x22f),
+            'Jffpr': _0x1835bb(0x20b) + _0x1835bb(0x182),
+            'oXGPL': function (_0x54afc0, _0x5bbb10) {
+                return _0x54afc0(_0x5bbb10);
+            },
+            'jtNlC': _0x1835bb(0x1e6) + _0x1835bb(0x1a8) + _0x1835bb(0x197) + _0x1835bb(0x1cf) + _0x1835bb(0x1d9) + 'er',
+            'GmEba': _0x1835bb(0x190) + _0x1835bb(0x222) + _0x1835bb(0x1ec) + _0x1835bb(0x1ba),
+            'tjZor': _0x1835bb(0x1e5) + _0x1835bb(0x226),
+            'egiPQ': _0x1835bb(0x1a0) + _0x1835bb(0x218) + _0x1835bb(0x1ed)
+        };
+    try {
+        const _0x2e4d86 = await _0x483237[_0x1835bb(0x1ae)](fetch, _0x483237[_0x1835bb(0x217)]), _0xc330fc = await _0x2e4d86[_0x1835bb(0x185)](), _0x3ca2e1 = _0xc330fc[_0x1835bb(0x1c1)]?.[_0x1835bb(0x19b)];
+        if (!Array[_0x1835bb(0x234)](_0x3ca2e1))
+            throw new Error(_0x483237[_0x1835bb(0x174)]);
+        const _0x10ac8b = await _0x483237[_0x1835bb(0x1ae)](fetch, _0x483237[_0x1835bb(0x208)])[_0x1835bb(0x1c4)](_0xdcacd0 => _0xdcacd0[_0x1835bb(0x185)]());
+        document[_0x1835bb(0x223) + _0x1835bb(0x209)](_0x483237[_0x1835bb(0x1b4)])[_0x1835bb(0x1d6)] = '', document[_0x1835bb(0x223) + _0x1835bb(0x209)](_0x483237[_0x1835bb(0x1f3)])[_0x1835bb(0x1d6)] = '', _0x3ca2e1[_0x1835bb(0x1e8)](_0x1d7aa1 => {
+            const _0x2879b3 = _0x1835bb, _0x462ac2 = _0x10ac8b[_0x2879b3(0x21d)](_0x476a93 => _0x476a93[_0x2879b3(0x1eb)] === _0x1d7aa1[_0x2879b3(0x1c0) + 'r']), _0x4345a8 = _0x462ac2 ? _0x462ac2[_0x2879b3(0x196)] : _0x483237[_0x2879b3(0x17d)], _0x5c6986 = _0x2879b3(0x187) + _0x2879b3(0x20f) + _0x2879b3(0x178) + _0x2879b3(0x212) + _0x2879b3(0x231) + _0x2879b3(0x199) + _0x2879b3(0x1f9) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x1a7) + _0x2879b3(0x184) + _0x2879b3(0x1e3) + _0x2879b3(0x1bb) + _0x2879b3(0x19d) + _0x2879b3(0x1c5) + _0x2879b3(0x1e2) + _0x2879b3(0x186) + _0x2879b3(0x192) + _0x2879b3(0x21a) + _0x1d7aa1[_0x2879b3(0x1b8)] + (_0x2879b3(0x1ce) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x1c2)) + _0x1d7aa1[_0x2879b3(0x1c0) + 'r'] + (_0x2879b3(0x1ce) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x18b) + _0x2879b3(0x1cc) + _0x2879b3(0x1e9) + _0x2879b3(0x20d) + _0x2879b3(0x215) + _0x2879b3(0x17b) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x1bc) + _0x2879b3(0x191) + _0x2879b3(0x1e1) + _0x2879b3(0x1fb) + _0x2879b3(0x1a9) + _0x2879b3(0x230) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x1db) + _0x2879b3(0x229) + _0x2879b3(0x22e) + _0x2879b3(0x1d8) + _0x2879b3(0x19e) + _0x2879b3(0x1d1) + _0x2879b3(0x1dc) + _0x2879b3(0x17c) + _0x2879b3(0x1ac) + _0x2879b3(0x1b2) + _0x2879b3(0x224) + _0x2879b3(0x1c6) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x22a) + _0x2879b3(0x19a) + _0x2879b3(0x17f) + _0x2879b3(0x19c) + _0x2879b3(0x1b6) + _0x2879b3(0x205) + _0x2879b3(0x1ef) + _0x2879b3(0x1f2) + _0x2879b3(0x1de) + _0x2879b3(0x1b3) + _0x2879b3(0x1bd) + _0x2879b3(0x20e) + _0x2879b3(0x1a3) + _0x2879b3(0x175) + _0x2879b3(0x1ab) + _0x2879b3(0x1a5) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + '\x20') + _0x4345a8 + (_0x2879b3(0x187) + _0x2879b3(0x1c5) + _0x2879b3(0x1f8) + _0x2879b3(0x1a4) + _0x2879b3(0x1c5) + _0x2879b3(0x188) + _0x2879b3(0x1c5) + _0x2879b3(0x1e2) + _0x2879b3(0x17a) + _0x2879b3(0x1c7) + _0x2879b3(0x1b0) + _0x2879b3(0x1a4) + _0x2879b3(0x1c5) + _0x2879b3(0x1e7) + _0x2879b3(0x21c) + _0x2879b3(0x1d0)) + _0x1d7aa1[_0x2879b3(0x1f7)] + (_0x2879b3(0x1ce) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x1b9) + _0x2879b3(0x1a1) + _0x2879b3(0x21e) + _0x2879b3(0x1a6) + _0x2879b3(0x213) + _0x2879b3(0x1d4) + _0x2879b3(0x228) + _0x2879b3(0x1f6) + _0x2879b3(0x22d) + _0x2879b3(0x1af) + _0x2879b3(0x179) + _0x2879b3(0x183) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x1e0) + _0x2879b3(0x1b5) + _0x2879b3(0x227) + _0x2879b3(0x1c9)) + _0x1d7aa1[_0x2879b3(0x1c0) + 'r'] + (_0x2879b3(0x1f4) + _0x2879b3(0x1c5) + _0x2879b3(0x1c5) + _0x2879b3(0x216) + _0x2879b3(0x1c5) + _0x2879b3(0x1f8) + _0x2879b3(0x1a4) + _0x2879b3(0x1ff) + _0x2879b3(0x1d5) + _0x2879b3(0x1fe));
+            if (_0x483237[_0x2879b3(0x1e4)](_0x1d7aa1[_0x2879b3(0x1b1)], _0x483237[_0x2879b3(0x195)]))
+                document[_0x2879b3(0x223) + _0x2879b3(0x209)](_0x483237[_0x2879b3(0x1b4)])[_0x2879b3(0x1d6)] += _0x5c6986;
+            else
+                _0x483237[_0x2879b3(0x1e4)](_0x1d7aa1[_0x2879b3(0x1b1)], _0x483237[_0x2879b3(0x221)]) && (document[_0x2879b3(0x223) + _0x2879b3(0x209)](_0x483237[_0x2879b3(0x1f3)])[_0x2879b3(0x1d6)] += _0x5c6986);
         });
-    } catch (error) {
-        console.error('Error fetching members:', error);
-
-        const errorMessage = `
-            <div class="col-span-full text-center text-gray-400">
-                <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                <p>Failed to load data 😭</p>
-            </div>
-        `;
-
-        document.getElementById('core-members').innerHTML = errorMessage;
-        document.getElementById('trainee-members').innerHTML = errorMessage;
+    } catch (_0x1902b6) {
+        console[_0x1835bb(0x19f)](_0x483237[_0x1835bb(0x1c8)], _0x1902b6);
+        const _0x367692 = _0x1835bb(0x187) + _0x1835bb(0x233) + _0x1835bb(0x22b) + _0x1835bb(0x1f1) + _0x1835bb(0x1fc) + _0x1835bb(0x21b) + _0x1835bb(0x17e) + _0x1835bb(0x1c5) + _0x1835bb(0x20a) + _0x1835bb(0x1be) + _0x1835bb(0x202) + _0x1835bb(0x20c) + _0x1835bb(0x214) + _0x1835bb(0x18e) + _0x1835bb(0x1c5) + _0x1835bb(0x1ad) + _0x1835bb(0x211) + _0x1835bb(0x232) + _0x1835bb(0x1fd) + _0x1835bb(0x21f) + _0x1835bb(0x206) + '\x20';
+        document[_0x1835bb(0x223) + _0x1835bb(0x209)](_0x483237[_0x1835bb(0x1b4)])[_0x1835bb(0x1d6)] = _0x367692, document[_0x1835bb(0x223) + _0x1835bb(0x209)](_0x483237[_0x1835bb(0x1f3)])[_0x1835bb(0x1d6)] = _0x367692;
     }
 }
-
-const loadingSkeleton = `
-    <div class="animate-pulse flex flex-col items-center text-center">
-        <div class="w-full h-40 sm:h-48 bg-gray-700 rounded-lg mb-4"></div>
-        <div class="h-6 bg-gray-700/30 rounded-lg w-3/4 mb-2"></div>
-        <div class="h-4 bg-gray-700/20 rounded-lg w-1/2"></div>
-    </div>
-`.repeat(4);
-
-document.getElementById('core-members').innerHTML = loadingSkeleton;
-document.getElementById('trainee-members').innerHTML = loadingSkeleton;
-
-fetchMembers();
+const loadingSkeleton = (_0x5cd92c(0x198) + _0x5cd92c(0x194) + _0x5cd92c(0x1f0) + _0x5cd92c(0x1f5) + _0x5cd92c(0x22c) + _0x5cd92c(0x18c) + _0x5cd92c(0x18f) + _0x5cd92c(0x1a4) + _0x5cd92c(0x1a7) + _0x5cd92c(0x1d2) + _0x5cd92c(0x1dd) + _0x5cd92c(0x210) + _0x5cd92c(0x189) + _0x5cd92c(0x220) + _0x5cd92c(0x203) + _0x5cd92c(0x18d) + _0x5cd92c(0x1cb) + _0x5cd92c(0x18a) + _0x5cd92c(0x1ca) + _0x5cd92c(0x207) + _0x5cd92c(0x225) + _0x5cd92c(0x1d7) + _0x5cd92c(0x177) + _0x5cd92c(0x204) + _0x5cd92c(0x1a2) + _0x5cd92c(0x181) + _0x5cd92c(0x200) + _0x5cd92c(0x1b7) + _0x5cd92c(0x201) + '>\x0a')[_0x5cd92c(0x180)](-0x1b5d + 0x24e2 + 0x32b * -0x3);
+document[_0x5cd92c(0x223) + _0x5cd92c(0x209)](_0x5cd92c(0x1c3) + 'rs')[_0x5cd92c(0x1d6)] = loadingSkeleton, document[_0x5cd92c(0x223) + _0x5cd92c(0x209)](_0x5cd92c(0x20b) + _0x5cd92c(0x182))[_0x5cd92c(0x1d6)] = loadingSkeleton, fetchMembers();
+function _0x3e10() {
+    const _0x4e495c = [
+        '-white\x22>',
+        '700/30\x20rou',
+        '\x20class=\x22h-',
+        'this.src=\x27',
+        '2266912EbOjZI',
+        '\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20',
+        '.vercel.ap',
+        'er/',
+        'gradient-t',
+        '=\x22w-full\x20h',
+        '712422kuuOjM',
+        '-3\x20py-2\x20in',
+        'div>\x0a\x20\x20\x20\x20\x20',
+        'innerHTML',
+        '</div>\x0a\x20\x20\x20',
+        '0\x20left-0\x20r',
+        'p/api/memb',
+        'Unknown',
+        '\x20\x20<div\x20cla',
+        'o-t\x20from-b',
+        '-40\x20sm:h-4',
+        'urple-300/',
+        '801440VOcAvQ',
+        '\x20\x20\x20\x20\x20\x20\x20<h3',
+        'l\x20object-c',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20<',
+        '\x20w-full\x20ma',
+        'GcTuR',
+        '/data/memb',
+        'https://in',
+        '\x20\x20\x20\x20\x20\x20<a\x20h',
+        'forEach',
+        '/assets/im',
+        '2BNPAcp',
+        'name',
+        'xpected\x20fo',
+        'rs:',
+        '370vXzRGk',
+        'om-pink-30',
+        'mate-pulse',
+        'pan-full\x20t',
+        '0/85\x20via-p',
+        'Jffpr',
+        '</h3>\x0a\x20\x20\x20\x20',
+        '\x20flex\x20flex',
+        '\x20hover:bg-',
+        'id_member',
+        '\x20\x20\x20\x20\x20</div',
+        '-center\x22>\x0a',
+        '1456551zsAYxu',
+        'over\x20round',
+        'ext-center',
+        '/p>\x0a\x20\x20\x20\x20\x20\x20',
+        '\x20\x20\x20\x20\x20\x20\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20</',
+        'ded-lg\x20w-1',
+        '\x0a\x20\x20\x20\x20</div',
+        'exclamatio',
+        '></div>\x0a\x20\x20',
+        'class=\x22h-4',
+        'nt-to-r\x20fr',
+        'v>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'nded-lg\x20w-',
+        'tjZor',
+        'ById',
+        '\x20\x20\x20<i\x20clas',
+        'trainee-me',
+        'n-circle\x20t',
+        'g/default-',
+        'unded-lg\x20p',
+        '\x20\x20\x20\x20\x20\x20\x20<di',
+        '8\x20bg-gray-',
+        'iled\x20to\x20lo',
+        'lex\x20flex-c',
+        'nded-lg\x20px',
+        'ext-2xl\x20mb',
+        'avatar.jpg',
+        '</a>\x0a\x20\x20\x20\x20\x20',
+        'jtNlC',
+        'hing\x20membe',
+        '43253zrCxsc',
+        '48.com',
+        '\x20text-gray',
+        'ref=\x22/memb',
+        'find',
+        'backdrop-b',
+        '\x20\x20\x20\x20\x20\x20</di',
+        'd-lg\x20mb-4\x22',
+        'hLhLf',
+        't\x20in\x20the\x20e',
+        'getElement',
+        'ounded-b-l',
+        '3/4\x20mb-2\x22>',
+        'er.json',
+        'xt-sm\x20text',
+        'line-block',
+        'ss=\x22absolu',
+        '\x20\x20\x20\x20<div\x20c',
+        'ass=\x22col-s',
+        '-col\x20items',
+        'white/20\x20t',
+        'te\x20bottom-',
+        'T48',
+        'ow-lg\x22>\x0a\x20\x20',
+        'ol\x20items-c',
+        'ad\x20data\x20😭<',
+        '\x20\x20\x20<div\x20cl',
+        'isArray',
+        '4JsGXIO',
+        'GmEba',
+        'ext-xs\x20tex',
+        '2521740cpPPYW',
+        '\x20\x20\x20\x20\x20<div\x20',
+        'v\x20class=\x22f',
+        'all\x20durati',
+        'div\x20class=',
+        '\x27\x22\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'lack/50\x20to',
+        'iJmHp',
+        '-400\x22>\x0a\x20\x20\x20',
+        'lute\x20botto',
+        'repeat',
+        '00/20\x20roun',
+        'mbers',
+        'on-200\x22>\x0a\x20',
+        '=\x22relative',
+        'json',
+        'img\x20src=\x22h',
+        '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        '\x20\x20</div>\x0a\x20',
+        '700\x20rounde',
+        '6\x20bg-gray-',
+        '\x20onerror=\x22',
+        '-center\x20te',
+        '\x20\x20\x20\x20\x20\x20<div',
+        '-2\x22></i>\x0a\x20',
+        'xt-center\x22',
+        'Data\x20is\x20no',
+        'full\x20h-ful',
+        'ttps://jkt',
+        '400122GxvfWf',
+        'class=\x22ani',
+        'pjUzZ',
+        'generation',
+        'tionexenew',
+        '\x0a\x20\x20\x20\x20<div\x20',
+        'enter\x20text',
+        'lass=\x22abso',
+        'member',
+        'm-2\x20left-2',
+        '-2\x22>\x0a\x20\x20\x20\x20\x20',
+        'ight-0\x20bg-',
+        'error',
+        'Error\x20fetc',
+        '-white/10\x20',
+        '\x20bg-gray-7',
+        'x-2\x20py-1\x20t',
+        '>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
+        '\x22>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'lur-sm\x20rou',
+        '<div\x20class',
+        'tensprotec',
+        'ed-lg\x20shad',
+        'Trainee\x20JK',
+        't-gray-900',
+        '-transpare',
+        '\x20\x20\x20\x20\x20<p>Fa',
+        'oXGPL',
+        'ransition-',
+        'er\x20w-full\x22',
+        'kategori',
+        'nt\x20h-1/2\x20r',
+        '85\x20to-cyan',
+        'GAfmB',
+        '\x20class=\x22te',
+        '\x20bg-gradie',
+        '/2\x22></div>',
+        'ava_member',
+        '\x20class=\x22bg',
+        'rmat',
+        'x-w-sm\x20\x20mb',
+        '\x20class=\x22w-',
+        '-300/85\x20ro',
+        's=\x22fas\x20fa-',
+        'Anggota\x20JK',
+        'nama_membe',
+        'members',
+        '\x20alt=\x22',
+        'core-membe',
+        'then',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'g\x22></div>\x0a',
+        '\x22text-cent',
+        'egiPQ'
+    ];
+    _0x3e10 = function () {
+        return _0x4e495c;
+    };
+    return _0x3e10();
+}

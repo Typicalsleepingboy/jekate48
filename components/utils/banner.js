@@ -1,35 +1,149 @@
-async function fetchBanners() {
-    try {
-        const response = await fetch('https://intensprotectionexenew.vercel.app/api/banners');
-        const data = await response.json();
-        if (data.success) {
-            setupCarousel(data.data);
+(function (_0x37b599, _0x1ad475) {
+    const _0x3813e7 = _0x1045, _0x172af5 = _0x37b599();
+    while (!![]) {
+        try {
+            const _0x3f2f0f = parseInt(_0x3813e7(0x1aa)) / (-0x16e5 + 0xd5 * 0x16 + 0x6 * 0xc4) + -parseInt(_0x3813e7(0x1b0)) / (0x238 * 0x6 + -0x3d * 0x7c + -0x56a * -0x3) * (-parseInt(_0x3813e7(0x184)) / (0x8 * 0x27f + -0x774 + -0xc81)) + -parseInt(_0x3813e7(0x1b5)) / (-0x3 * -0x6d3 + 0x1e91 + -0x3306) + -parseInt(_0x3813e7(0x1a9)) / (0xf9 * 0xa + 0x136 + 0x41 * -0x2b) + -parseInt(_0x3813e7(0x195)) / (-0x127d + 0x7 * 0x52 + 0x1045) * (parseInt(_0x3813e7(0x1a7)) / (0xa54 * 0x2 + 0x1 * 0x103d + -0x2d6 * 0xd)) + parseInt(_0x3813e7(0x1bc)) / (-0x1881 + -0x2452 * 0x1 + 0x3cdb) * (-parseInt(_0x3813e7(0x1b2)) / (0x101b + 0x1dbe + -0xb74 * 0x4)) + parseInt(_0x3813e7(0x188)) / (-0x1f13 + 0x1 * 0x1030 + 0xeed) * (parseInt(_0x3813e7(0x1a2)) / (-0x1378 * -0x2 + -0x1b5b * 0x1 + 0x7 * -0x1a6));
+            if (_0x3f2f0f === _0x1ad475)
+                break;
+            else
+                _0x172af5['push'](_0x172af5['shift']());
+        } catch (_0x262e0c) {
+            _0x172af5['push'](_0x172af5['shift']());
         }
-    } catch (error) {
-        console.error('Error fetching banners:', error);
+    }
+}(_0x36db, 0x131b39 + -0x5 * -0x3a6d1 + -0x1afc80));
+async function fetchBanners() {
+    const _0x48e02a = _0x1045, _0x30d31b = {
+            'FLwIU': function (_0x3846ce, _0x128ec9) {
+                return _0x3846ce(_0x128ec9);
+            },
+            'TpRLy': _0x48e02a(0x1bb) + _0x48e02a(0x1a5) + _0x48e02a(0x1a6) + _0x48e02a(0x1ab) + _0x48e02a(0x193) + _0x48e02a(0x197),
+            'wRErf': function (_0x51df67, _0x510d3d) {
+                return _0x51df67(_0x510d3d);
+            },
+            'aEhOC': _0x48e02a(0x186) + _0x48e02a(0x19f) + _0x48e02a(0x18f)
+        };
+    try {
+        const _0x50e8eb = await _0x30d31b[_0x48e02a(0x17c)](fetch, _0x30d31b[_0x48e02a(0x198)]), _0x1532ec = await _0x50e8eb[_0x48e02a(0x19d)]();
+        _0x1532ec[_0x48e02a(0x1b6)] && _0x30d31b[_0x48e02a(0x187)](setupCarousel, _0x1532ec[_0x48e02a(0x19e)]);
+    } catch (_0x413a87) {
+        console[_0x48e02a(0x185)](_0x30d31b[_0x48e02a(0x199)], _0x413a87);
     }
 }
-
-function setupCarousel(banners) {
-    const carouselElement = document.getElementById('carousel');
-    let currentSlide = 0;
-
-    banners.forEach((banner, index) => {
-        const slide = document.createElement('div');
-        slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
-        slide.style.backgroundImage = `url(${banner.img_url})`;
-        slide.style.backgroundSize = 'cover';
-        slide.style.backgroundPosition = 'center';
-        carouselElement.appendChild(slide);
+function setupCarousel(_0x3a1958) {
+    const _0x45e9ab = _0x1045, _0x160f14 = {
+            'hpcOr': _0x45e9ab(0x190),
+            'csVCJ': function (_0x1ecf8f, _0x589c25) {
+                return _0x1ecf8f === _0x589c25;
+            },
+            'GQGKU': _0x45e9ab(0x17d),
+            'dEXoY': _0x45e9ab(0x18c),
+            'jkLKS': _0x45e9ab(0x19c),
+            'hOyhY': function (_0x42b7da, _0x52fd3e) {
+                return _0x42b7da % _0x52fd3e;
+            },
+            'vpXlT': function (_0x205a40, _0x2daa7a) {
+                return _0x205a40 + _0x2daa7a;
+            },
+            'jypUs': _0x45e9ab(0x183),
+            'mexbc': _0x45e9ab(0x1b4) + _0x45e9ab(0x1b1),
+            'fVCei': function (_0x45e4d8, _0x41b613, _0x405094) {
+                return _0x45e4d8(_0x41b613, _0x405094);
+            }
+        }, _0x547f09 = document[_0x45e9ab(0x1b8) + _0x45e9ab(0x1b9)](_0x160f14[_0x45e9ab(0x180)]);
+    let _0x5b410b = -0xaa8 + -0x1209 + 0x71 * 0x41;
+    _0x3a1958[_0x45e9ab(0x18d)]((_0x258d66, _0x3f676d) => {
+        const _0x33ba74 = _0x45e9ab, _0x5c14f7 = document[_0x33ba74(0x19b) + _0x33ba74(0x194)](_0x160f14[_0x33ba74(0x192)]);
+        _0x5c14f7[_0x33ba74(0x1be)] = _0x33ba74(0x1a1) + _0x33ba74(0x17e) + (_0x160f14[_0x33ba74(0x1af)](_0x3f676d, 0xed * 0xd + -0x1 * -0x1421 + -0x2e * 0xb3) ? _0x160f14[_0x33ba74(0x1ad)] : ''), _0x5c14f7[_0x33ba74(0x1b7)][_0x33ba74(0x1b3) + _0x33ba74(0x1a0)] = _0x33ba74(0x18e) + _0x258d66[_0x33ba74(0x196)] + ')', _0x5c14f7[_0x33ba74(0x1b7)][_0x33ba74(0x1b3) + _0x33ba74(0x1a3)] = _0x160f14[_0x33ba74(0x17f)], _0x5c14f7[_0x33ba74(0x1b7)][_0x33ba74(0x1b3) + _0x33ba74(0x1a8)] = _0x160f14[_0x33ba74(0x189)], _0x547f09[_0x33ba74(0x181) + 'd'](_0x5c14f7);
     });
-
-    const slides = document.querySelectorAll('.carousel-slide');
-
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
+    const _0x1deafc = document[_0x45e9ab(0x191) + _0x45e9ab(0x1ba)](_0x160f14[_0x45e9ab(0x1bd)]);
+    function _0x279f14() {
+        const _0x3596db = _0x45e9ab;
+        _0x1deafc[_0x5b410b][_0x3596db(0x18b)][_0x3596db(0x18a)](_0x160f14[_0x3596db(0x1ad)]), _0x5b410b = _0x160f14[_0x3596db(0x1ae)](_0x160f14[_0x3596db(0x182)](_0x5b410b, -0x2134 + -0x724 + 0x2859), _0x1deafc[_0x3596db(0x1a4)]), _0x1deafc[_0x5b410b][_0x3596db(0x18b)][_0x3596db(0x1ac)](_0x160f14[_0x3596db(0x1ad)]);
     }
-    setInterval(nextSlide, 8000);
+    _0x160f14[_0x45e9ab(0x19a)](setInterval, _0x279f14, 0x1 * -0x2e11 + 0x348d + -0x27a * -0xa);
+}
+function _0x1045(_0x4b3ead, _0x27fc6f) {
+    const _0x5b4c9c = _0x36db();
+    return _0x1045 = function (_0xb6ec5c, _0x416bec) {
+        _0xb6ec5c = _0xb6ec5c - (-0xac * -0x27 + -0x1 * 0x23b9 + 0xb01);
+        let _0x10465f = _0x5b4c9c[_0xb6ec5c];
+        return _0x10465f;
+    }, _0x1045(_0x4b3ead, _0x27fc6f);
+}
+function _0x36db() {
+    const _0x45aa62 = [
+        'vpXlT',
+        'carousel',
+        '946587ReqkXx',
+        'error',
+        'Error\x20fetc',
+        'wRErf',
+        '1051870LasUeN',
+        'jkLKS',
+        'remove',
+        'classList',
+        'cover',
+        'forEach',
+        'url(',
+        'rs:',
+        'div',
+        'querySelec',
+        'hpcOr',
+        'p/api/bann',
+        'ent',
+        '66XjbxQI',
+        'img_url',
+        'ers',
+        'TpRLy',
+        'aEhOC',
+        'fVCei',
+        'createElem',
+        'center',
+        'json',
+        'data',
+        'hing\x20banne',
+        'Image',
+        'carousel-s',
+        '154pVeiUL',
+        'Size',
+        'length',
+        'tensprotec',
+        'tionexenew',
+        '710521rnhpLA',
+        'Position',
+        '530490eofuni',
+        '545213mhIlTo',
+        '.vercel.ap',
+        'add',
+        'GQGKU',
+        'hOyhY',
+        'csVCJ',
+        '6NkHZvh',
+        'slide',
+        '9iaDSCm',
+        'background',
+        '.carousel-',
+        '39256KggqOv',
+        'success',
+        'style',
+        'getElement',
+        'ById',
+        'torAll',
+        'https://in',
+        '8414648Evfpjr',
+        'mexbc',
+        'className',
+        'FLwIU',
+        'active',
+        'lide\x20',
+        'dEXoY',
+        'jypUs',
+        'appendChil'
+    ];
+    _0x36db = function () {
+        return _0x45aa62;
+    };
+    return _0x36db();
 }
 fetchBanners();

@@ -1,53 +1,212 @@
-fetch('/data/ssk.json')
-    .then(response => response.json())
-    .then(data => {
-        const candidateGrid = document.getElementById('candidate-grid');
-        const loadingSkeleton = document.getElementById('loadingSkeleton');
-        if (loadingSkeleton) {
-            loadingSkeleton.innerHTML = '';
+const _0x312633 = _0x55d2;
+(function (_0x49e36e, _0x5e64f1) {
+    const _0x27d662 = _0x55d2, _0x373490 = _0x49e36e();
+    while (!![]) {
+        try {
+            const _0x21b1a0 = parseInt(_0x27d662(0x234)) / (-0x3 * 0x521 + 0xd51 + 0xb1 * 0x3) * (-parseInt(_0x27d662(0x1bb)) / (0x11b8 + -0x2707 * -0x1 + -0x38bd)) + -parseInt(_0x27d662(0x205)) / (0x84f * -0x2 + -0xa8d * -0x1 + 0x30a * 0x2) + parseInt(_0x27d662(0x1f6)) / (-0x25c5 + 0x1 * 0x128f + 0x133a) + -parseInt(_0x27d662(0x1a5)) / (0x1bf2 + 0x18c7 + 0x2 * -0x1a5a) * (-parseInt(_0x27d662(0x200)) / (0x2 * 0x1f7 + 0x2 * 0x580 + -0xee8)) + -parseInt(_0x27d662(0x1ce)) / (0xd18 + -0x419 * 0x7 + 0xf9e) * (parseInt(_0x27d662(0x1c8)) / (0x1ac6 + 0x3eb + -0x1ea9)) + -parseInt(_0x27d662(0x1ab)) / (0x22f1 * 0x1 + -0x20d0 + 0x218 * -0x1) * (-parseInt(_0x27d662(0x1f5)) / (-0x17d4 + -0x1d9 * 0x10 + 0x356e)) + parseInt(_0x27d662(0x1e0)) / (-0x19e8 + 0x4fa + 0x14f9);
+            if (_0x21b1a0 === _0x5e64f1)
+                break;
+            else
+                _0x373490['push'](_0x373490['shift']());
+        } catch (_0x3a2af5) {
+            _0x373490['push'](_0x373490['shift']());
         }
-
-        data.forEach(candidate => {
-            const card = document.createElement('div');
-            card.className = 'bg-gray-800 rounded-lg overflow-hidden transform transition-all hover:scale-105 card-container';
-            card.innerHTML = `
-                <div class="relative aspect-[3/4]">
-                    <img src="https://ssk.jkt48.com/2024/${candidate.data.img}" alt="${candidate.name}" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-1/2 rounded-b-lg"></div>
-                </div>
-                <div class="p-2 sm:p-3 md:p-4">
-                <a href="/ssk/${candidate.id}" class="block">
-                        <h3 class="text-sm sm:text-base md:text-lg font-semibold mb-2 md:mb-3 truncate">${candidate.name}</h3>
-                    </a>
-                </div>
-            `;
-            candidateGrid.appendChild(card);
-        });
-    })
-    .catch(error => {
-        console.error('Error fetching JSON data:', error);
-        const loadingSkeleton = document.getElementById('loadingSkeleton');
-        if (loadingSkeleton) {
-            loadingSkeleton.innerHTML = `
-                <div class="col-span-3 text-center text-gray-400">
-                    <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                    <p>Failed to load Sousenkyo data 😭</p>
-                </div>
-            `;
-        }
-    });
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const loadingSkeleton = document.getElementById('loadingSkeleton');
-    for (let i = 0; i < 10; i++) {
-        const skeletonCard = document.createElement('div');
-        skeletonCard.className = 'bg-gray-800 p-4 rounded-lg animate-pulse-slow';
-        skeletonCard.innerHTML = `
-            <div class="relative aspect-[3/4] bg-gray-600 rounded mb-4"></div>
-            <div class="h-4 bg-gray-600 rounded mb-2"></div>
-            <div class="h-3 bg-gray-600 rounded w-2/3"></div>
-        `;
-        loadingSkeleton.appendChild(skeletonCard);
     }
-});
+}(_0xc979, -0xe163 + -0x2a63a + 0x1 * 0x62e9d), fetch(_0x312633(0x1be) + _0x312633(0x1c3))[_0x312633(0x21e)](_0x48832b => _0x48832b[_0x312633(0x1c3)]())[_0x312633(0x21e)](_0xeac0bb => {
+    const _0x2687a2 = _0x312633, _0xc7262b = {
+            'wEfOj': _0x2687a2(0x20e),
+            'PpBZw': _0x2687a2(0x1cf) + _0x2687a2(0x223) + _0x2687a2(0x1ee) + _0x2687a2(0x21b) + _0x2687a2(0x1ac) + _0x2687a2(0x1f7) + _0x2687a2(0x1e9) + _0x2687a2(0x1d2) + _0x2687a2(0x1a6) + _0x2687a2(0x236),
+            'CvDeG': _0x2687a2(0x1ec) + _0x2687a2(0x221),
+            'yohJq': _0x2687a2(0x1d6) + _0x2687a2(0x1fd)
+        }, _0x561902 = document[_0x2687a2(0x1df) + _0x2687a2(0x215)](_0xc7262b[_0x2687a2(0x1ca)]), _0x2c7e77 = document[_0x2687a2(0x1df) + _0x2687a2(0x215)](_0xc7262b[_0x2687a2(0x207)]);
+    _0x2c7e77 && (_0x2c7e77[_0x2687a2(0x227)] = ''), _0xeac0bb[_0x2687a2(0x1db)](_0x9baf33 => {
+        const _0x44ae01 = _0x2687a2, _0x193909 = document[_0x44ae01(0x1fc) + _0x44ae01(0x235)](_0xc7262b[_0x44ae01(0x20f)]);
+        _0x193909[_0x44ae01(0x1af)] = _0xc7262b[_0x44ae01(0x1e3)], _0x193909[_0x44ae01(0x227)] = _0x44ae01(0x1e2) + _0x44ae01(0x1d9) + _0x44ae01(0x228) + _0x44ae01(0x1cd) + _0x44ae01(0x1fb) + _0x44ae01(0x1a8) + _0x44ae01(0x1c1) + _0x44ae01(0x212) + _0x44ae01(0x22c) + _0x44ae01(0x1a7) + _0x44ae01(0x1b7) + _0x9baf33[_0x44ae01(0x232)][_0x44ae01(0x1c5)] + _0x44ae01(0x1b4) + _0x9baf33[_0x44ae01(0x201)] + (_0x44ae01(0x1b5) + _0x44ae01(0x1b2) + _0x44ae01(0x1de) + _0x44ae01(0x1ae) + _0x44ae01(0x1a3) + _0x44ae01(0x1a8) + _0x44ae01(0x1c1) + _0x44ae01(0x230) + _0x44ae01(0x1b0) + _0x44ae01(0x1cc) + _0x44ae01(0x1b1) + _0x44ae01(0x1d0) + _0x44ae01(0x1f1) + _0x44ae01(0x21c) + _0x44ae01(0x213) + _0x44ae01(0x1d8) + _0x44ae01(0x1dc) + _0x44ae01(0x1f3) + _0x44ae01(0x208) + _0x44ae01(0x1e2) + _0x44ae01(0x1ea) + _0x44ae01(0x20c) + _0x44ae01(0x1c1) + _0x44ae01(0x1c6) + _0x44ae01(0x1ba) + _0x44ae01(0x1f8) + _0x44ae01(0x209) + _0x44ae01(0x20a) + _0x44ae01(0x1da) + 'k/') + _0x9baf33['id'] + (_0x44ae01(0x1e7) + _0x44ae01(0x1a9) + _0x44ae01(0x1c1) + _0x44ae01(0x1c1) + _0x44ae01(0x1ad) + _0x44ae01(0x21f) + _0x44ae01(0x1fa) + _0x44ae01(0x1c2) + _0x44ae01(0x1b9) + _0x44ae01(0x22d) + _0x44ae01(0x218) + _0x44ae01(0x1d5) + '>') + _0x9baf33[_0x44ae01(0x201)] + (_0x44ae01(0x20b) + _0x44ae01(0x1c1) + _0x44ae01(0x229) + _0x44ae01(0x1e2) + _0x44ae01(0x1ea) + _0x44ae01(0x20c) + _0x44ae01(0x203)), _0x561902[_0x44ae01(0x1e8) + 'd'](_0x193909);
+    });
+})[_0x312633(0x1b6)](_0x2f80f6 => {
+    const _0x4f5884 = _0x312633, _0x2f9c17 = {
+            'kdoRz': _0x4f5884(0x219) + _0x4f5884(0x1c0) + _0x4f5884(0x1bf),
+            'qqBWh': _0x4f5884(0x1d6) + _0x4f5884(0x1fd)
+        };
+    console[_0x4f5884(0x1d7)](_0x2f9c17[_0x4f5884(0x22f)], _0x2f80f6);
+    const _0x1117cb = document[_0x4f5884(0x1df) + _0x4f5884(0x215)](_0x2f9c17[_0x4f5884(0x21d)]);
+    _0x1117cb && (_0x1117cb[_0x4f5884(0x227)] = _0x4f5884(0x1e2) + _0x4f5884(0x1d9) + _0x4f5884(0x1e1) + _0x4f5884(0x1c9) + _0x4f5884(0x211) + _0x4f5884(0x1e6) + _0x4f5884(0x21a) + _0x4f5884(0x1c1) + _0x4f5884(0x1ed) + _0x4f5884(0x22e) + _0x4f5884(0x1dd) + _0x4f5884(0x1e5) + _0x4f5884(0x1eb) + _0x4f5884(0x224) + _0x4f5884(0x1fe) + _0x4f5884(0x1c1) + _0x4f5884(0x214) + _0x4f5884(0x226) + _0x4f5884(0x206) + _0x4f5884(0x1d4) + _0x4f5884(0x1ff) + _0x4f5884(0x210) + _0x4f5884(0x22b) + _0x4f5884(0x216));
+}), document[_0x312633(0x1f2) + _0x312633(0x1ef)](_0x312633(0x22a) + _0x312633(0x1a2), () => {
+    const _0x1d5f52 = _0x312633, _0x1d58d2 = {
+            'rACel': _0x1d5f52(0x1d6) + _0x1d5f52(0x1fd),
+            'KRRDZ': function (_0x5909b1, _0x4c6ad7) {
+                return _0x5909b1 < _0x4c6ad7;
+            },
+            'zvwws': _0x1d5f52(0x20e),
+            'AByTI': _0x1d5f52(0x1cf) + _0x1d5f52(0x1f9) + _0x1d5f52(0x202) + _0x1d5f52(0x20d) + _0x1d5f52(0x1f4)
+        }, _0x1424ce = document[_0x1d5f52(0x1df) + _0x1d5f52(0x215)](_0x1d58d2[_0x1d5f52(0x204)]);
+    for (let _0x3f251a = -0x11e9 + -0x43 * -0x1f + 0x4e6 * 0x2; _0x1d58d2[_0x1d5f52(0x1b8)](_0x3f251a, 0x1d4 + 0x4be * -0x1 + 0x2f4); _0x3f251a++) {
+        const _0x3e1b13 = document[_0x1d5f52(0x1fc) + _0x1d5f52(0x235)](_0x1d58d2[_0x1d5f52(0x225)]);
+        _0x3e1b13[_0x1d5f52(0x1af)] = _0x1d58d2[_0x1d5f52(0x1d3)], _0x3e1b13[_0x1d5f52(0x227)] = _0x1d5f52(0x1e2) + _0x1d5f52(0x230) + _0x1d5f52(0x1f0) + _0x1d5f52(0x1b3) + _0x1d5f52(0x1a4) + _0x1d5f52(0x1c7) + _0x1d5f52(0x1c4) + _0x1d5f52(0x1bd) + _0x1d5f52(0x1c1) + _0x1d5f52(0x1e4) + _0x1d5f52(0x220) + _0x1d5f52(0x1cb) + _0x1d5f52(0x1d1) + _0x1d5f52(0x1aa) + _0x1d5f52(0x1e2) + _0x1d5f52(0x230) + _0x1d5f52(0x1bc) + _0x1d5f52(0x233) + _0x1d5f52(0x231) + _0x1d5f52(0x222) + _0x1d5f52(0x217) + '\x20', _0x1424ce[_0x1d5f52(0x1e8) + 'd'](_0x3e1b13);
+    }
+}));
+function _0x55d2(_0x40d3ab, _0xcbb9e8) {
+    const _0x4bb527 = _0xc979();
+    return _0x55d2 = function (_0x30a358, _0x5a50f1) {
+        _0x30a358 = _0x30a358 - (-0xc81 + -0x2fe * -0x5 + -0xd3 * 0x1);
+        let _0x2a6469 = _0x4bb527[_0x30a358];
+        return _0x2a6469;
+    }, _0x55d2(_0x40d3ab, _0xcbb9e8);
+}
+function _0xc979() {
+    const _0x5d1a56 = [
+        '\x20<h3\x20class',
+        'cover\x22\x20loa',
+        'className',
+        'ass=\x22absol',
+        '-0\x20left-0\x20',
+        '-full\x20h-fu',
+        'ive\x20aspect',
+        '\x22\x20alt=\x22',
+        '\x22\x20class=\x22w',
+        'catch',
+        '.com/2024/',
+        'KRRDZ',
+        '-lg\x20font-s',
+        '=\x22p-2\x20sm:p',
+        '10coRpQe',
+        'ass=\x22h-3\x20b',
+        '4\x22></div>\x0a',
+        '/data/ssk.',
+        'data:',
+        'hing\x20JSON\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'se\x20md:text',
+        'json',
+        'ounded\x20mb-',
+        'img',
+        '<div\x20class',
+        'gray-600\x20r',
+        '2437928ZNzBmc',
+        'ol-span-3\x20',
+        'CvDeG',
+        '-gray-600\x20',
+        'ute\x20bottom',
+        'elative\x20as',
+        '7UmTqMy',
+        'bg-gray-80',
+        'right-0\x20bg',
+        'rounded\x20mb',
+        'scale-105\x20',
+        'AByTI',
+        'o\x20data\x20😭</',
+        '\x20truncate\x22',
+        'loadingSke',
+        'error',
+        'o-transpar',
+        '\x20\x20\x20\x20\x20\x20\x20<di',
+        '\x20href=\x22/ss',
+        'forEach',
+        'ent\x20h-1/2\x20',
+        's\x20fa-excla',
+        'll\x20object-',
+        'getElement',
+        '2228435eFFOLp',
+        'v\x20class=\x22c',
+        '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'PpBZw',
+        '\x20\x20<div\x20cla',
+        'mation-cir',
+        'r\x20text-gra',
+        '\x22\x20class=\x22b',
+        'appendChil',
+        'all\x20hover:',
+        '\x20\x20\x20\x20\x20\x20\x20</d',
+        'cle\x20text-2',
+        'candidate-',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<i',
+        'lg\x20overflo',
+        'stener',
+        'ass=\x22relat',
+        '-gradient-',
+        'addEventLi',
+        'rounded-b-',
+        '-slow',
+        '2406630WnGPyD',
+        '1242480QKtGHy',
+        'ransition-',
+        '-3\x20md:p-4\x22',
+        '0\x20p-4\x20roun',
+        'sm:text-ba',
+        'pect-[3/4]',
+        'createElem',
+        'leton',
+        '/i>\x0a\x20\x20\x20\x20\x20\x20',
+        'p>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        '513948HKeMXj',
+        'name',
+        'ded-lg\x20ani',
+        '\x20\x20\x20\x20\x20\x20',
+        'rACel',
+        '184113CiHdXu',
+        'd\x20Sousenky',
+        'yohJq',
+        'lg\x22></div>',
+        '>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<a',
+        '</h3>\x0a\x20\x20\x20\x20',
+        'iv>\x0a\x20\x20\x20\x20\x20\x20',
+        'mate-pulse',
+        'div',
+        'wEfOj',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20<',
+        'text-cente',
+        '\x20\x20\x20<img\x20sr',
+        'black/50\x20t',
+        '\x20\x20\x20\x20<p>Fai',
+        'ById',
+        '\x20\x20\x20\x20\x20\x20\x20\x20',
+        'v>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        '-2\x20md:mb-3',
+        'Error\x20fetc',
+        'y-400\x22>\x0a\x20\x20',
+        'w-hidden\x20t',
+        'to-t\x20from-',
+        'qqBWh',
+        'then',
+        '=\x22text-sm\x20',
+        'ss=\x22h-4\x20bg',
+        'grid',
+        '-2/3\x22></di',
+        '0\x20rounded-',
+        'xl\x20mb-2\x22><',
+        'zvwws',
+        'led\x20to\x20loa',
+        'innerHTML',
+        'v\x20class=\x22r',
+        '\x20\x20\x20\x20\x20\x20</a>',
+        'DOMContent',
+        '/div>\x0a\x20\x20\x20\x20',
+        'c=\x22https:/',
+        'emibold\x20mb',
+        '\x20class=\x22fa',
+        'kdoRz',
+        '\x20\x20\x20<div\x20cl',
+        '\x20rounded\x20w',
+        'data',
+        'g-gray-600',
+        '59918cZNXOA',
+        'ent',
+        'iner',
+        'Loaded',
+        'ding=\x22lazy',
+        '-[3/4]\x20bg-',
+        '5TtaDbV',
+        'card-conta',
+        '/ssk.jkt48',
+        '\x22>\x0a\x20\x20\x20\x20\x20\x20\x20',
+        'lock\x22>\x0a\x20\x20\x20',
+        '-2\x22></div>',
+        '9Iihcuk',
+        'ransform\x20t'
+    ];
+    _0xc979 = function () {
+        return _0x5d1a56;
+    };
+    return _0xc979();
+}

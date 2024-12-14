@@ -1,132 +1,340 @@
-// news list
-
+const _0x3f7469 = _0x4981;
+(function (_0x5310d5, _0x278844) {
+    const _0x2fec52 = _0x4981, _0x394069 = _0x5310d5();
+    while (!![]) {
+        try {
+            const _0xec2972 = parseInt(_0x2fec52(0xbb)) / (0x2cf + 0x2 * 0x905 + -0xa6c * 0x2) + -parseInt(_0x2fec52(0xdf)) / (0x2 * 0xd5f + -0x3 * 0x92b + 0xc5 * 0x1) * (parseInt(_0x2fec52(0x167)) / (-0x2577 + 0x5c + -0x1 * -0x251e)) + parseInt(_0x2fec52(0x16e)) / (-0x1ee8 + 0x1068 * 0x1 + 0xe84) + parseInt(_0x2fec52(0x164)) / (0x195d * -0x1 + 0x6d * 0x17 + 0xf97) * (parseInt(_0x2fec52(0x11b)) / (0xda1 + 0x1 * -0x1b97 + 0xdfc)) + -parseInt(_0x2fec52(0xcd)) / (0xedb * -0x1 + 0x97a + 0x568) + -parseInt(_0x2fec52(0x170)) / (-0x15d6 + -0x2 * -0xac6 + 0x2 * 0x29) + parseInt(_0x2fec52(0xc9)) / (-0x5a9 + 0x269f + 0x1 * -0x20ed) * (parseInt(_0x2fec52(0x148)) / (-0xaec + 0xd3 * 0xd + 0x3f));
+            if (_0xec2972 === _0x278844)
+                break;
+            else
+                _0x394069['push'](_0x394069['shift']());
+        } catch (_0x20c455) {
+            _0x394069['push'](_0x394069['shift']());
+        }
+    }
+}(_0x23de, 0x57940 + 0x79c00 + -0x92f73));
 async function fetchLatestNews() {
+    const _0x4d0b78 = _0x4981, _0x4d6059 = {
+            'eETRe': _0x4d0b78(0xe0),
+            'PbMnQ': _0x4d0b78(0xed) + _0x4d0b78(0x134) + _0x4d0b78(0xeb) + _0x4d0b78(0x124) + _0x4d0b78(0x102) + _0x4d0b78(0xca) + _0x4d0b78(0x10f) + _0x4d0b78(0x142),
+            'iIriK': _0x4d0b78(0x169),
+            'ULDAD': _0x4d0b78(0xe4),
+            'THJuq': function (_0x20c9e3, _0x16c3fb) {
+                return _0x20c9e3(_0x16c3fb);
+            },
+            'HSQou': _0x4d0b78(0x11d) + _0x4d0b78(0x100) + _0x4d0b78(0x135) + _0x4d0b78(0xe9) + _0x4d0b78(0xbf),
+            'ftQun': _0x4d0b78(0xe5) + _0x4d0b78(0xbd),
+            'pmZCR': _0x4d0b78(0xc1) + _0x4d0b78(0x121) + 'ws',
+            'QZKli': _0x4d0b78(0x110) + _0x4d0b78(0xfb)
+        };
     try {
-        const response = await fetch('https://intensprotectionexenew.vercel.app/api/news');
-        const data = await response.json();
-
-        const latestNews = data.berita.slice(0, 15);
-
-        const newsContainer = document.getElementById('newsContainer');
-        const loadingSkeleton = document.querySelectorAll('#loading-skeleton-news');
-        loadingSkeleton.forEach(skeleton => {
-            skeleton.remove();
+        const _0x5116e5 = await _0x4d6059[_0x4d0b78(0x162)](fetch, _0x4d6059[_0x4d0b78(0x136)]), _0x5632f8 = await _0x5116e5[_0x4d0b78(0x15e)](), _0x454bb5 = _0x5632f8[_0x4d0b78(0x117)][_0x4d0b78(0x13f)](0x248c * 0x1 + -0x12dd + 0x9 * -0x1f7, -0xa6f * -0x1 + -0x7f1 * -0x2 + -0x1a42), _0x7eaefd = document[_0x4d0b78(0x141) + _0x4d0b78(0x111)](_0x4d6059[_0x4d0b78(0xa2)]), _0x165de0 = document[_0x4d0b78(0x112) + _0x4d0b78(0xb1)](_0x4d6059[_0x4d0b78(0xea)]);
+        _0x165de0[_0x4d0b78(0xb3)](_0x3ac245 => {
+            const _0x2f40cd = _0x4d0b78;
+            _0x3ac245[_0x2f40cd(0xd1)]();
+        }), _0x7eaefd[_0x4d0b78(0xb9)] = '', _0x454bb5[_0x4d0b78(0xb3)](_0x2c882e => {
+            const _0x23250d = _0x4d0b78, _0x3e9924 = document[_0x23250d(0x105) + _0x23250d(0x150)](_0x4d6059[_0x23250d(0x14a)]);
+            _0x3e9924[_0x23250d(0xb0)] = _0x4d6059[_0x23250d(0x106)], _0x3e9924[_0x23250d(0xb9)] = _0x23250d(0xd3) + _0x23250d(0x138) + _0x23250d(0x147) + _0x23250d(0x16c) + _0x23250d(0x13d) + _0x23250d(0x14f) + _0x23250d(0x152) + _0x23250d(0x103) + _0x23250d(0xec) + _0x23250d(0xe8) + _0x23250d(0x16a) + _0x23250d(0xf7) + _0x23250d(0x114) + _0x23250d(0x15d) + _0x23250d(0x166) + _0x2c882e[_0x23250d(0x15c)] + (_0x23250d(0x145) + _0x23250d(0x9d) + _0x23250d(0xc8) + _0x23250d(0xcb) + _0x23250d(0x140) + _0x23250d(0x10e) + _0x23250d(0x152) + _0x23250d(0x104) + _0x23250d(0xc2) + _0x23250d(0xa8) + _0x23250d(0xdd) + _0x23250d(0xd3) + _0x23250d(0xde) + _0x23250d(0x128) + _0x23250d(0x152) + _0x23250d(0x12e) + _0x23250d(0x16b) + _0x23250d(0xf6) + _0x23250d(0xdb)) + _0x2c882e[_0x23250d(0x9f)] + (_0x23250d(0xdc) + _0x23250d(0x152) + _0x23250d(0x10b) + _0x23250d(0x99) + _0x23250d(0x10d)) + _0x2c882e[_0x23250d(0xa6)] + (_0x23250d(0xc7) + _0x23250d(0xd2)), _0x3e9924[_0x23250d(0x155)][_0x23250d(0x131)] = _0x4d6059[_0x23250d(0x159)], _0x3e9924[_0x23250d(0x133) + _0x23250d(0xfa)](_0x4d6059[_0x23250d(0x9a)], () => {
+                const _0x4563e6 = _0x23250d;
+                window[_0x4563e6(0x125)][_0x4563e6(0x10a)] = _0x4563e6(0x12a) + _0x2c882e[_0x4563e6(0x151)];
+            }), _0x7eaefd[_0x23250d(0xc6) + 'd'](_0x3e9924);
         });
-        newsContainer.innerHTML = '';
-
-        latestNews.forEach(news => {
-            const newsCard = document.createElement('div');
-            newsCard.className = 'bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300';
-
-            newsCard.innerHTML = `
-                <div class="flex items-center mb-4">
-                    <img src="https://res.cloudinary.com/haymzm4wp/image/upload/assets/jkt48${news.badge_url}" alt="News Badge" class="w-20 h-5 mr-2 rounded-full"/>
-                    <i class="fas fa-info-circle"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2">${news.judul}</h3>
-                <p class="text-gray-400">${news.waktu}</p>
-            `;
-            newsCard.style.cursor = 'pointer';
-            newsCard.addEventListener('click', () => {
-                window.location.href = `/news/${news.berita_id}`;
-            });
-
-            newsContainer.appendChild(newsCard);
-        });
-    } catch (error) {
-        console.error('Error fetching news:', error);
-        const newsContainer = document.getElementById('newsContainer');
-        newsContainer.innerHTML = `
-            <div class="col-span-3 text-center text-gray-400">
-                <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                <p>Gagal mendapatkan data news 😭</p>
-            </div>
-        `;
+    } catch (_0x41ca27) {
+        console[_0x4d0b78(0x13a)](_0x4d6059[_0x4d0b78(0x153)], _0x41ca27);
+        const _0x251d87 = document[_0x4d0b78(0x141) + _0x4d0b78(0x111)](_0x4d6059[_0x4d0b78(0xa2)]);
+        _0x251d87[_0x4d0b78(0xb9)] = _0x4d0b78(0xd3) + _0x4d0b78(0xf3) + _0x4d0b78(0xa9) + _0x4d0b78(0x12f) + _0x4d0b78(0x161) + _0x4d0b78(0xf4) + _0x4d0b78(0x116) + _0x4d0b78(0x152) + _0x4d0b78(0x12d) + _0x4d0b78(0xd9) + _0x4d0b78(0xcf) + _0x4d0b78(0xae) + _0x4d0b78(0xb5) + _0x4d0b78(0xc5) + _0x4d0b78(0x152) + _0x4d0b78(0x107) + _0x4d0b78(0xfc) + _0x4d0b78(0xb2) + _0x4d0b78(0x15f) + _0x4d0b78(0x152) + _0x4d0b78(0x12b) + _0x4d0b78(0xd8);
     }
 }
-document.addEventListener('DOMContentLoaded', fetchLatestNews);
-
-
-
-// news detail
-const pathSegments = window.location.pathname.split('/');
-const newsId = pathSegments[pathSegments.length - 1];
-let apiUrl = `https://intensprotectionexenew.vercel.app/api/news/detail/${newsId}`;
-
+document[_0x3f7469(0x133) + _0x3f7469(0xfa)](_0x3f7469(0xee) + _0x3f7469(0xd5), fetchLatestNews);
+const pathSegments = window[_0x3f7469(0x125)][_0x3f7469(0xc0)][_0x3f7469(0xf9)]('/'), newsId = pathSegments[pathSegments[_0x3f7469(0x157)] - (-0x236f + 0x34a * 0x6 + 0xfb4)];
+function _0x23de() {
+    const _0x222e00 = [
+        'lass=\x22w-20',
+        '45iegfiw',
+        'ition-colo',
+        '\x20h-5\x20mr-2\x20',
+        'rRJmD',
+        '2049446tBgNKX',
+        'xl\x20mb-2\x22><',
+        'lamation-c',
+        'alt',
+        'remove',
+        '\x20\x20\x20\x20\x20\x20\x20',
+        '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'mation-cir',
+        'Loaded',
+        '0\x20whitespa',
+        '00\x20rounded',
+        '\x20\x20\x20\x20\x20\x20',
+        'fas\x20fa-exc',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'ld\x20mb-2\x22>',
+        '</h3>\x0a\x20\x20\x20\x20',
+        'rcle\x22></i>',
+        '\x20\x20\x20\x20\x20\x20\x20</d',
+        '6ppJCwT',
+        'div',
+        'news-detai',
+        '\x20\x20\x20',
+        'classList',
+        'click',
+        'newsContai',
+        '\x20di\x20web\x20JK',
+        'add',
+        '//res.clou',
+        '.vercel.ap',
+        'pmZCR',
+        'ded-lg\x20hov',
+        'rc=\x22https:',
+        'bg-gray-80',
+        'DOMContent',
+        'ol-span-3\x20',
+        'ohQOO',
+        'tkan\x20data\x20',
+        'rEcJa',
+        '\x20\x20\x20<div\x20cl',
+        'xt-gray-40',
+        '-full\x20mt-4',
+        'ont-semibo',
+        '/haymzm4wp',
+        'img',
+        'split',
+        'stener',
+        'hing\x20news:',
+        '\x20mendapatk',
+        '\x20class=\x22te',
+        'gap-4',
+        '\x20px-4\x20py-2',
+        'tensprotec',
+        'e\x20mb-6\x22>',
+        '-700\x20trans',
+        '\x20\x20\x20\x20<img\x20s',
+        '\x20\x20\x20\x20\x20\x20<i\x20c',
+        'createElem',
+        'PbMnQ',
+        '\x20\x20<p>Gagal',
+        '\x20\x20\x20\x20<p>Gag',
+        'isArray',
+        'href',
+        '\x20\x20<p\x20class',
+        'ass=\x22flex\x20',
+        'y-400\x22>',
+        'll\x22/>\x0a\x20\x20\x20\x20',
+        'rs\x20duratio',
+        'Error\x20fetc',
+        'ById',
+        'querySelec',
+        's\x20fa-excla',
+        '/image/upl',
+        '-full\x20hove',
+        '0\x22>\x0a\x20\x20\x20\x20\x20\x20',
+        'berita',
+        'h3\x20class=\x22',
+        'items-cent',
+        'hing\x20news\x20',
+        '16260WWIFHD',
+        '/detail/',
+        'https://in',
+        '/i>\x0a\x20\x20\x20\x20\x20\x20',
+        '/p>\x0a\x20\x20\x20\x20\x20\x20',
+        'rounded-lg',
+        'keleton-ne',
+        'v\x20class=\x22c',
+        'wGXoI',
+        'er:bg-gray',
+        'location',
+        'wsdetail',
+        'kGSeh',
+        'iv>\x0a\x20\x20\x20\x20\x20\x20',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<i',
+        '/news/',
+        '\x20</div>\x0a\x20\x20',
+        'ce-pre-lin',
+        '<i\x20class=\x22',
+        '<h3\x20class=',
+        'pan-3\x20text',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20<',
+        'cursor',
+        '600\x22>Lihat',
+        'addEventLi',
+        '0\x20p-6\x20roun',
+        'tionexenew',
+        'HSQou',
+        'EhUrH',
+        '\x20\x20\x20\x20\x20\x20\x20<di',
+        'qwzhD',
+        'error',
+        'nt-bold\x20mb',
+        'y-400\x22>\x0a\x20\x20',
+        'center\x20mb-',
+        'iiqdf',
+        'slice',
+        'rounded-fu',
+        'getElement',
+        'n-300',
+        'T48</a>\x0a\x20\x20',
+        'konten',
+        '\x22\x20alt=\x22New',
+        '</div>\x0a\x20\x20\x20',
+        'v\x20class=\x22f',
+        '220580jdcXsu',
+        'mb-6',
+        'eETRe',
+        '\x20class=\x22fa',
+        'XMNMa',
+        'l-containe',
+        'WIpbR',
+        '4\x22>\x0a\x20\x20\x20\x20\x20\x20',
+        'ent',
+        'berita_id',
+        '\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',
+        'QZKli',
+        'grid-cols-',
+        'style',
+        'gambar',
+        'length',
+        'p-6',
+        'iIriK',
+        'sm:grid-co',
+        'r:bg-pink-',
+        'badge_url',
+        'oad/assets',
+        'json',
+        'ws\x20😭</p>\x0a\x20',
+        'text-xl\x20fo',
+        '-center\x20te',
+        'THJuq',
+        'ls-2',
+        '885MsgNmm',
+        '\x20\x20\x20<a\x20href',
+        '/jkt48',
+        '187587ZCTawh',
+        't-gray-400',
+        'pointer',
+        'dinary.com',
+        '\x22text-xl\x20f',
+        'lex\x20items-',
+        'wlDiF',
+        '725496cPKIHy',
+        'news/detai',
+        '349992VwVezT',
+        '\x20\x20\x20\x20\x20\x20<spa',
+        'cle\x20text-2',
+        '=\x22text-gra',
+        'ULDAD',
+        'JOyvQ',
+        '\x20bg-pink-5',
+        's\x20Badge\x22\x20c',
+        'src',
+        'judul',
+        'qaYas',
+        '-4\x22>',
+        'ftQun',
+        'grid',
+        'l/id/',
+        '\x20\x20\x20\x20\x20\x20\x20\x20<p',
+        'waktu',
+        'BMLLz',
+        'fa-info-ci',
+        'ass=\x22col-s',
+        'r\x20text-gra',
+        'MphzM',
+        'er\x20mb-4\x22>\x0a',
+        'al\x20mendapa',
+        'ircle\x20text',
+        'details:',
+        'className',
+        'torAll',
+        'an\x20data\x20ne',
+        'forEach',
+        'n\x20class=\x22t',
+        '-2xl\x20mb-2\x22',
+        'text-cente',
+        'tanggal',
+        'id\x20news\x20😭<',
+        'innerHTML',
+        '\x22\x20class=\x22w',
+        '8217elzknt',
+        'jkt48.com/',
+        'ner',
+        'ext-sm\x20tex',
+        'p/api/news',
+        'pathname',
+        '#loading-s',
+        'lass=\x22fas\x20',
+        '</span>\x0a\x20\x20',
+        '=\x22https://',
+        '></i>\x0a\x20\x20\x20\x20',
+        'appendChil',
+        '</p>\x0a\x20\x20\x20\x20\x20'
+    ];
+    _0x23de = function () {
+        return _0x222e00;
+    };
+    return _0x23de();
+}
+let apiUrl = _0x3f7469(0x11d) + _0x3f7469(0x100) + _0x3f7469(0x135) + _0x3f7469(0xe9) + _0x3f7469(0xbf) + _0x3f7469(0x11c) + newsId;
+function _0x4981(_0x909412, _0x1c0f74) {
+    const _0x56a840 = _0x23de();
+    return _0x4981 = function (_0x2aebdf, _0x2a6236) {
+        _0x2aebdf = _0x2aebdf - (0x1c9e + 0x2 * -0xff7 + 0x3e7);
+        let _0x41cc43 = _0x56a840[_0x2aebdf];
+        return _0x41cc43;
+    }, _0x4981(_0x909412, _0x1c0f74);
+}
 async function fetchNewsDetails() {
+    const _0x2df461 = _0x3f7469, _0x29a859 = {
+            'MphzM': _0x2df461(0xf8),
+            'BMLLz': _0x2df461(0x120),
+            'qaYas': _0x2df461(0xe1) + _0x2df461(0x14d) + 'r',
+            'EhUrH': _0x2df461(0xc1) + _0x2df461(0x121) + _0x2df461(0x126),
+            'kGSeh': function (_0x1143e0, _0x37dd69) {
+                return _0x1143e0(_0x37dd69);
+            },
+            'qwzhD': _0x2df461(0xe0),
+            'wlDiF': _0x2df461(0xed) + '0',
+            'wGXoI': _0x2df461(0x158),
+            'ohQOO': function (_0x27d073, _0x27568a) {
+                return _0x27d073 > _0x27568a;
+            },
+            'rEcJa': _0x2df461(0xa3),
+            'iiqdf': _0x2df461(0x154) + '1',
+            'XMNMa': _0x2df461(0x15a) + _0x2df461(0x163),
+            'WIpbR': _0x2df461(0xfe),
+            'JOyvQ': _0x2df461(0x149),
+            'rRJmD': _0x2df461(0x110) + _0x2df461(0x11a) + _0x2df461(0xaf)
+        };
     try {
         if (!newsId) {
-            const newsDetailContainer = document.getElementById('news-detail-container');
-            const loadingSkeleton = document.querySelectorAll('#loading-skeleton-newsdetail');
-            loadingSkeleton.forEach(skeleton => {
-                skeleton.remove();
-            });
-            newsDetailContainer.innerHTML = `
-                <div class="col-span-3 text-center text-gray-400">
-                    <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                    <p>Gagal mendapatkan data id news 😭</p>
-                </div>
-            `;
+            const _0x34949a = document[_0x2df461(0x141) + _0x2df461(0x111)](_0x29a859[_0x2df461(0xa0)]), _0x59ce19 = document[_0x2df461(0x112) + _0x2df461(0xb1)](_0x29a859[_0x2df461(0x137)]);
+            _0x59ce19[_0x2df461(0xb3)](_0x421c30 => {
+                const _0x1cc01a = _0x2df461;
+                _0x421c30[_0x1cc01a(0xd1)]();
+            }), _0x34949a[_0x2df461(0xb9)] = _0x2df461(0xd3) + _0x2df461(0x138) + _0x2df461(0x122) + _0x2df461(0xef) + _0x2df461(0xb6) + _0x2df461(0xaa) + _0x2df461(0x13c) + _0x2df461(0x152) + _0x2df461(0x129) + _0x2df461(0x14b) + _0x2df461(0x113) + _0x2df461(0xd4) + _0x2df461(0x98) + _0x2df461(0xce) + _0x2df461(0x11e) + _0x2df461(0x152) + _0x2df461(0x108) + _0x2df461(0xad) + _0x2df461(0xf1) + _0x2df461(0xb8) + _0x2df461(0x11f) + _0x2df461(0x152) + _0x2df461(0x146) + _0x2df461(0xda);
             return;
         }
-
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        const newsDetailContainer = document.getElementById('news-detail-container');
-        const loadingSkeleton = document.querySelectorAll('#loading-skeleton-newsdetail');
-        loadingSkeleton.forEach(skeleton => {
-            skeleton.remove();
+        const _0x3ccf69 = await _0x29a859[_0x2df461(0x127)](fetch, apiUrl), _0x4840fd = await _0x3ccf69[_0x2df461(0x15e)](), _0x1600dd = document[_0x2df461(0x141) + _0x2df461(0x111)](_0x29a859[_0x2df461(0xa0)]), _0x514502 = document[_0x2df461(0x112) + _0x2df461(0xb1)](_0x29a859[_0x2df461(0x137)]);
+        _0x514502[_0x2df461(0xb3)](_0x1cb7ab => {
+            const _0x4c26f2 = _0x2df461;
+            _0x1cb7ab[_0x4c26f2(0xd1)]();
         });
-
-        const articleElement = document.createElement('div');
-        articleElement.classList.add('bg-gray-800', 'p-6', 'rounded-lg');
-
-        articleElement.innerHTML = `
-            <div class="flex items-center mb-4">
-                <span class="text-sm text-gray-400">${data.tanggal}</span>
-            </div>
-            <h3 class="text-xl font-bold mb-4">${data.judul}</h3>
-            <p class="text-gray-400 whitespace-pre-line mb-6">${data.konten}</p>
-        `;
-
-        if (Array.isArray(data.gambar) && data.gambar.length > 0) {
-            const imageGallery = document.createElement('div');
-            imageGallery.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'gap-4', 'mb-6');
-
-            data.gambar.forEach((imageUrl) => {
-                const imgElement = document.createElement('img');
-                imgElement.src = imageUrl;
-                imgElement.alt = data.judul;
-                imgElement.classList.add('rounded-lg');
-                imageGallery.appendChild(imgElement);
-            });
-
-            articleElement.appendChild(imageGallery);
+        const _0x1f01bc = document[_0x2df461(0x105) + _0x2df461(0x150)](_0x29a859[_0x2df461(0x139)]);
+        _0x1f01bc[_0x2df461(0xe3)][_0x2df461(0xe7)](_0x29a859[_0x2df461(0x16d)], _0x29a859[_0x2df461(0x123)], _0x29a859[_0x2df461(0xa7)]), _0x1f01bc[_0x2df461(0xb9)] = _0x2df461(0xd3) + _0x2df461(0xf3) + _0x2df461(0x10c) + _0x2df461(0x119) + _0x2df461(0xac) + _0x2df461(0x152) + _0x2df461(0x97) + _0x2df461(0xb4) + _0x2df461(0xbe) + _0x2df461(0x168) + '\x22>' + _0x4840fd[_0x2df461(0xb7)] + (_0x2df461(0xc3) + _0x2df461(0x152) + _0x2df461(0x146) + _0x2df461(0x130) + _0x2df461(0x118) + _0x2df461(0x160) + _0x2df461(0x13b) + _0x2df461(0xa1)) + _0x4840fd[_0x2df461(0x9f)] + (_0x2df461(0xdc) + _0x2df461(0xa5) + _0x2df461(0xfd) + _0x2df461(0xf4) + _0x2df461(0xd6) + _0x2df461(0x12c) + _0x2df461(0x101)) + _0x4840fd[_0x2df461(0x144)] + (_0x2df461(0xc7) + _0x2df461(0xe2));
+        if (Array[_0x2df461(0x109)](_0x4840fd[_0x2df461(0x156)]) && _0x29a859[_0x2df461(0xf0)](_0x4840fd[_0x2df461(0x156)][_0x2df461(0x157)], 0x259 * -0xd + 0x5 * -0x263 + -0x344 * -0xd)) {
+            const _0x20358c = document[_0x2df461(0x105) + _0x2df461(0x150)](_0x29a859[_0x2df461(0x139)]);
+            _0x20358c[_0x2df461(0xe3)][_0x2df461(0xe7)](_0x29a859[_0x2df461(0xf2)], _0x29a859[_0x2df461(0x13e)], _0x29a859[_0x2df461(0x14c)], _0x29a859[_0x2df461(0x14e)], _0x29a859[_0x2df461(0x9b)]), _0x4840fd[_0x2df461(0x156)][_0x2df461(0xb3)](_0xb2d2b9 => {
+                const _0x14a5ae = _0x2df461, _0x44d5fb = document[_0x14a5ae(0x105) + _0x14a5ae(0x150)](_0x29a859[_0x14a5ae(0xab)]);
+                _0x44d5fb[_0x14a5ae(0x9e)] = _0xb2d2b9, _0x44d5fb[_0x14a5ae(0xd0)] = _0x4840fd[_0x14a5ae(0x9f)], _0x44d5fb[_0x14a5ae(0xe3)][_0x14a5ae(0xe7)](_0x29a859[_0x14a5ae(0xa7)]), _0x20358c[_0x14a5ae(0xc6) + 'd'](_0x44d5fb);
+            }), _0x1f01bc[_0x2df461(0xc6) + 'd'](_0x20358c);
         }
-
-        articleElement.innerHTML += `
-            <a href="https://jkt48.com/news/detail/id/${newsId}" class="w-full mt-4 px-4 py-2 bg-pink-500 rounded-full hover:bg-pink-600">Lihat di web JKT48</a>
-        `;
-
-        newsDetailContainer.appendChild(articleElement);
-    } catch (error) {
-        console.error('Error fetching news details:', error);
-        const newsDetailContainer = document.getElementById('news-detail-container');
-
-        const loadingSkeleton = document.querySelectorAll('#loading-skeleton-newsdetail');
-        loadingSkeleton.forEach(skeleton => {
-            skeleton.remove();
-        });
-
-        newsDetailContainer.innerHTML = `
-            <div class="col-span-3 text-center text-gray-400">
-                <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                <p>Gagal mendapatkan data news 😭</p>
-            </div>
-        `;
+        _0x1f01bc[_0x2df461(0xb9)] += _0x2df461(0xd3) + _0x2df461(0x165) + _0x2df461(0xc4) + _0x2df461(0xbc) + _0x2df461(0x16f) + _0x2df461(0xa4) + newsId + (_0x2df461(0xba) + _0x2df461(0xf5) + _0x2df461(0xff) + _0x2df461(0x9c) + _0x2df461(0xd7) + _0x2df461(0x115) + _0x2df461(0x15b) + _0x2df461(0x132) + _0x2df461(0xe6) + _0x2df461(0x143) + _0x2df461(0xd8)), _0x1600dd[_0x2df461(0xc6) + 'd'](_0x1f01bc);
+    } catch (_0x3e6d13) {
+        console[_0x2df461(0x13a)](_0x29a859[_0x2df461(0xcc)], _0x3e6d13);
+        const _0x50cd46 = document[_0x2df461(0x141) + _0x2df461(0x111)](_0x29a859[_0x2df461(0xa0)]), _0x10499d = document[_0x2df461(0x112) + _0x2df461(0xb1)](_0x29a859[_0x2df461(0x137)]);
+        _0x10499d[_0x2df461(0xb3)](_0x5237fb => {
+            const _0x2e3ab9 = _0x2df461;
+            _0x5237fb[_0x2e3ab9(0xd1)]();
+        }), _0x50cd46[_0x2df461(0xb9)] = _0x2df461(0xd3) + _0x2df461(0xf3) + _0x2df461(0xa9) + _0x2df461(0x12f) + _0x2df461(0x161) + _0x2df461(0xf4) + _0x2df461(0x116) + _0x2df461(0x152) + _0x2df461(0x12d) + _0x2df461(0xd9) + _0x2df461(0xcf) + _0x2df461(0xae) + _0x2df461(0xb5) + _0x2df461(0xc5) + _0x2df461(0x152) + _0x2df461(0x107) + _0x2df461(0xfc) + _0x2df461(0xb2) + _0x2df461(0x15f) + _0x2df461(0x152) + _0x2df461(0x12b) + _0x2df461(0xd8);
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', fetchNewsDetails);
+document[_0x3f7469(0x133) + _0x3f7469(0xfa)](_0x3f7469(0xee) + _0x3f7469(0xd5), fetchNewsDetails);
