@@ -21,7 +21,6 @@
     <meta property="og:description" content="EXPERIENCE THE MAGIC OF JKT48, ANYTIME, ANYWHERE">
 </head>
 
-
 <body class="min-h-screen bg-gray-900 text-white">
     <nav class="flex items-center justify-between p-3 bg-gray-800">
         <div class="text-2xl font-bold">
@@ -44,7 +43,7 @@
                     Mypage
                 </button>
             </a>
-            <a href="/login.html">
+            <a href="/login">
                 <button
                     class="px-4 py-2 border border-pink-300 text-pink-300 rounded-full hover:bg-pink-300 hover:text-gray-800 transition duration-300">
                     Login
@@ -72,8 +71,7 @@
     </div>
     <div id="progressContainer" class="relative w-full h-1 bg-gray-700">
         <div id="progressBar" class="absolute h-1 bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300"
-            style="width: 0%;">
-        </div>
+            style="width: 0%;"></div>
     </div>
 
     <section class="flex flex-col md:flex-row items-center justify-center p-8 md:p-16">
@@ -83,12 +81,9 @@
                 Selamat datang di JEKATE48 Fanmade Website, platform yang didedikasikan untuk para penggemar JKT48.
                 Kami berkomitmen untuk memberikan pengalaman digital terbaik untuk semua penggemar grup idola favorit
                 Anda.
-                Mulai dari berita terbaru, jadwal teater, hingga merchandise, semua dapat Anda temukan di sini.
+                Mulai dari berita terbaru, jadwal teater, hingga merchandise, semua dapat Anda temukan di sini, alasan dibuatnya webiste ini
+                karena webistenya JOT sering ngelek (hehe) jadi mager makanya bikin ini wkwk sorry yaa kalau sering down soalnya bukan dewa boy.
             </p>
-            <p class="text-lg leading-relaxed">
-                Situs ini dibuat dengan penuh cinta oleh penggemar, untuk penggemar.
-                Harap dicatat bahwa ini adalah situs **tidak resmi** dan bertujuan sebagai dedikasi untuk JKT48.
-                Kami berharap Anda menikmati pengalaman Anda di sini dan tetap mendukung grup kesayangan kita bersama!
             </p>
             <p class="text-lg leading-relaxed">
                 Website ini dikembangkan oleh
@@ -96,13 +91,13 @@
                     Typicalsleepingboy
                 </a>
             </p>
+            <p id="live-time" class="text-lg leading-relaxed mt-4"></p>
         </div>
         <div class="md:w-1/2 mt-8 md:mt-0">
             <img src="/assets/css/image/logo.png" alt="JKT48"
                 class="rounded-lg shadow-lg max-w-full md:max-w-[300px] lg:max-w-[400px] mx-auto">
         </div>
     </section>
-
 
     <footer class="bg-gray-800 p-8">
         <div class="flex flex-col md:flex-row justify-between items-start mb-8">
@@ -115,7 +110,6 @@
                         <li><a href="/about" class="text-gray-400 hover:text-white">About JEKATE48</a>
                         </li>
                         <li><a href="/schedule" class="text-gray-400 hover:text-white">Schedule</a></li>
-                    </ul>
                     </ul>
                 </div>
                 <div>
@@ -138,7 +132,7 @@
             <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 JEKATE48 fanmade Website by Typicalsleepingboy. All rights
                 reserved.</p>
             <div class="flex space-x-4">
-                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.7.5</p>
+                <p class="text-gray-400 mb-4 md:mb-0">Version : 0.8.0</p>
                 <a href="https://github.com/Typicalsleepingboy" class="text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>
@@ -159,11 +153,12 @@
         hamburgerIcon.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        const publishDate = new Date('2024-12-14'); 
+        const currentDate = new Date();
+        const timeDifference = Math.floor((currentDate - publishDate) / (1000 * 3600 * 24));
+        const liveTimeElement = document.getElementById('live-time');
+        liveTimeElement.textContent = `This website has been live for ${timeDifference} days.`;
     </script>
-    <script src="/progress.js"></script>
-    <script src="/middleware/middleware.js"></script>
-    <script src="/progress.js"></script>
-    <script src="/security/typicalsleepingboy.js"></script>
 </body>
 
 </html>
