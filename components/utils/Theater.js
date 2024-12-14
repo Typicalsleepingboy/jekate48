@@ -22,7 +22,7 @@ function getShowStatus(showInfo) {
     tomorrow.setDate(tomorrow.getDate() + 1);
 
     const [_, datePart, timePart] = showInfo.split(" ");
-    const showDateTime = new Date(`${datePart}T${timePart}:00+07:00`); // Make sure to set timezone (+07:00)
+    const showDateTime = new Date(`${datePart}T${timePart}:00+07:00`); 
 
     const showDateOnly = new Date(showDateTime);
     showDateOnly.setHours(0, 0, 0, 0);

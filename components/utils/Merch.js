@@ -37,11 +37,11 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
             merchItem.classList.add('bg-gray-800', 'rounded-lg', 'overflow-hidden');
 
             const image = document.createElement('img');
-            image.src = item.imageUrl;
+            image.src = item.imageUrl; // Use the optimized URL here
             image.alt = item.title;
             image.classList.add('w-full', 'h-48', 'object-cover');
-            
-            image.onerror = function() {
+
+            image.onerror = function () {
                 if (isCloudinaryUrl(this.src)) {
                     const originalUrl = decodeURIComponent(this.src.split('/fill/')[1]);
                     this.src = originalUrl;
@@ -62,18 +62,18 @@ fetch('https://intensprotectionexenew.vercel.app/api/merch')
 
             const button = document.createElement('button');
             button.classList.add(
-              'w-full',
-              'mt-4',
-              'px-4',
-              'py-2',
-              'bg-gradient-to-r',
-              'from-pink-300',
-              'via-purple-300',
-              'to-cyan-300',
-              'rounded-full',
-              'hover:from-pink-400',
-              'hover:via-purple-400',
-              'hover:to-cyan-400'
+                'w-full',
+                'mt-4',
+                'px-4',
+                'py-2',
+                'bg-gradient-to-r',
+                'from-pink-300',
+                'via-purple-300',
+                'to-cyan-300',
+                'rounded-full',
+                'hover:from-pink-400',
+                'hover:via-purple-400',
+                'hover:to-cyan-400'
             );
 
             button.textContent = 'Order Now';

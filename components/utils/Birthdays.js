@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return { text: "Hari Ini", color: "bg-green-500" };
         } else if (diffDays === 1) {
             return { text: "Besok", color: "bg-yellow-500" };
-        } else if (diffDays === 2) {
-            return { text: "2 Hari Lagi", color: "bg-blue-500" };
         }
 
         return null;
@@ -56,10 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 noDataImage.src = "https://res.cloudinary.com/dlx2zm7ha/image/upload/v1733508715/allactkiuu9tmtrqfumi.png";
                 noDataImage.alt = "No Data Found";
                 noDataImage.className = "mx-auto mt-6";
-
-                const noDataText = document.createElement("p");
-                noDataText.textContent = "Tidak ada data ulang tahun.";
-                noDataText.className = "text-center text-gray-500 mt-4";
 
                 birthdayList.appendChild(noDataImage);
                 birthdayList.appendChild(noDataText);
