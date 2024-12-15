@@ -48,11 +48,7 @@
     {
       "source": "/member/:profileId",
       "destination": "/components/detail/member?id=:profileId"
-    },
-    {
-      "source": "/ssk/:candidateId",
-      "destination": "/components/detail/ssk.html?id=:candidateId"
-    }  ,  
+    }, 
     {
       "source": "/theater/:setlist",
       "destination": "/components/detail/theater?setlist=:setlist"
