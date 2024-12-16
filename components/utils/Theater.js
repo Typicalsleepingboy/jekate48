@@ -1,423 +1,267 @@
-const _0x21834f = _0x4bfd;
-(function (_0x5c8312, _0x350a45) {
-    const _0xbd6f73 = _0x4bfd, _0x2041a9 = _0x5c8312();
-    while (!![]) {
-        try {
-            const _0xd8924f = parseInt(_0xbd6f73(0x22c)) / (-0xb3f + -0x706 + -0x1 * -0x1246) * (-parseInt(_0xbd6f73(0x231)) / (-0x11a4 + -0x2a * -0x67 + 0x2 * 0x60)) + -parseInt(_0xbd6f73(0x1c1)) / (0x3 * -0x5ef + 0x626 * -0x3 + 0x2442) * (-parseInt(_0xbd6f73(0x1b4)) / (-0x1276 + 0x10 * -0x15e + -0x1 * -0x285a)) + -parseInt(_0xbd6f73(0x1d4)) / (0x255f + -0x1 * 0x187 + -0x23d3) * (-parseInt(_0xbd6f73(0x1ed)) / (-0x20d4 + 0x5fa + 0x8 * 0x35c)) + parseInt(_0xbd6f73(0x1aa)) / (-0x983 * -0x2 + 0x13aa + -0x26a9) * (-parseInt(_0xbd6f73(0x1c5)) / (0x1358 * -0x1 + 0x1495 * -0x1 + -0xc1 * -0x35)) + parseInt(_0xbd6f73(0x1cd)) / (0x13 * 0xd5 + 0x7 * -0x1f1 + -0x22f) * (-parseInt(_0xbd6f73(0x1dd)) / (0x5 * 0x3fd + -0x2 * -0xadb + -0x299d)) + -parseInt(_0xbd6f73(0x1ad)) / (-0x2150 + 0xde4 + 0x1377) * (parseInt(_0xbd6f73(0x1b7)) / (-0x2 * -0xacf + 0x4bf + -0x1a51)) + parseInt(_0xbd6f73(0x1da)) / (0x1c15 + -0x21a9 + 0x5a1);
-            if (_0xd8924f === _0x350a45)
-                break;
-            else
-                _0x2041a9['push'](_0x2041a9['shift']());
-        } catch (_0x28ed39) {
-            _0x2041a9['push'](_0x2041a9['shift']());
-        }
-    }
-}(_0xd4a1, 0xcfe * -0x36 + 0x4 * -0x10e89 + 0xa9767));
-function formatShowDate(_0x3db922, _0x2df10f) {
-    const _0x2fb651 = _0x4bfd, _0x479d39 = {
-            'DzJEU': _0x2fb651(0x242),
-            'ChQVp': _0x2fb651(0x256),
-            'nElFJ': _0x2fb651(0x23b) + 'ta',
-            'tLXPN': _0x2fb651(0x219)
-        }, _0x3fb576 = new Date(_0x3db922), _0x440725 = {
-            'day': _0x479d39[_0x2fb651(0x1de)],
-            'month': _0x479d39[_0x2fb651(0x227)],
-            'year': _0x479d39[_0x2fb651(0x1de)],
-            'timeZone': _0x479d39[_0x2fb651(0x1e8)]
-        }, _0x52ce1d = new Intl[(_0x2fb651(0x1fc)) + (_0x2fb651(0x1a5))](_0x479d39[_0x2fb651(0x217)], _0x440725)[_0x2fb651(0x26b)](_0x3fb576), _0x54cc08 = _0x2df10f[_0x2fb651(0x26c)]('\x20')[-0xffe * -0x1 + 0x417 * 0x9 + -0x35 * 0xff], _0xc4e43c = _0x54cc08[_0x2fb651(0x1e9)](':', '.') + _0x2fb651(0x239);
-    return {
-        'formattedDate': _0x52ce1d,
-        'formattedTime': _0xc4e43c
+function formatShowDate(dateString, showInfo) {
+    const date = new Date(dateString);
+
+    const dateOptions = {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'Asia/Jakarta'
     };
+    const formattedDate = new Intl.DateTimeFormat('id-ID', dateOptions).format(date);
+    const time = showInfo.split(" ")[2];
+    const formattedTime = `${time.replace(":", ".")} WIB`;
+    return { formattedDate, formattedTime };
 }
-function _0x4bfd(_0x2446bd, _0x42dd1b) {
-    const _0xae97bd = _0xd4a1();
-    return _0x4bfd = function (_0x5a497c, _0xc839d7) {
-        _0x5a497c = _0x5a497c - (-0x1110 + -0x104d * -0x2 + -0x4a3 * 0x3);
-        let _0x1a0447 = _0xae97bd[_0x5a497c];
-        return _0x1a0447;
-    }, _0x4bfd(_0x2446bd, _0x42dd1b);
-}
-function getShowStatus(_0x4859f9) {
-    const _0x112e6d = _0x4bfd, _0x179778 = {
-            'FelLv': function (_0x26382b, _0xf40d76) {
-                return _0x26382b + _0xf40d76;
-            },
-            'mmDWE': function (_0x3ebd9e, _0x128278) {
-                return _0x3ebd9e === _0x128278;
-            },
-            'lFrLS': function (_0x5b3638, _0x7c5f23) {
-                return _0x5b3638 <= _0x7c5f23;
-            },
-            'mopGT': _0x112e6d(0x1bd) + _0x112e6d(0x258),
-            'lfMFI': _0x112e6d(0x232) + '00',
-            'haKnl': _0x112e6d(0x1f1),
-            'XbmkW': _0x112e6d(0x1f0) + '0',
-            'SbMeS': function (_0x2d333b, _0x58b268) {
-                return _0x2d333b === _0x58b268;
-            },
-            'aGvGf': _0x112e6d(0x1f2),
-            'mSCJn': _0x112e6d(0x1ca) + _0x112e6d(0x1c4)
-        }, _0xb8b6b8 = new Date(), _0x20fbd7 = new Date();
-    _0x20fbd7[_0x112e6d(0x1e2)](-0x6e + 0x49 * -0x6 + -0x4 * -0x89, 0x1 * 0x24b + 0xb1 * -0x1e + -0x1273 * -0x1, 0x17 * -0x18b + -0x3e5 * -0x7 + 0x83a, 0x17f9 + -0xa05 + -0xdf4);
-    const _0x13870c = new Date(_0x20fbd7);
-    _0x13870c[_0x112e6d(0x200)](_0x179778[_0x112e6d(0x1d6)](_0x13870c[_0x112e6d(0x240)](), 0x15a * 0x4 + 0x19c7 * -0x1 + -0x28c * -0x8));
-    const [_0x157881, _0x163fdb, _0xa46ec2] = _0x4859f9[_0x112e6d(0x26c)]('\x20'), _0x2b5ca6 = new Date(_0x163fdb + 'T' + _0xa46ec2 + _0x112e6d(0x1ba)), _0x56c23d = new Date(_0x2b5ca6);
-    _0x56c23d[_0x112e6d(0x1e2)](0x9b * -0xf + 0x170a + -0xdf5, 0x147b + -0x8 * 0x1a5 + -0x19 * 0x4b, -0x382 * 0xb + -0x8 * -0x1c6 + 0x15b * 0x12, -0x2 * 0xd6a + -0xc7 * -0x1 + 0x1a0d);
-    if (_0x179778[_0x112e6d(0x253)](_0x56c23d[_0x112e6d(0x1b6)](), _0x20fbd7[_0x112e6d(0x1b6)]())) {
-        if (_0x179778[_0x112e6d(0x226)](_0x2b5ca6, _0xb8b6b8))
+
+
+function getShowStatus(showInfo) {
+    const now = new Date();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const [_, datePart, timePart] = showInfo.split(" ");
+    const showDateTime = new Date(`${datePart}T${timePart}:00`);
+
+    const showDateOnly = new Date(showDateTime);
+    showDateOnly.setHours(0, 0, 0, 0);
+
+    if (showDateOnly.getTime() === today.getTime()) {
+        if (showDateTime <= now) {
             return {
-                'text': _0x179778[_0x112e6d(0x1cc)],
-                'color': _0x179778[_0x112e6d(0x21d)]
+                text: "Sedang Berlangsung",
+                color: "bg-green-500",
             };
+        }
         return {
-            'text': _0x179778[_0x112e6d(0x1c3)],
-            'color': _0x179778[_0x112e6d(0x20e)]
+            text: "Hari ini",
+            color: "bg-blue-500",
         };
     }
-    if (_0x179778[_0x112e6d(0x249)](_0x56c23d[_0x112e6d(0x1b6)](), _0x13870c[_0x112e6d(0x1b6)]()))
+
+    if (showDateOnly.getTime() === tomorrow.getTime()) {
         return {
-            'text': _0x179778[_0x112e6d(0x23d)],
-            'color': _0x179778[_0x112e6d(0x233)]
+            text: "Besok",
+            color: "bg-yellow-500",
         };
+    }
+
     return null;
 }
-function _0xd4a1() {
-    const _0x50713a = [
-        'SbMeS',
-        'Error\x20fetc',
-        'setlist',
-        '/data/thea',
-        'col\x20md:fle',
-        'y-500\x20mt-4',
-        'svg',
-        'ById',
-        'flex\x20flex-',
-        'classList',
-        'mmDWE',
-        'alt',
-        'JmgNF',
-        'long',
-        'YZeAM',
-        'langsung',
-        'div',
-        '-x-4\x20md:sp',
-        'mi.png',
-        'ers:\x20',
-        'src',
-        '\x20text-whit',
-        'UkRkC',
-        'hidden',
-        'gZHMY',
-        'href',
-        'createElem',
-        'x-row\x20just',
-        'rpWEI',
-        'CFsms',
-        'ogiWh',
-        'w-16\x20h-16\x20',
-        'mbers',
-        'uu9tmtrqfu',
-        'format',
-        'split',
-        'e\x20px-7\x20py-',
-        'ter.json',
-        'Error\x20load',
-        'pKHbF',
-        'text-lg\x20te',
-        'zCxuH',
-        'text-gray-',
-        'rmat',
-        'er\x20data:',
-        'text',
-        'MfvhI',
-        't48.com/im',
-        '22526QsYNGc',
-        'loading-sk',
-        'image',
-        '70961AsBNQX',
-        'sGCTk',
-        'qnIhM',
-        '1\x20rounded-',
-        'Waktu:\x20',
-        'sm\x20mt-2\x20md',
-        'tionexenew',
-        '4nfVVHT',
-        'apatkan\x20da',
-        'getTime',
-        '60rYVnAB',
-        'p/api/thea',
-        'QYqQC',
-        ':00+07:00',
-        'wgSWf',
-        'er.',
-        'Sedang\x20Ber',
-        'cSKxx',
-        'No\x20Data\x20Fo',
-        'find',
-        '691791BnCsWQ',
-        'ta\x20theater',
-        'haKnl',
-        '500',
-        '568JhgmtT',
-        'flex\x20space',
-        'NUmTX',
-        'ater',
-        'length',
-        'bg-yellow-',
-        'EtreY',
-        'mopGT',
-        '431694eBCYhg',
-        'XsWpo',
-        'appendChil',
-        'theater-li',
-        'Total\x20Memb',
-        'art\x20border',
-        'pHGrg',
-        '2305HHyzQv',
-        'Gagal\x20mend',
-        'FelLv',
-        'n\x20items-st',
-        '\x20😭.',
-        'error',
-        '5624190HOjGzp',
-        'catch',
-        'getElement',
-        '80otEsBm',
-        'DzJEU',
-        'ify-betwee',
-        'https://jk',
-        'Uhytd',
-        'setHours',
-        'className',
-        'wWhMD',
-        'stener',
-        'then',
-        'Seintansai',
-        'nElFJ',
-        'replace',
-        'qcnhz',
-        'members',
-        'r\x20text-gra',
-        '3252IMISWc',
-        'aFFMF',
-        'cdrkP',
-        'bg-blue-50',
-        'Hari\x20ini',
-        'Besok',
-        'v173350871',
-        'vbeRM',
-        'pupaf',
-        'font-bold\x20',
-        'text-cente',
-        'span',
-        'b-4',
-        'hing\x20theat',
-        'ZuBLK',
-        'DateTimeFo',
-        'oUyZz',
-        'BtTev',
-        '/theater/',
-        'setDate',
-        'uTcYO',
-        'date',
-        'eleton-the',
-        'DOMContent',
-        'addEventLi',
-        '-b\x20border-',
-        'NSIOM',
-        'remove',
-        'KdTRf',
-        's.cloudina',
-        'showInfo',
-        ':mt-0',
-        'innerHTML',
-        'XbmkW',
-        'ing\x20theate',
-        'img',
-        '2zm7ha/ima',
-        'yaCOD',
-        'r.json:',
-        'textConten',
-        'xCYse',
-        'ge/upload/',
-        'tLXPN',
-        '400\x20text-l',
-        'id-ID',
-        'ter',
-        'SAoyp',
-        'Loaded',
-        'lfMFI',
-        'tensprotec',
-        'join',
-        'json',
-        'ry.com/dlx',
-        'Tidak\x20ada\x20',
-        '.vercel.ap',
-        'ages/logo.',
-        'full\x20text-',
-        'lFrLS',
-        'ChQVp',
-        'pqJdX',
-        'ace-x-6',
-        'rhhkw',
-        '5/allactki',
-        '2831ZjQpZk',
-        'Cofnm',
-        'mx-auto\x20mt',
-        'qSACN',
-        'add',
-        '22DOHkEn',
-        'bg-green-5',
-        'mSCJn',
-        'data\x20theat',
-        'xt-white-4',
-        'forEach',
-        'ent',
-        'ooVjh',
-        '\x20WIB',
-        '\x20yang\x20tamp',
-        'Asia/Jakar',
-        'gray-700\x20p',
-        'aGvGf',
-        'color',
-        'https://in',
-        'getDate',
-        'und',
-        'numeric',
-        'birthdayMe',
-        'uDlqV',
-        'LQDuy',
-        'rounded-lg',
-        'https://re',
-        'ENkzG'
-    ];
-    _0xd4a1 = function () {
-        return _0x50713a;
-    };
-    return _0xd4a1();
-}
-document[_0x21834f(0x205) + _0x21834f(0x1e5)](_0x21834f(0x204) + _0x21834f(0x21c), () => {
-    const _0x3786ad = _0x21834f, _0x5cab17 = {
-            'BtTev': _0x3786ad(0x259),
-            'uTcYO': _0x3786ad(0x251) + _0x3786ad(0x24d) + _0x3786ad(0x264) + _0x3786ad(0x1df) + _0x3786ad(0x1d7) + _0x3786ad(0x1d2) + _0x3786ad(0x206) + _0x3786ad(0x23c) + _0x3786ad(0x1f9),
-            'UkRkC': _0x3786ad(0x1c6) + _0x3786ad(0x25a) + _0x3786ad(0x229),
-            'cdrkP': _0x3786ad(0x210),
-            'SAoyp': _0x3786ad(0x1e0) + _0x3786ad(0x1a9) + _0x3786ad(0x224) + _0x3786ad(0x24f),
-            'pKHbF': _0x3786ad(0x268) + _0x3786ad(0x246),
-            'QYqQC': function (_0x4a6731, _0x5b3e6c) {
-                return _0x4a6731(_0x5b3e6c);
-            },
-            'CFsms': _0x3786ad(0x1f6) + _0x3786ad(0x1a2) + _0x3786ad(0x235) + '00',
-            'qSACN': function (_0x29b6c4, _0x2673f3, _0x3e1e7f) {
-                return _0x29b6c4(_0x2673f3, _0x3e1e7f);
-            },
-            'JmgNF': _0x3786ad(0x1a4) + _0x3786ad(0x218) + 'g',
-            'KdTRf': function (_0x1580bf, _0x5c34f6) {
-                return _0x1580bf > _0x5c34f6;
-            },
-            'NSIOM': function (_0x468bf7, _0x4db088) {
-                return _0x468bf7(_0x4db088);
-            },
-            'rhhkw': _0x3786ad(0x1f8),
-            'ooVjh': _0x3786ad(0x260),
-            'xCYse': function (_0x260c20, _0x3f26a1) {
-                return _0x260c20 === _0x3f26a1;
-            },
-            'oUyZz': _0x3786ad(0x247) + _0x3786ad(0x20a) + _0x3786ad(0x221) + _0x3786ad(0x211) + _0x3786ad(0x216) + _0x3786ad(0x1f3) + _0x3786ad(0x22b) + _0x3786ad(0x26a) + _0x3786ad(0x25b),
-            'gZHMY': _0x3786ad(0x1bf) + _0x3786ad(0x241),
-            'pHGrg': _0x3786ad(0x22e) + '-6',
-            'ogiWh': _0x3786ad(0x222) + _0x3786ad(0x234) + _0x3786ad(0x1bc),
-            'vbeRM': _0x3786ad(0x1f7) + _0x3786ad(0x1ec) + _0x3786ad(0x24e),
-            'wgSWf': _0x3786ad(0x24a) + _0x3786ad(0x1fa) + _0x3786ad(0x1a6),
-            'NUmTX': _0x3786ad(0x1d5) + _0x3786ad(0x1b5) + _0x3786ad(0x1c2) + _0x3786ad(0x1d8),
-            'aFFMF': _0x3786ad(0x23f) + _0x3786ad(0x21e) + _0x3786ad(0x1b3) + _0x3786ad(0x223) + _0x3786ad(0x1b8) + _0x3786ad(0x21a),
-            'wWhMD': _0x3786ad(0x26f) + _0x3786ad(0x20f) + _0x3786ad(0x213),
-            'rpWEI': _0x3786ad(0x1ab) + _0x3786ad(0x203) + _0x3786ad(0x1c8),
-            'XsWpo': _0x3786ad(0x1d0) + 'st',
-            'YZeAM': function (_0x13e9ba, _0x25b7ff) {
-                return _0x13e9ba(_0x25b7ff);
-            },
-            'ZuBLK': _0x3786ad(0x24c) + _0x3786ad(0x26e)
-        }, _0x33d39e = document[_0x3786ad(0x1dc) + _0x3786ad(0x250)](_0x5cab17[_0x3786ad(0x265)]), _0x16e2ad = document[_0x3786ad(0x1dc) + _0x3786ad(0x250)](_0x5cab17[_0x3786ad(0x1ce)]);
-    _0x5cab17[_0x3786ad(0x257)](fetch, _0x5cab17[_0x3786ad(0x1fb)])[_0x3786ad(0x1e6)](_0x4c583d => _0x4c583d[_0x3786ad(0x220)]())[_0x3786ad(0x1e6)](_0x1428f5 => {
-        const _0x13a281 = _0x3786ad, _0x4e3549 = {
-                'ENkzG': _0x5cab17[_0x13a281(0x1bb)],
-                'LQDuy': _0x5cab17[_0x13a281(0x1c7)]
-            };
-        _0x5cab17[_0x13a281(0x1b9)](fetch, _0x5cab17[_0x13a281(0x1ee)])[_0x13a281(0x1e6)](_0x2d9a5b => _0x2d9a5b[_0x13a281(0x220)]())[_0x13a281(0x1e6)](_0x19f615 => {
-            const _0x446d1c = _0x13a281, _0x525774 = {
-                    'EtreY': _0x5cab17[_0x446d1c(0x1fe)],
-                    'Cofnm': _0x5cab17[_0x446d1c(0x201)],
-                    'qcnhz': _0x5cab17[_0x446d1c(0x25f)],
-                    'cSKxx': _0x5cab17[_0x446d1c(0x1ef)],
-                    'MfvhI': _0x5cab17[_0x446d1c(0x21b)],
-                    'Uhytd': _0x5cab17[_0x446d1c(0x1a1)],
-                    'qnIhM': function (_0x3e4c53, _0x40f292) {
-                        const _0x4217d0 = _0x446d1c;
-                        return _0x5cab17[_0x4217d0(0x1b9)](_0x3e4c53, _0x40f292);
-                    },
-                    'zCxuH': _0x5cab17[_0x446d1c(0x266)],
-                    'yaCOD': function (_0x2d7b9b, _0x18abfc, _0x37f433) {
-                        const _0x2a71e2 = _0x446d1c;
-                        return _0x5cab17[_0x2a71e2(0x22f)](_0x2d7b9b, _0x18abfc, _0x37f433);
-                    },
-                    'pqJdX': _0x5cab17[_0x446d1c(0x255)],
-                    'pupaf': function (_0x261814, _0xcc4c0) {
-                        const _0x53d4c0 = _0x446d1c;
-                        return _0x5cab17[_0x53d4c0(0x209)](_0x261814, _0xcc4c0);
-                    },
-                    'uDlqV': function (_0x62f0f6, _0x247593) {
-                        const _0x509aa4 = _0x446d1c;
-                        return _0x5cab17[_0x509aa4(0x207)](_0x62f0f6, _0x247593);
-                    },
-                    'sGCTk': _0x5cab17[_0x446d1c(0x22a)]
-                };
-            _0x33d39e[_0x446d1c(0x252)][_0x446d1c(0x230)](_0x5cab17[_0x446d1c(0x238)]), _0x16e2ad[_0x446d1c(0x252)][_0x446d1c(0x208)](_0x5cab17[_0x446d1c(0x238)]);
-            if (!_0x19f615 || _0x5cab17[_0x446d1c(0x215)](_0x19f615[_0x446d1c(0x1c9)], 0x5 * 0x759 + -0xc42 + 0x829 * -0x3)) {
-                const _0x10791f = document[_0x446d1c(0x263) + _0x446d1c(0x237)](_0x5cab17[_0x446d1c(0x1ef)]);
-                _0x10791f[_0x446d1c(0x25d)] = _0x5cab17[_0x446d1c(0x1fd)], _0x10791f[_0x446d1c(0x254)] = _0x5cab17[_0x446d1c(0x261)], _0x10791f[_0x446d1c(0x1e3)] = _0x5cab17[_0x446d1c(0x1d3)];
-                const _0x21a6dc = document[_0x446d1c(0x263) + _0x446d1c(0x237)]('p');
-                _0x21a6dc[_0x446d1c(0x214) + 't'] = _0x5cab17[_0x446d1c(0x267)], _0x21a6dc[_0x446d1c(0x1e3)] = _0x5cab17[_0x446d1c(0x1f4)], _0x16e2ad[_0x446d1c(0x1cf) + 'd'](_0x10791f), _0x16e2ad[_0x446d1c(0x1cf) + 'd'](_0x21a6dc);
-                return;
-            }
-            _0x19f615[_0x446d1c(0x236)](_0x402f72 => {
-                const _0x129d1 = _0x446d1c, _0x1188be = document[_0x129d1(0x263) + _0x129d1(0x237)](_0x525774[_0x129d1(0x1cb)]);
-                _0x1188be[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x22d)];
-                const _0x4048f9 = document[_0x129d1(0x263) + _0x129d1(0x237)](_0x525774[_0x129d1(0x1cb)]);
-                _0x4048f9[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x1ea)];
-                const _0x25a15a = _0x1428f5[_0x129d1(0x1c0)](_0x2bf556 => _0x2bf556[_0x129d1(0x24b)] === _0x402f72[_0x129d1(0x24b)]), _0x5bde14 = document[_0x129d1(0x263) + _0x129d1(0x237)](_0x525774[_0x129d1(0x1be)]);
-                _0x5bde14[_0x129d1(0x25d)] = _0x25a15a ? _0x25a15a[_0x129d1(0x1ac)] : _0x525774[_0x129d1(0x1a8)], _0x5bde14[_0x129d1(0x254)] = _0x402f72[_0x129d1(0x24b)], _0x5bde14[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x1e1)];
-                const _0x28f2f4 = document[_0x129d1(0x263) + _0x129d1(0x237)](_0x525774[_0x129d1(0x1cb)]), _0x37798b = document[_0x129d1(0x263) + _0x129d1(0x237)]('a');
-                _0x37798b[_0x129d1(0x262)] = _0x129d1(0x1ff) + _0x525774[_0x129d1(0x1af)](encodeURIComponent, _0x402f72[_0x129d1(0x24b)]), _0x37798b[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x1a3)], _0x37798b[_0x129d1(0x20d)] = '' + _0x402f72[_0x129d1(0x24b)];
-                const {
-                        formattedDate: _0xd9fc88,
-                        formattedTime: _0x47fea6
-                    } = _0x525774[_0x129d1(0x212)](formatShowDate, _0x402f72[_0x129d1(0x202)], _0x402f72[_0x129d1(0x20b)]), _0x50314c = document[_0x129d1(0x263) + _0x129d1(0x237)]('p');
-                _0x50314c[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x228)], _0x50314c[_0x129d1(0x20d)] = _0x129d1(0x1b1) + _0xd9fc88;
-                const _0x429d3d = document[_0x129d1(0x263) + _0x129d1(0x237)]('p');
-                _0x429d3d[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x228)], _0x429d3d[_0x129d1(0x20d)] = _0x129d1(0x1b1) + _0x47fea6;
-                const _0x2f355b = document[_0x129d1(0x263) + _0x129d1(0x237)]('p');
-                _0x2f355b[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x228)], _0x2f355b[_0x129d1(0x20d)] = _0x129d1(0x1d1) + _0x129d1(0x25c) + _0x402f72[_0x129d1(0x1eb)][_0x129d1(0x1c9)] + (_0x129d1(0x23a) + 'il'), _0x28f2f4[_0x129d1(0x1cf) + 'd'](_0x37798b), _0x28f2f4[_0x129d1(0x1cf) + 'd'](_0x50314c), _0x28f2f4[_0x129d1(0x1cf) + 'd'](_0x429d3d), _0x28f2f4[_0x129d1(0x1cf) + 'd'](_0x2f355b);
-                if (_0x402f72[_0x129d1(0x243) + _0x129d1(0x269)] && _0x525774[_0x129d1(0x1f5)](_0x402f72[_0x129d1(0x243) + _0x129d1(0x269)][_0x129d1(0x1c9)], 0x18b0 + -0x11aa + -0x3e * 0x1d)) {
-                    const _0x405cb7 = document[_0x129d1(0x263) + _0x129d1(0x237)]('p');
-                    _0x405cb7[_0x129d1(0x1e3)] = _0x525774[_0x129d1(0x228)], _0x405cb7[_0x129d1(0x20d)] = _0x129d1(0x1e7) + ':\x20' + _0x402f72[_0x129d1(0x243) + _0x129d1(0x269)][_0x129d1(0x21f)](',\x20'), _0x28f2f4[_0x129d1(0x1cf) + 'd'](_0x405cb7);
-                }
-                _0x4048f9[_0x129d1(0x1cf) + 'd'](_0x5bde14), _0x4048f9[_0x129d1(0x1cf) + 'd'](_0x28f2f4);
-                const _0x379d24 = _0x525774[_0x129d1(0x244)](getShowStatus, _0x402f72[_0x129d1(0x20b)]);
-                if (_0x379d24) {
-                    const _0x199d22 = document[_0x129d1(0x263) + _0x129d1(0x237)](_0x525774[_0x129d1(0x1ae)]);
-                    _0x199d22[_0x129d1(0x1e3)] = _0x379d24[_0x129d1(0x23e)] + (_0x129d1(0x25e) + _0x129d1(0x26d) + _0x129d1(0x1b0) + _0x129d1(0x225) + _0x129d1(0x1b2) + _0x129d1(0x20c)), _0x199d22[_0x129d1(0x214) + 't'] = _0x379d24[_0x129d1(0x1a7)], _0x1188be[_0x129d1(0x1cf) + 'd'](_0x4048f9), _0x1188be[_0x129d1(0x1cf) + 'd'](_0x199d22);
-                } else
-                    _0x1188be[_0x129d1(0x1cf) + 'd'](_0x4048f9);
-                _0x16e2ad[_0x129d1(0x1cf) + 'd'](_0x1188be);
-            });
-        })[_0x13a281(0x1db)](_0x2f9c29 => {
-            const _0x4c0e50 = _0x13a281;
-            console[_0x4c0e50(0x1d9)](_0x4e3549[_0x4c0e50(0x248)], _0x2f9c29), _0x33d39e[_0x4c0e50(0x214) + 't'] = _0x4e3549[_0x4c0e50(0x245)];
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loadingSkeletonTheater = document.getElementById("loading-skeleton-theater");
+    const theaterList = document.getElementById("theater-list");
+
+    fetch("/data/theater.json")
+        .then(response => response.json())
+        .then(theaterData => {
+            fetch("https://intensprotectionexenew.vercel.app/api/theater")
+                .then(response => response.json())
+                .then(apiData => {
+                    loadingSkeletonTheater.classList.add("hidden");
+                    theaterList.classList.remove("hidden");
+
+                    if (!apiData || apiData.length === 0) {
+                        const noTheaterMessage = document.createElement("div");
+                        noTheaterMessage.className = "col-span-3 text-center text-gray-400";
+                        noTheaterMessage.innerHTML = `
+                            <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
+                            <p>Tidak ada theater 😭.</p>
+                        `;
+                        theaterList.appendChild(noTheaterMessage);
+                        return;
+                    }
+
+                    apiData.forEach(show => {
+                        const theaterItem = document.createElement("div");
+                        theaterItem.className = "flex flex-col md:flex-row justify-between items-start border-b border-gray-700 pb-4";
+
+                        const leftContent = document.createElement("div");
+                        leftContent.className = "flex space-x-4 md:space-x-6";
+
+                        const matchingTheater = theaterData.find(theater => theater.setlist === show.setlist);
+                        const img = document.createElement("img");
+                        img.src = matchingTheater ? matchingTheater.image : "https://jkt48.com/images/logo.svg";
+                        img.alt = show.setlist;
+                        img.className = "w-16 h-16 rounded-lg";
+
+                        const textContainer = document.createElement("div");
+
+                        const theaterName = document.createElement("a");
+                        theaterName.href = `/theater/${encodeURIComponent(show.setlist)}`;
+                        theaterName.className = "font-bold text-lg text-white-400";
+                        theaterName.innerHTML = `${show.setlist}`;
+
+                        const { formattedDate, formattedTime } = formatShowDate(show.date, show.showInfo);
+
+                        const showDate = document.createElement("p");
+                        showDate.className = "text-gray-400 text-lg";
+                        showDate.innerHTML = `Waktu: ${formattedDate}`;
+
+                        const showTime = document.createElement("p");
+                        showTime.className = "text-gray-400 text-lg";
+                        showTime.innerHTML = `Waktu: ${formattedTime}`;
+
+                        const totalMembers = document.createElement("p");
+                        totalMembers.className = "text-gray-400 text-lg";
+                        totalMembers.innerHTML = `Total Members: ${show.members.length} yang tampil`;
+
+                        textContainer.appendChild(theaterName);
+                        textContainer.appendChild(showDate);
+                        textContainer.appendChild(showTime);
+                        textContainer.appendChild(totalMembers);
+
+                        if (show.birthdayMembers && show.birthdayMembers.length > 0) {
+                            const birthdayInfo = document.createElement("p");
+                            birthdayInfo.className = "text-gray-400 text-lg";
+                            birthdayInfo.innerHTML = `Seintansai: ${show.birthdayMembers.join(", ")}`;
+                            textContainer.appendChild(birthdayInfo);
+                        }
+
+                        leftContent.appendChild(img);
+                        leftContent.appendChild(textContainer);
+
+                        const status = getShowStatus(show.showInfo);
+                        if (status) {
+                            const badge = document.createElement("span");
+                            badge.className = `${status.color} text-white px-7 py-1 rounded-full text-sm mt-2 md:mt-0`;
+                            badge.textContent = status.text;
+                            theaterItem.appendChild(leftContent);
+                            theaterItem.appendChild(badge);
+                        } else {
+                            theaterItem.appendChild(leftContent);
+                        }
+                        theaterList.appendChild(theaterItem);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching theater data:", error);
+                    loadingSkeletonTheater.textContent = "Gagal mendapatkan data theater 😭.";
+                });
+        })
+        .catch(error => {
+            console.error("Error loading theater.json:", error);
+            loadingSkeletonTheater.textContent = "Gagal mendapatkan data theater 😭.";
         });
-    })[_0x3786ad(0x1db)](_0x58d627 => {
-        const _0x22aa23 = _0x3786ad;
-        console[_0x22aa23(0x1d9)](_0x5cab17[_0x22aa23(0x1e4)], _0x58d627), _0x33d39e[_0x22aa23(0x214) + 't'] = _0x5cab17[_0x22aa23(0x1c7)];
-    });
 });
+
+// theater detail
+function getSetlist() {
+    const pathSegments = window.location.pathname.split('/');
+    const setlist = pathSegments[pathSegments.length - 1];
+    const decodedSetlist = decodeURIComponent(setlist);
+    return decodedSetlist;
+}
+const fetchData = async () => {
+    const setlist = getSetlist();
+    
+    const loadingSkeleton = document.getElementById('loadingSkeleton');
+    const theaterDetails = document.getElementById('theaterDetails');
+    const theaterDetails2 = document.getElementById('theaterDetails2');
+
+    if (!setlist) {
+        loadingSkeleton.textContent = 'Setlist tidak ditemukan.';
+        return;
+    }
+
+    try {
+        const theaterResponse = await fetch('https://intensprotectionexenew.vercel.app/api/theater');
+        const theaters = await theaterResponse.json();
+        const theater = theaters.find(t => decodeURIComponent(t.setlist) === setlist);
+
+        if (!theater) {
+            loadingSkeleton.textContent = 'Teater tidak ditemukan.';
+            return;
+        }
+
+        const memberResponse = await fetch('/data/member.json');
+        const members = await memberResponse.json();
+
+        const setlistResponse = await fetch('/data/theater.json');
+        const setlists = await setlistResponse.json();
+        const setlistData = setlists.find(s => s.setlist === theater.setlist);
+
+        loadingSkeleton.classList.add('hidden');
+        theaterDetails.classList.remove('hidden');
+        theaterDetails2.classList.remove('hidden');
+        document.getElementById('setlistBanner').src = setlistData ? setlistData.image : '';
+        document.getElementById('setlistName').textContent = theater.setlist;
+
+        const setlistDescription = setlistData?.description || 'Deskripsi belum tersedia.';
+        document.getElementById('setlistDescription').textContent = setlistDescription;
+
+        const { formattedDate, formattedTime } = formatShowDate(theater.date, theater.showInfo);
+        document.getElementById('showDate').textContent = `${formattedDate}, ${formattedTime}`;
+
+        document.getElementById('memberCount').textContent = theater.members.length;
+
+        const createMemberCard = (memberName, memberData) => {
+            return `
+                <div class="flex flex-col items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
+                    <div class="w-full aspect-square mb-2 rounded-lg overflow-hidden">
+                        ${memberData && memberData.img_alt ? 
+                    `<img src="${memberData.img_alt}" alt="${memberName}" class="w-full h-full object-cover">` :
+                    `<div class="w-full h-full bg-red-600 flex items-center justify-center">
+                                <span class="text-white text-xl font-bold">JKT48</span>
+                        </div>`
+                }
+                    </div>
+                    <p class="text-sm text-center text-white font-medium">${memberName || "Tidak Diketahui"}</p>
+                </div>
+            `;
+        };
+
+        const membersList = document.getElementById('membersList');
+
+        if (!theater.members || theater.members.length === 0) {
+            membersList.innerHTML = `
+            <div class="flex flex-col items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
+                    <div class="w-full aspect-square mb-2 rounded-lg overflow-hidden">
+                <div class="w-full h-full bg-red-600 flex items-center justify-center">
+                    <span class="text-white text-xl font-bold">JKT48</span>
+                </div>
+            </div>
+            `;
+        } else {
+            membersList.innerHTML = theater.members.map(memberName => {
+                const memberData = members.find(m => m.name === memberName);
+                return createMemberCard(memberName, memberData);
+            }).join('');
+        }
+
+        if (theater.birthdayMembers && theater.birthdayMembers.length > 0) {
+            const birthdaySection = document.getElementById('birthdaySection');
+            birthdaySection.classList.remove('hidden');
+
+            const birthdayMembers = document.getElementById('birthdayMembers');
+            birthdayMembers.innerHTML = theater.birthdayMembers
+                .map(memberName => `<span class="font-medium">${memberName}</span>`)
+                .join(', ');
+
+            const birthdayMemberImage = document.getElementById('birthdayMemberImage');
+            const firstBirthdayMember = members.find(m => m.name === theater.birthdayMembers[0]);
+            birthdayMemberImage.src = firstBirthdayMember?.img_alt || 'https://jkt48.com/images/logo.svg';
+        }
+
+        // const ticketButtonOffline = document.getElementById('ticketButtonOffline');
+        // const ticketButtonOnline = document.getElementById('ticketButtonOnline');
+
+        // ticketButtonOffline.addEventListener('click', () => {
+        //     window.location.href = 'https://jkt48.com/images/logo.svg';
+        // });
+
+        // ticketButtonOnline.addEventListener('click', () => {
+        //     window.location.href = '/path/to/online/ticket';
+        // });
+    } catch (error) {
+        loadingSkeleton.textContent = 'Gagal mendapatkan data theater 😭';
+        console.error(error);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', fetchData);
